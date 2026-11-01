@@ -1,0 +1,48 @@
+{
+  "dataset": "model_leeching",
+  "seed": 42,
+  "input_sha256": {
+    "normal": "2c7b6377db11481d0708607a972b94d8aa0ad0fc16d7c842881773fd4fc7fb77",
+    "attacker": "ac90d6f69cadfa5c960f35bb71ad909983842939adfb5dcbc9f327ca13bbb942"
+  },
+  "audit": {
+    "cross_partition_id_collisions": 0,
+    "cross_partition_normalized_text_collisions": 0,
+    "cross_partition_attack_context_collisions": 0,
+    "input_rows": {
+      "benign": 10062,
+      "attack": 10062
+    },
+    "attack_context_rows_parsed": 10062,
+    "cross_label_normalized_collisions_removed": 0,
+    "source_groups_per_partition": {
+      "train": 738,
+      "validation": 369,
+      "calibration": 369,
+      "test": 371
+    }
+  },
+  "retained_counts": {
+    "train": {
+      "benign": 3924,
+      "attack": 3936
+    },
+    "validation": {
+      "benign": 2032,
+      "attack": 2035
+    },
+    "calibration": {
+      "benign": 1978,
+      "attack": 1985
+    },
+    "test": {
+      "benign": 1966,
+      "attack": 1967
+    }
+  },
+  "limitations": [
+    "Identical or normalized source passages are grouped; paraphrased or related passages are not detected.",
+    "ID and prompt format assumptions apply only to model_leeching.",
+    "Repeated windows are dependent."
+  ]
+}
