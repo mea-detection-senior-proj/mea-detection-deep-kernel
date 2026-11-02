@@ -28,3 +28,5 @@ venv/
 
 hf_dataset_README.md
 data/model_leeching/
+data/Meaeq_SST-2/
+data/ME_BERT_sst2_wiki/

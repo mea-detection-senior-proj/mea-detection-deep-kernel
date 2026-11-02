@@ -1,0 +1,247 @@
+{
+  "Meaeq_SST-2": {
+    "1": {
+      "sizes": {
+        "train": {
+          "benign": 3994,
+          "attack": 620
+        },
+        "validation": {
+          "benign": 2004,
+          "attack": 303
+        },
+        "calibration": {
+          "benign": 1992,
+          "attack": 315
+        },
+        "test": {
+          "benign": 2010,
+          "attack": 298
+        }
+      },
+      "audit": {
+        "cross_partition_id_collisions": 0,
+        "cross_partition_normalized_text_collisions": 0,
+        "cross_partition_attack_context_collisions": 0,
+        "input_rows": {
+          "benign": 10000,
+          "attack": 1536
+        },
+        "grouping_policy": "id-text-only",
+        "source_provenance_available": false,
+        "dataset": "Meaeq_SST-2",
+        "attack_context_rows_parsed": 0,
+        "cross_label_normalized_collisions_removed": 0,
+        "source_groups_per_partition": {
+          "train": 4614,
+          "validation": 2307,
+          "calibration": 2307,
+          "test": 2308
+        }
+      }
+    },
+    "20": {
+      "sizes": {
+        "train": {
+          "benign": 4010,
+          "attack": 604
+        },
+        "validation": {
+          "benign": 1982,
+          "attack": 325
+        },
+        "calibration": {
+          "benign": 1974,
+          "attack": 333
+        },
+        "test": {
+          "benign": 2034,
+          "attack": 274
+        }
+      },
+      "audit": {
+        "cross_partition_id_collisions": 0,
+        "cross_partition_normalized_text_collisions": 0,
+        "cross_partition_attack_context_collisions": 0,
+        "input_rows": {
+          "benign": 10000,
+          "attack": 1536
+        },
+        "grouping_policy": "id-text-only",
+        "source_provenance_available": false,
+        "dataset": "Meaeq_SST-2",
+        "attack_context_rows_parsed": 0,
+        "cross_label_normalized_collisions_removed": 0,
+        "source_groups_per_partition": {
+          "train": 4614,
+          "validation": 2307,
+          "calibration": 2307,
+          "test": 2308
+        }
+      }
+    },
+    "42": {
+      "sizes": {
+        "train": {
+          "benign": 3994,
+          "attack": 620
+        },
+        "validation": {
+          "benign": 2017,
+          "attack": 290
+        },
+        "calibration": {
+          "benign": 1990,
+          "attack": 317
+        },
+        "test": {
+          "benign": 1999,
+          "attack": 309
+        }
+      },
+      "audit": {
+        "cross_partition_id_collisions": 0,
+        "cross_partition_normalized_text_collisions": 0,
+        "cross_partition_attack_context_collisions": 0,
+        "input_rows": {
+          "benign": 10000,
+          "attack": 1536
+        },
+        "grouping_policy": "id-text-only",
+        "source_provenance_available": false,
+        "dataset": "Meaeq_SST-2",
+        "attack_context_rows_parsed": 0,
+        "cross_label_normalized_collisions_removed": 0,
+        "source_groups_per_partition": {
+          "train": 4614,
+          "validation": 2307,
+          "calibration": 2307,
+          "test": 2308
+        }
+      }
+    }
+  },
+  "ME_BERT_sst2_wiki": {
+    "1": {
+      "sizes": {
+        "train": {
+          "benign": 26743,
+          "attack": 5435
+        },
+        "validation": {
+          "benign": 13408,
+          "attack": 2681
+        },
+        "calibration": {
+          "benign": 13410,
+          "attack": 2679
+        },
+        "test": {
+          "benign": 13417,
+          "attack": 2672
+        }
+      },
+      "audit": {
+        "cross_partition_id_collisions": 0,
+        "cross_partition_normalized_text_collisions": 0,
+        "cross_partition_attack_context_collisions": 0,
+        "input_rows": {
+          "benign": 67349,
+          "attack": 13470
+        },
+        "grouping_policy": "id-text-only",
+        "source_provenance_available": false,
+        "dataset": "ME_BERT_sst2_wiki",
+        "attack_context_rows_parsed": 0,
+        "cross_label_normalized_collisions_removed": 0,
+        "source_groups_per_partition": {
+          "train": 32178,
+          "validation": 16089,
+          "calibration": 16089,
+          "test": 16089
+        }
+      }
+    },
+    "20": {
+      "sizes": {
+        "train": {
+          "benign": 26812,
+          "attack": 5366
+        },
+        "validation": {
+          "benign": 13334,
+          "attack": 2755
+        },
+        "calibration": {
+          "benign": 13422,
+          "attack": 2667
+        },
+        "test": {
+          "benign": 13410,
+          "attack": 2679
+        }
+      },
+      "audit": {
+        "cross_partition_id_collisions": 0,
+        "cross_partition_normalized_text_collisions": 0,
+        "cross_partition_attack_context_collisions": 0,
+        "input_rows": {
+          "benign": 67349,
+          "attack": 13470
+        },
+        "grouping_policy": "id-text-only",
+        "source_provenance_available": false,
+        "dataset": "ME_BERT_sst2_wiki",
+        "attack_context_rows_parsed": 0,
+        "cross_label_normalized_collisions_removed": 0,
+        "source_groups_per_partition": {
+          "train": 32178,
+          "validation": 16089,
+          "calibration": 16089,
+          "test": 16089
+        }
+      }
+    },
+    "42": {
+      "sizes": {
+        "train": {
+          "benign": 26685,
+          "attack": 5493
+        },
+        "validation": {
+          "benign": 13370,
+          "attack": 2719
+        },
+        "calibration": {
+          "benign": 13455,
+          "attack": 2634
+        },
+        "test": {
+          "benign": 13468,
+          "attack": 2621
+        }
+      },
+      "audit": {
+        "cross_partition_id_collisions": 0,
+        "cross_partition_normalized_text_collisions": 0,
+        "cross_partition_attack_context_collisions": 0,
+        "input_rows": {
+          "benign": 67349,
+          "attack": 13470
+        },
+        "grouping_policy": "id-text-only",
+        "source_provenance_available": false,
+        "dataset": "ME_BERT_sst2_wiki",
+        "attack_context_rows_parsed": 0,
+        "cross_label_normalized_collisions_removed": 0,
+        "source_groups_per_partition": {
+          "train": 32178,
+          "validation": 16089,
+          "calibration": 16089,
+          "test": 16089
+        }
+      }
+    }
+  },
+  "cross_dataset_benign_normalized_overlap": 9629
+}

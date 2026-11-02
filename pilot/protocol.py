@@ -1,4 +1,4 @@
-"""Construct paired, source-grouped partitions for the model_leeching pilot."""
+"""Group inspected datasets by available identity, text and source provenance."""
 import hashlib
 import json
 import unicodedata
@@ -7,6 +7,7 @@ from pathlib import Path
 import numpy as np
 
 PARTITIONS = ('train', 'validation', 'calibration', 'test')
+SUPPORTED_DATASETS = ('model_leeching', 'Meaeq_SST-2', 'ME_BERT_sst2_wiki')
 
 
 def digest(value):
@@ -39,8 +40,11 @@ def read_rows(path, limit=None):
     return rows
 
 
-def make_partitions(normal, attack, seed):
+def make_partitions(normal, attack, seed, dataset='model_leeching'):
     """Link equal ids, normalized text and attack source contexts transitively."""
+    if dataset not in SUPPORTED_DATASETS:
+        raise ValueError(f'Uninspected dataset: {dataset}')
+    require_context = dataset == 'model_leeching'
     rows = [('benign', r) for r in normal] + [('attack', r) for r in attack]
     parent = list(range(len(rows)))
     def root(i):
@@ -65,7 +69,7 @@ def make_partitions(normal, attack, seed):
                 union(i, seen[key])
             else:
                 seen[key] = i
-    if context_matches != len(attack):
+    if require_context and context_matches != len(attack):
         raise ValueError(f'Could identify source context in {context_matches}/{len(attack)} attack rows; inspect dataset before proceeding')
     # Ambiguous labels must not enter training or evaluation.
     benign_text = {normalize(r['query']) for r in normal}
@@ -95,6 +99,9 @@ def make_partitions(normal, attack, seed):
                     dedup[label].add(key)
     audit = audit_partitions(partitions)
     audit.update({'input_rows': {'benign': len(normal), 'attack': len(attack)},
+                  'grouping_policy': 'id-text-attack-context' if require_context else 'id-text-only',
+                  'source_provenance_available': require_context,
+                  'dataset': dataset,
                   'attack_context_rows_parsed': context_matches,
                   'cross_label_normalized_collisions_removed': len(collisions),
                   'source_groups_per_partition': group_counts})

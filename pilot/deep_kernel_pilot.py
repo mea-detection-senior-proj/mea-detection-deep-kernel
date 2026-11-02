@@ -4,6 +4,7 @@ import copy
 import csv
 import json
 import sys
+import time
 from pathlib import Path
 
 import numpy as np
@@ -12,7 +13,7 @@ from torch import nn
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from MMD_detection import mmd_detector_gpu as original
-from pilot.protocol import PARTITIONS, digest, make_partitions, read_rows
+from pilot.protocol import PARTITIONS, SUPPORTED_DATASETS, digest, make_partitions, read_rows
 
 original.np, original.torch = np, torch
 
@@ -134,16 +135,19 @@ def main():
                    help='Number of benign references averaged per window, in calibration and test')
     p.add_argument('--max-per-class', type=int, default=None)
     args = p.parse_args()
+    if args.output.exists() and any(p.name != 'run.log' for p in args.output.iterdir()):
+        p.error(f'Refusing to overwrite nonempty output: {args.output}')
+    started = time.perf_counter()
     if min(args.window, args.train_window) < 2 or min(args.epochs, args.calibration_windows, args.test_windows, args.reference_repeats) < 1 or min(args.steps, args.validation_windows) < 2:
         p.error('window sizes, steps and validation windows must be >= 2; other counts must be positive')
     bandwidth_rng, train_rng, validation_rng, calibration_rng, test_rng = [np.random.default_rng(s) for s in np.random.SeedSequence(args.seed).spawn(5)]
     torch.manual_seed(args.seed)
-    if args.dataset.lower() != 'model_leeching':
-        p.error('Source grouping is validated only for model_leeching; inspect other datasets before use')
+    if args.dataset not in SUPPORTED_DATASETS:
+        p.error(f'Inspected datasets: {SUPPORTED_DATASETS}')
     normal_path, attack_path, _ = original.default_dataset_paths(args.data_root, args.dataset)
     normal = read_rows(normal_path, args.max_per_class)
     attack = read_rows(attack_path, args.max_per_class)
-    partitions, audit = make_partitions(normal, attack, args.seed)
+    partitions, audit = make_partitions(normal, attack, args.seed, args.dataset)
     names = [f'{label}_{part}' for label in ('benign', 'attack') for part in PARTITIONS]
     rows_by_name = {f'{label}_{part}': partitions[part][label] for label in ('benign', 'attack') for part in PARTITIONS}
     groups = [[row['query'] for row in rows_by_name[name]] for name in names]
@@ -188,12 +192,15 @@ def main():
             windows += [(f'mixed_{ratio:g}', mixed(be, ae, args.window, ratio, test_rng)) for _ in range(args.test_windows)]
         refs = [draw_reference_indices(bt, args.window, args.reference_repeats, test_rng) for _ in windows]
         for method, (bandwidths, model) in methods.items():
+            print(f'Evaluating {method}: calibration ({args.reference_repeats} references/window)', flush=True)
             cal = [repeated_score(bt, indices, w, bandwidths, model).item() for indices, w in calibration]
             threshold = float(np.quantile(cal, .95))
             thresholds[method] = threshold
             calibration_results.extend({'method': method, 'window_id': i, 'score': value,
                                         'threshold': threshold} for i, value in enumerate(cal))
             for i, ((label, window), indices) in enumerate(zip(windows, refs)):
+                if i % 50 == 0:
+                    print(f'{method}: test window {i}/{len(windows)}', flush=True)
                 value = repeated_score(bt, indices, window, bandwidths, model).item()
                 results.append({'method': method, 'split': label, 'window_id': i, 'score': value, 'threshold': threshold, 'detected': int(value > threshold)})
     args.output.mkdir(parents=True, exist_ok=True)
@@ -204,6 +211,10 @@ def main():
     summary = {m: {s: float(np.mean([r['detected'] for r in results if r['method']==m and r['split']==s])) for s in ['benign','mixed_0.05','mixed_0.1']} for m in methods}
     manifest = {name: [{'id_sha256': digest(row['id']), 'text_sha256': digest(row['query'])} for row in rows_by_name[name]] for name in names}
     metadata = {'protocol_version': 'source-grouped-v3-matched-reference-repeats', 'arguments': {k: str(v) if isinstance(v, Path) else v for k,v in vars(args).items()}, 'software': {'torch': torch.__version__, 'numpy': np.__version__, 'cuda': torch.version.cuda}, 'sizes': dict(zip(names, sizes)), 'audit': audit, 'sigma': sigma, 'thresholds': thresholds, 'rates': summary, 'training': training, 'split_sha256': manifest}
+    metadata['elapsed_seconds'] = time.perf_counter() - started
+    if args.dataset != 'model_leeching':
+        metadata['protocol_version'] = 'id-text-grouped-v1-matched-reference-repeats'
+    metadata['actual_attack_fractions'] = {str(r): max(1, round(args.window * r)) / args.window for r in (.05, .1)}
     (args.output / 'metadata.json').write_text(json.dumps(metadata, indent=2), encoding='utf-8')
     torch.save(network.state_dict(), args.output / 'deep_kernel.pt')
     print(json.dumps(summary, indent=2))

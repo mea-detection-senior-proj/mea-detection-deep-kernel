@@ -1,0 +1,26 @@
+{
+  "repo": "ShuzeLiu11/mmd-llm-mea-detection-data",
+  "revision": "7f96e886b424cc8cd384190f65c0cf0c6ea90d94",
+  "files": [
+    {
+      "path": "data\\Meaeq_SST-2\\normal\\queries.jsonl",
+      "sha256": "38236ff5d85e3df2963db25c785934d295451d39872d862c9160530d86228ea7",
+      "bytes": 1166194
+    },
+    {
+      "path": "data\\Meaeq_SST-2\\attacker\\queries.jsonl",
+      "sha256": "e25adbb528ba431397e4c4e859f40b2aa16e12451ccf3b29ea9ce52e0cd5d0c2",
+      "bytes": 387530
+    },
+    {
+      "path": "data\\ME_BERT_sst2_wiki\\normal\\queries.jsonl",
+      "sha256": "329117db9cb797e84579daf6703547643ccd120bece347f7db1646d77e1aac9d",
+      "bytes": 9979954
+    },
+    {
+      "path": "data\\ME_BERT_sst2_wiki\\attacker\\queries.jsonl",
+      "sha256": "b1a2a66d6e95cb910cf93690cd3afe4a81aa6952c763af8e0b69bc8ec1f070fd",
+      "bytes": 3020375
+    }
+  ]
+}

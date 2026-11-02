@@ -1,5 +1,67 @@
 # Known-attack feasibility pilot
 
+## Additional datasets
+
+`Meaeq_SST-2` and `ME_BERT_sst2_wiki` are inspected, downloaded datasets.
+Pinned repository revision and file SHA256 hashes are recorded in
+`ADDITIONAL_DATA_PROVENANCE.json`. `ADDITIONAL_DATA_AUDIT.json` records all
+three split seeds and available class sizes. Run the audit alone with:
+
+```powershell
+.\.venv\Scripts\python.exe pilot/run_additional.py --audit-only
+```
+
+Run both datasets with the same six-case settings as model_leeching and
+produce the combined method-first report:
+
+```powershell
+.\.venv\Scripts\python.exe -u pilot/run_additional.py
+```
+
+The two additional artifacts provide synthetic per-row IDs, index and query,
+not source-passage provenance. Their splits link shared IDs and normalized
+text, remove cross-label text collisions and deduplicate within each label.
+This is an explicit ID/text-grouped protocol, not verified source-independent
+evaluation. `model_leeching` retains its existing strict context parser and
+source grouping. All datasets are trained and evaluated separately. The two
+SST-2 benign pools overlap (see audit); this is not unseen-family testing.
+
+The combined report is `MULTI_DATASET_RESULTS_TH.md`, with Method, Dataset,
+Seed, Window, FPR, TPR 5%, TPR 10% at the top. Each dataset has its own
+report, CSVs, charts, checkpoints and code snapshot under
+`outputs/main_<dataset>_repeats20/`. Existing output folders are refused.
+Individual runs use `run_known_pilot.py --dataset <name> --output <new-path>`;
+individual summaries use `summarize_main.py <path> --dataset <name>`.
+
+## Locked model_leeching experiment
+
+Run the six-case comparison (seeds 1/20/42, windows 250/500) with 20
+references in both calibration and test:
+
+```powershell
+.\.venv\Scripts\python.exe -u pilot/run_known_pilot.py
+.\.venv\Scripts\python.exe pilot/summarize_main.py pilot/outputs/main_model_leeching_repeats20
+```
+
+The runner explicitly uses 20 epochs, 8 training windows per epoch, 32
+validation windows, 200 calibration windows, and 100 test windows per
+condition. The underlying pilot fixes training windows at 100 queries with
+10% attacks; test conditions are benign, 5%, and 10% attacks. Each method
+uses identical evaluation windows and reference draws. Thresholds use each
+method's 95th calibration percentile. Checkpoints use validation only.
+
+Output directories must be new; completed runs are never overwritten.
+Use `--output` to choose a new experiment directory. `--reference-repeats`
+is configurable for separate experiments, but the main summary validator
+requires the locked value of 20. The summary checks all six settings, split
+audits, calibration thresholds and reported rates before producing
+`REPORT.md`, `summary.csv`, `validated_runs.csv`, `training_history.csv` and
+`rates.svg` and `training.svg`. Ranges between seeds are descriptive, not confidence intervals.
+
+This experiment studies known-attack behavior with the existing exploratory
+objective. Length-only diagnostics remain background limitations; they are
+not part of this experiment's method comparison.
+
 This is exploratory code, not the complete research protocol. It compares a
 median-bandwidth RBF, the repository's four-bandwidth RBF, and a learned
 kernel. The learned kernel multiplies the fixed multi-RBF kernel by an RBF on
@@ -16,7 +78,7 @@ an established MMD power variance estimator, and these windows overlap. A
 higher validation objective does not establish improved detection at a fixed
 FPR. This is an exploratory proxy that needs further research validation.
 
-The supported dataset is `model_leeching`. Its benign and attack rows reuse
+For `model_leeching`, benign and attack rows reuse
 question IDs, and attack prompts contain source passages shared by multiple
 questions. Before splitting, rows are joined transitively by shared ID,
 normalized query text, and normalized attack source passage. Connected groups
