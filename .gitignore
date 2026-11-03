@@ -26,7 +26,12 @@ data/ME_BERT_mnli_wiki/normal/queries.jsonl
 .venv/
 venv/
 
+# New experiment artifacts; source/config/docs remain tracked.
+/artifacts/
+
 hf_dataset_README.md
 data/model_leeching/
 data/Meaeq_SST-2/
 data/ME_BERT_sst2_wiki/
+
+.agents

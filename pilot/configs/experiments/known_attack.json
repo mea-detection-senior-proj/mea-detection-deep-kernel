@@ -1,0 +1,17 @@
+{
+  "dataset": "model_leeching",
+  "data_root": "data",
+  "device": "cpu",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "cache_dir": "pilot/cache",
+  "output": "pilot/outputs/known_attack",
+  "seed": 42,
+  "window": 250,
+  "train_window": 100,
+  "epochs": 20,
+  "steps": 8,
+  "validation_windows": 32,
+  "calibration_windows": 200,
+  "test_windows": 100,
+  "reference_repeats": 20
+}

@@ -10,6 +10,40 @@ This repository provides code for benign-calibrated detection of LLM model extra
 The main detector applies maximum mean discrepancy (MMD) to sentence embeddings and compares incoming traffic windows against benign reference traffic.
 The artifact also includes adapted and original-protocol baselines used in the paper: PRADA, SEAT, CAP, DATE, marginal Mahalanobis distance, and pseudo-class energy.
 
+## Config-driven MMD development workflow
+
+A new baseline workflow separates detector mathematics, data preparation, and
+evaluation. It currently compares Single-RBF and Multi-RBF MMD on shared windows
+and reference draws, with separate reference/calibration/test pools. Deep Kernel
+training is also available through the locked comparison workflow; the remaining
+legacy baselines have not yet been migrated.
+
+From the repository root (PowerShell, using an existing local encoder):
+
+```powershell
+.\.venv\Scripts\python.exe -m experiments.run --config configs/experiments/mmd_smoke.json --device cuda --embedding-model pilot/cache/bge-small-en-v1.5 --output artifacts/my_first_smoke
+```
+
+The run command now prepares a shared protocol, runs selected methods, and writes
+`results/` and `report/` under the output folder. Use explicit flags to override
+config settings, or add `--dry-run` to check data capacity without loading an
+encoder or writing artifacts. See [single-command usage (Thai)](docs/RUN_EXPERIMENTS_TH.md).
+Datasets are read directly from `data/<name>/normal/queries.jsonl` and
+`data/<name>/attacker/queries.jsonl`. No dataset JSON or registry is required:
+copy a dataset into a new folder and select it with `--dataset <new-name>`.
+
+```powershell
+.\.venv\Scripts\python.exe -m experiments.run --config configs/experiments/deep_pure.json --window 250 --seed 42 --reference-repeats 20 --calibration-windows 200 --test-windows 500 --output artifacts/my_comparison_500 --dry-run
+```
+
+Use a new output path for every run. Remote encoders require a pinned commit in
+`embedding_revision`. The new protocol intentionally differs from the original
+paper scripts; existing commands and results remain available below.
+See [workflow and protocol (Thai)](docs/BASELINE_WORKFLOW_TH.md) and
+[restructuring plan (Thai)](docs/RESTRUCTURING_PLAN_TH.md).
+For the first pure-training Deep Kernel comparison, see
+[locked protocol and commands (Thai)](docs/DEEP_KERNEL_PROTOCOL_TH.md).
+
 ## Citation
 
 If you find this repository useful, please cite our paper:
@@ -41,6 +75,7 @@ The default setting uses `BAAI/bge-small-en-v1.5` as the sentence embedding mode
 
 ```text
 MMD_detection/              # proposed benign-calibrated MMD detector
+pilot/                      # modular Deep Kernel MMD research; see pilot/README.md
 PRADA/                      # PRADA-style adapted and stream detectors
 SEAT/                       # SEAT-style adapted and original account detectors
 CAP/                        # CAP-style coverage detector

@@ -102,6 +102,17 @@ def main():
             path = ROOT / 'pilot' / name
             shutil.copy2(path, snapshot / name)
             hashes[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+        # Entry points now import the package; archive its implementation and
+        # dataset/experiment specifications as well for reproducibility.
+        for folder in ('deep_mmd', 'configs'):
+            for path in sorted((ROOT / 'pilot' / folder).rglob('*')):
+                if not path.is_file() or path.suffix not in ('.py', '.json'):
+                    continue
+                relative = path.relative_to(ROOT / 'pilot')
+                destination = snapshot / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(path, destination)
+                hashes[relative.as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
         (snapshot / 'sha256.json').write_text(json.dumps(hashes, indent=2), encoding='utf-8')
     combine()
 

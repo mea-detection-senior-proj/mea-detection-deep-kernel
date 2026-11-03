@@ -1,4 +1,90 @@
-# Known-attack feasibility pilot
+# Deep Kernel MMD — Model Extraction Detection
+
+โค้ดหลักอยู่ใน `deep_mmd/` ส่วนไฟล์ชื่อ pilot เดิมเป็นทางเข้าสำหรับคำสั่งเก่า
+เริ่มอ่าน workflow จาก `deep_mmd/experiment.py`
+
+```text
+pilot/
+├── deep_mmd/                  # implementation หลัก
+│   ├── cli.py, __main__.py    # อ่าน config/CLI และเริ่มทดลอง
+│   ├── experiment.py         # workflow: load → split → encode → train → evaluate → save
+│   ├── datasets/
+│   │   ├── registry.py       # dataset specifications
+│   │   └── protocol.py       # JSONL, dedup, grouped splits, leakage audit
+│   ├── embeddings.py         # frozen encoder และ embedding cache
+│   ├── models.py             # neural feature network
+│   ├── kernels.py            # RBF, Multi-RBF, Deep Kernel, MMD²
+│   ├── sampling.py           # reference และ mixed traffic windows
+│   ├── training.py           # objective, optimizer, validation checkpoint
+│   └── evaluation.py         # calibration threshold และ detection scores
+├── configs/
+│   ├── datasets/             # หนึ่ง JSON ต่อ dataset
+│   └── experiments/          # ค่าการทดลองที่ใช้ซ้ำได้
+├── tests/                    # protocol, gradient, training, dataset extension
+├── docs/                     # คู่มือเพิ่ม dataset และแผนพัฒนาต่อ
+├── cache/                    # encoder/embeddings; ไม่เข้า Git
+├── outputs/                  # ผลทดลองและ checkpoints; ไม่เข้า Git
+├── deep_kernel_pilot.py      # compatibility entry point
+├── protocol.py              # compatibility imports
+├── test_*.py                 # compatibility test paths
+├── run_known_pilot.py        # runner เดิม: 3 seeds × 2 windows
+├── run_additional.py         # audit/runner/report เดิมสำหรับ 2 SST-2 datasets
+├── summarize_main.py         # สรุปเฉพาะ protocol 6 runs ที่ล็อกไว้
+└── *.md, *.json, diagnose_length.py  # รายงาน, provenance, diagnostic เดิม
+```
+
+ข้อมูลดิบยังอยู่ใน `data/` ที่ราก repository ใช้ร่วมกับวิธีตรวจจับอื่นได้
+ผลทดลองและรายงานเดิมอยู่ตำแหน่งเดิมเพื่อให้ลิงก์เดิมยังใช้ได้
+
+## เริ่มใช้งาน
+
+รันจากราก repository หลังติดตั้ง dependencies ใน `requirements.txt`:
+
+```powershell
+.\.venv\Scripts\python.exe -m pilot.deep_mmd --help
+
+.\.venv\Scripts\python.exe -m pilot.deep_mmd `
+  --config pilot/configs/experiments/known_attack.json `
+  --device cuda `
+  --embedding-model pilot/cache/bge-small-en-v1.5 `
+  --output pilot/outputs/model_leeching/run_001
+```
+
+ตัวอย่างใช้ encoder ในเครื่อง ถ้ายังไม่มีให้ใช้ `BAAI/bge-small-en-v1.5`
+ซึ่งจะดาวน์โหลดเมื่อรันจริง ใช้ `--device cpu` ได้หากไม่มี GPU
+ไม่อนุญาตให้ทับ output ที่มีผลอยู่แล้ว ให้ตั้งชื่อ run ใหม่เสมอ
+
+CLI override ค่าจาก experiment JSON; path ใน experiment JSON อ้างจาก working directory
+ส่วน path ของไฟล์ข้อมูลใน dataset JSON อ้างจาก `--data-root`
+config ตัวอย่างใช้ 20 reference repeats; ถ้าไม่ใช้ config จะคง default เดิมที่ 1 repeat
+
+## เพิ่ม dataset และทดสอบ
+
+เพิ่ม JSON ใน `configs/datasets/<name>.json` แล้วใช้ `--dataset <name>`
+หรือส่ง `--dataset-config <path>` โดยไม่แก้โค้ดฝึก
+ดู [คู่มือเพิ่ม dataset](docs/ADDING_DATASETS_TH.md)
+
+```powershell
+.\.venv\Scripts\python.exe -m pilot.deep_mmd `
+  --config pilot/configs/experiments/known_attack.json `
+  --dataset Meaeq_SST-2 `
+  --output pilot/outputs/Meaeq_SST-2/run_001
+
+.\.venv\Scripts\python.exe -m unittest discover -s pilot/tests -v
+```
+
+แต่ละ run ฝึกและประเมิน dataset เดียวแยกจากชุดอื่น
+runner และ summary เดิมยังจำกัดการทดลองที่ล็อกไว้
+test dataset ใหม่ใช้ embeddings จำลอง จึงไม่ดาวน์โหลด encoder
+
+การจัดโครงสร้างครั้งนี้คงสูตร kernel, objective, RNG streams, splits และ calibration เดิม
+objective ยังเป็น exploratory signal-to-noise proxy และ encoder ยัง frozen
+จึงยังไม่ถือว่าจบ protocol งานวิจัยเต็มรูปแบบ
+ดู [สถาปัตยกรรมและแผนพัฒนาต่อ](docs/ARCHITECTURE_TH.md)
+
+---
+
+# รายละเอียดการทดลอง pilot เดิม
 
 ## Additional datasets
 

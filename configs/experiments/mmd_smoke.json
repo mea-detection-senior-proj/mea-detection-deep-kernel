@@ -1,0 +1,23 @@
+{
+  "dataset": "Meaeq_SST-2",
+  "output": "artifacts/mmd_smoke",
+  "methods": [
+    "rbf",
+    "multi_rbf"
+  ],
+  "seeds": [
+    42
+  ],
+  "window_sizes": [
+    100
+  ],
+  "attacker_ratios": [
+    0.01,
+    0.05,
+    1.0
+  ],
+  "reference_repeats": 2,
+  "calibration_windows": 8,
+  "test_windows": 4,
+  "target_fpr": 0.05
+}

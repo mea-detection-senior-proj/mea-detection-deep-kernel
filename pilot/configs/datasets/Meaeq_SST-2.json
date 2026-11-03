@@ -1,0 +1,7 @@
+{
+  "name": "Meaeq_SST-2",
+  "benign_path": "Meaeq_SST-2/normal/queries.jsonl",
+  "attack_path": "Meaeq_SST-2/attacker/queries.jsonl",
+  "grouping_policy": "id-text-only",
+  "provenance_notes": "Synthetic per-row IDs; source-passage provenance unavailable. Benign pool overlaps ME_BERT_sst2_wiki. No claim of source independence."
+}

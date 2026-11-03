@@ -1,0 +1,7 @@
+{
+  "name": "model_leeching",
+  "benign_path": "model_leeching/normal/queries.jsonl",
+  "attack_path": "model_leeching/attacker/queries.jsonl",
+  "grouping_policy": "id-text-attack-context",
+  "provenance_notes": "Shared IDs, normalized query text and parsed attack source passages are grouped transitively. Every attack must have the expected context format."
+}
