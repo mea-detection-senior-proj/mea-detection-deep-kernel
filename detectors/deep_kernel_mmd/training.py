@@ -1,11 +1,13 @@
 """Train on pure attacker pairs; select checkpoint only on fixed validation pairs."""
 import copy
 import math
+import time
 
 import numpy as np
 import torch
 
 from detectors.mmd.detector import median_bandwidth
+from detectors.deep_kernel_mmd.model import DeepKernelMMD
 
 DEFAULT_TRAINING = {"mode": "pure", "window_size": 100, "epochs": 30, "steps_per_epoch": 16,
                     "validation_pairs": 32, "learning_rate": .001, "weight_decay": .0001,
@@ -98,3 +100,29 @@ def fit_kernel(model, benign_train, attack_train, benign_validation, attack_vali
     return {"initial_validation_objective": initial, "best_validation_objective": best, "best_epoch": best_epoch,
             "selection": "maximum mean pure-pair validation objective, including epoch zero",
             "history": history, "config": config, "kernel_parameters": model.parameters_metadata()}
+
+
+def fit_detector(benign_train, attack_train, benign_validation, attack_validation,
+                 base_bandwidth, config, seed, checkpoint_path, lock_id):
+    """Build, select, freeze and persist a detector without access to held-out pools."""
+    config = validate_training(config)
+    torch.manual_seed(seed)
+    model = DeepKernelMMD(benign_train.shape[1], base_bandwidth,
+                          config["hidden_dim"], config["feature_dim"]).to(benign_train)
+    started = time.perf_counter()
+    training = fit_kernel(model, benign_train, attack_train, benign_validation, attack_validation, config, seed)
+    training["elapsed_seconds"] = time.perf_counter() - started
+    torch.save({"state_dict": model.state_dict(), "input_dim": benign_train.shape[1], "config": config,
+                "initial_base_bandwidth": base_bandwidth, "lock_id": lock_id}, checkpoint_path)
+    return model, training
+
+
+def load_detector(checkpoint_path, device="cpu"):
+    """Replay the selected frozen detector, including checkpoints from before the refactor."""
+    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=True)
+    config = checkpoint["config"]
+    model = DeepKernelMMD(checkpoint["input_dim"], checkpoint["initial_base_bandwidth"],
+                          config["hidden_dim"], config["feature_dim"])
+    model.to(device=device, dtype=checkpoint["state_dict"]["log_base_bandwidth"].dtype)
+    model.load_state_dict(checkpoint["state_dict"])
+    return model.eval().requires_grad_(False)

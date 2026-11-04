@@ -9,11 +9,11 @@ import numpy as np
 import torch
 
 from data_pipeline.datasets import digest, load_dataset, split_rows
+from data_pipeline.capacity import require_evaluation_capacity, require_training_capacity
 from data_pipeline.embeddings import embed_texts
 from data_pipeline.windows import Window, make_windows
 from detectors.mmd.detector import MMDDetector, median_bandwidth
-from detectors.deep_kernel_mmd.model import DeepKernelMMD
-from detectors.deep_kernel_mmd.training import fit_kernel
+from detectors.deep_kernel_mmd.training import fit_detector
 from evaluation.windows import evaluate
 from experiments.configuration import ROOT, project_path
 from experiments.artifacts import code_identity, write_csv, write_json
@@ -71,6 +71,11 @@ def prepare(config, output):
     spec, benign, attack = load_dataset(config, ROOT)
     rows = {"benign": benign, "attack": attack}
     plans = [(seed, *split_rows(rows["benign"], rows["attack"], seed, spec["grouping_policy"])) for seed in config["seeds"]]
+    for seed, _, audit, _ in plans:
+        try:
+            require_evaluation_capacity(audit["sizes"], config["window_sizes"], config["attacker_ratios"])
+        except ValueError as exc:
+            raise ValueError(f"Dataset {spec['name']}, seed {seed}, {exc}") from exc
     texts = sorted({r["query"] for _, parts, _, _ in plans for classes in parts.values()
                     for entries in classes.values() for r in entries})
     positions = {text: i for i, text in enumerate(texts)}
@@ -155,10 +160,11 @@ def run_locked(config):
     # Training capacity is checked before creating run artifacts.
     if "deep_kernel" in config["methods"]:
         size = config["training"]["window_size"]
-        for entry in lock["seeds"].values():
-            for part in ("train", "validation"):
-                if min(entry["sizes"][part].values()) < size:
-                    raise ValueError(f"Insufficient {part} data for pure training size {size}")
+        for seed, entry in lock["seeds"].items():
+            try:
+                require_training_capacity(entry["sizes"], size)
+            except ValueError as exc:
+                raise ValueError(f"Seed {seed}: {exc}") from exc
     z = torch.as_tensor(np.load(lock_path / "embeddings.npy", allow_pickle=False),
                         dtype=getattr(torch, config["dtype"]), device=config["device"])
     output.mkdir(parents=True, exist_ok=False)
@@ -178,16 +184,11 @@ def run_locked(config):
             pools = json.loads((lock_path / f"seed_{seed}/pools.json").read_text())
             if "deep_kernel" in config["methods"]:
                 print(f"Training pure Deep Kernel: seed {seed}", flush=True)
-                torch.manual_seed(seed)
-                model = DeepKernelMMD(z.shape[1], sigma, config["training"]["hidden_dim"], config["training"]["feature_dim"]).to(z)
-                training_started = time.perf_counter()
                 def pool(part, label):
                     return z[torch.as_tensor(pools[part][label], device=z.device)]
-                training = fit_kernel(model, pool("train", "benign"), pool("train", "attack"),
-                                      pool("validation", "benign"), pool("validation", "attack"), config["training"], seed)
-                training["elapsed_seconds"] = time.perf_counter() - training_started
-                torch.save({"state_dict": model.state_dict(), "input_dim": z.shape[1], "config": config["training"],
-                            "initial_base_bandwidth": sigma, "lock_id": lock["lock_id"]}, seed_dir / "deep_kernel.pt")
+                model, training = fit_detector(pool("train", "benign"), pool("train", "attack"),
+                                               pool("validation", "benign"), pool("validation", "attack"),
+                                               sigma, config["training"], seed, seed_dir / "deep_kernel.pt", lock["lock_id"])
                 write_json(seed_dir / "training.json", training)
                 write_csv(seed_dir / "training_history.csv", training["history"])
                 available["deep_kernel"] = model

@@ -1,10 +1,9 @@
 """Single-command orchestration with side-effect-free capacity preflight."""
 import json
 
-import numpy as np
-
+from data_pipeline.capacity import require_evaluation_capacity, require_training_capacity
 from data_pipeline.datasets import load_dataset, split_rows
-from data_pipeline.windows import attacker_count, make_windows
+from data_pipeline.windows import attacker_count
 from experiments.configuration import ROOT, project_path
 from experiments.artifacts import code_identity, write_json
 
@@ -28,21 +27,12 @@ def preflight(config):
         name = spec["name"]
         protocol_action = "prepare new shared protocol under output/protocol"
     for seed, sizes in sizes_by_seed.items():
-        pools = {p: {label: np.arange(count) for label, count in classes.items()} for p, classes in sizes.items()}
-        for size in config["window_sizes"]:
-            try:
-                make_windows(pools["calibration"]["benign"], [], pools["reference"]["benign"], size,
-                             config["reference_repeats"], 1, [0], np.random.default_rng(0))
-                make_windows(pools["test"]["benign"], pools["test"]["attack"], pools["reference"]["benign"], size,
-                             config["reference_repeats"], 1, [0] + config["attacker_ratios"], np.random.default_rng(0))
-            except ValueError as exc:
-                raise ValueError(f"Dataset {name}, seed {seed}, evaluation window {size}: {exc}") from exc
-        if "deep_kernel" in config["methods"]:
-            required = config["training"]["window_size"]
-            for part in ("train", "validation"):
-                for label in ("benign", "attack"):
-                    if sizes[part][label] < required:
-                        raise ValueError(f"Seed {seed}: pure training needs {required} {part}/{label} rows, found {sizes[part][label]}")
+        try:
+            require_evaluation_capacity(sizes, config["window_sizes"], config["attacker_ratios"])
+            if "deep_kernel" in config["methods"]:
+                require_training_capacity(sizes, config["training"]["window_size"])
+        except ValueError as exc:
+            raise ValueError(f"Dataset {name}, seed {seed}, {exc}") from exc
     count = len(config["seeds"]) * len(config["window_sizes"])
     return {"dataset": name, "methods": config["methods"], "device": config["device"],
             "embedding_model": config["embedding_model"], "evaluation_window_sizes": config["window_sizes"],

@@ -5,10 +5,45 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
+import numpy as np
+
+from data_pipeline.capacity import evaluation_capacity, require_evaluation_capacity, require_training_capacity
+from data_pipeline.windows import make_windows
 from experiments.audit_data import capacity_rows, provenance_records, row_stats, training_rows, verify_partitions
 
 
 class ReadinessTests(unittest.TestCase):
+    def test_capacity_agrees_with_distinct_window_draws(self):
+        for reference, calibration, benign, attack in ((4, 4, 4, 4), (4, 4, 4, 1),
+                                                       (3, 4, 4, 4), (4, 3, 4, 4), (4, 4, 3, 4),
+                                                       (4, 4, 4, 0)):
+            sizes = {"reference": {"benign": reference}, "calibration": {"benign": calibration},
+                     "test": {"benign": benign, "attack": attack}}
+            for ratio in (0, .25, 1):
+                with self.subTest(sizes=sizes, ratio=ratio):
+                    capacity = evaluation_capacity(sizes, 4, ratio)
+                    try:
+                        rng = np.random.default_rng(42)
+                        make_windows(np.arange(calibration), [], np.arange(reference), 4, 2, 1, [0], rng)
+                        make_windows(np.arange(benign), np.arange(attack), np.arange(reference),
+                                     4, 2, 1, [0, ratio], rng)
+                    except ValueError:
+                        self.assertFalse(capacity["supported"])
+                        with self.assertRaises(ValueError):
+                            require_evaluation_capacity(sizes, [4], [ratio])
+                    else:
+                        self.assertTrue(capacity["supported"])
+                        require_evaluation_capacity(sizes, [4], [ratio])
+
+    def test_pure_training_capacity_checks_both_labels_in_both_partitions(self):
+        for part in ("train", "validation"):
+            for label in ("benign", "attack"):
+                sizes = {p: {"benign": 4, "attack": 4} for p in ("train", "validation")}
+                require_training_capacity(sizes, 4)
+                sizes[part][label] = 3
+                with self.subTest(part=part, label=label), self.assertRaisesRegex(ValueError, f"{part}_{label}"):
+                    require_training_capacity(sizes, 4)
+
     def test_provenance_loads_without_pilot_directory(self):
         record = {"revision": "fixture", "files": [
             {"path": "data\\fixture\\normal\\queries.jsonl", "sha256": "fixture-hash"}]}

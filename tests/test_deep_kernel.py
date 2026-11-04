@@ -1,4 +1,5 @@
 """Kernel/objective numerical checks, gradients, checkpoint selection and locked runs."""
+import csv
 import json
 import math
 from pathlib import Path
@@ -10,8 +11,8 @@ import numpy as np
 import torch
 
 from detectors.deep_kernel_mmd.model import DeepKernelMMD
-from detectors.deep_kernel_mmd.training import fit_kernel, power_objective
-from experiments.locked import prepare, verify_lock
+from detectors.deep_kernel_mmd.training import fit_kernel, load_detector, power_objective
+from experiments.locked import load_draws, prepare, verify_lock
 from experiments.run import load_config, run
 from experiments.summarize_comparison import summarize
 
@@ -108,9 +109,17 @@ class LockedRunTests(unittest.TestCase):
             report = summarize([baseline, deep], root / "comparison")
             self.assertTrue((report / "overall.csv").is_file())
             checkpoint = torch.load(deep / "seed_42/deep_kernel.pt", map_location="cpu", weights_only=True)
-            replay = DeepKernelMMD(3, checkpoint["initial_base_bandwidth"], 4, 2).double()
-            replay.load_state_dict(checkpoint["state_dict"])
-            replay.eval().requires_grad_(False)
+            replay = load_detector(deep / "seed_42/deep_kernel.pt")
+            self.assertFalse(replay.training)
+            self.assertTrue(all(not p.requires_grad for p in replay.parameters()))
+            self.assertEqual(next(replay.parameters()).dtype, torch.float64)
+            embeddings = torch.as_tensor(np.load(lock / "embeddings.npy"), dtype=torch.float64)
+            _, windows = load_draws(lock / "seed_42/window_4.npz")
+            with (deep / "seed_42/window_4/scores.csv").open(newline="") as stream:
+                scores = list(csv.DictReader(stream))
+            for row, window in zip(scores, windows):
+                self.assertEqual(replay.score(embeddings, embeddings[window.indices],
+                                             torch.as_tensor(window.references)), float(row["score"]))
             self.assertEqual(checkpoint["lock_id"], a["lock_id"])
             with patch.dict(b, {"cases": []}):
                 (deep / "metadata.json").write_text(json.dumps(b))

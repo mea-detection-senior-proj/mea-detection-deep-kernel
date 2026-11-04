@@ -138,13 +138,33 @@ artifacts/my_comparison_500/
    ├─ REPORT.md
    ├─ overall.csv
    ├─ per_seed.csv
+   ├─ minimum_windows.csv    ขนาด window ต่ำสุดที่ผ่านเกณฑ์ แยกต่อ seed
+   ├─ availability.csv       เงื่อนไขที่ข้อมูลรองรับและสาเหตุที่ไม่รองรับ
+   ├─ rates_*.png            กราฟ TPR คู่กับ measured FPR แยก dataset/สัดส่วน attack
    ├─ auroc_per_seed.csv
-   └─ paired_differences.csv  มีเมื่อเลือก Deep Kernel คู่กับ fixed baseline
+   └─ paired_differences.csv  มีเมื่อเลือก Deep Kernel คู่กับวิธีเปรียบเทียบอื่น
 ```
 
 ถ้าใช้ external protocol lock จะไม่มี protocol/ สำเนาใหม่ใน output แต่บันทึกตำแหน่ง lock ใน resolved_config/run metadata การย้ายหรือเก็บผลจึงต้องเก็บ lock ที่อ้างถึงด้วย
 
 เมื่อมี seed เดียว รายงานไม่แสดง between-seed standard deviation เป็น ±0 เพราะยังประมาณความแปรปรวนข้าม seed ไม่ได้
+
+รายงานตรวจความครบเทียบกับ protocol lock และตรวจอัตราใน summary กับคะแนนรายหน้าต่างก่อนสรุป
+จึงต้องเก็บไฟล์ config, scores, calibration scores และ lock ที่อ้างถึงไว้ด้วย
+ผลหลาย dataset แสดงแยกกัน โดยแต่ละ dataset ต้องมี lock เดียวกันระหว่างวิธีที่เปรียบเทียบ
+ชื่อวิธีในรายงานมาจากวิธีที่เลือกจริง ไม่จำกัดไว้เฉพาะสามชื่อเดิม
+
+`minimum_windows.csv` ใช้เกณฑ์ measured TPR ≥ 90% พร้อม measured FPR ≤ 5%
+แยกตาม dataset, seed, method และ attacker fraction จากขนาดที่ทดลองจริงเท่านั้น:
+
+- `reached`: มีขนาดที่ผ่านเกณฑ์ แสดงขนาดต่ำสุดพร้อม TPR/FPR ของขนาดนั้น
+- `not_reached`: มีขนาดที่รองรับ แต่ยังไม่มีขนาดผ่านเกณฑ์
+- `unavailable`: ไม่มีขนาดที่ข้อมูลรองรับสำหรับเงื่อนไขนั้น
+
+ค่าที่หายหรือ run ไม่สมบูรณ์จะถูกปฏิเสธ ไม่ถูกนับเป็น `unavailable` หรือ TPR ศูนย์
+ส่วนตัวรันยังหยุดเมื่อพบข้อมูลไม่พอตามพฤติกรรมเดิม การข้ามช่องที่ไม่รองรับยังเป็นงานแยก
+กราฟใช้ Matplotlib จาก `requirements.txt` และแสดงค่าเฉลี่ยเชิงพรรณนาข้าม seed;
+การผ่านเกณฑ์ราย seed ไม่ใช่หลักฐานรับประกัน FPR ระดับประชากร
 
 ## คำสั่งเดิมและสูตรวิจัย
 

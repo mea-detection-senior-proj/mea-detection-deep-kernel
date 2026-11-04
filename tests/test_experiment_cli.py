@@ -111,7 +111,7 @@ class ExperimentCLITests(unittest.TestCase):
             execute(config)
         baseline = {**config, "output": str(self.root / "baseline"), "methods": ["rbf"],
                     "protocol_lock": str(output / "protocol"), "training": {**config["training"], "window_size": 999}}
-        with patch("experiments.locked.fit_kernel", side_effect=AssertionError("Baseline must not train")), \
+        with patch("experiments.locked.fit_detector", side_effect=AssertionError("Baseline must not train")), \
              patch("experiments.locked.embed_texts", side_effect=AssertionError("Reuse must not encode")), \
              contextlib.redirect_stdout(io.StringIO()):
             selected = execute(baseline)

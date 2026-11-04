@@ -6,6 +6,7 @@ import numpy as np
 import torch
 
 from data_pipeline.datasets import digest, load_dataset, split_rows
+from data_pipeline.capacity import require_evaluation_capacity
 from data_pipeline.embeddings import embed_texts
 from data_pipeline.windows import make_windows
 from detectors.mmd.detector import MMDDetector, median_bandwidth
@@ -28,15 +29,7 @@ def run(config):
     plans = []
     for seed in config["seeds"]:
         partitions, audit, manifest = split_rows(benign, attack, seed, spec["grouping_policy"])
-        for size in config["window_sizes"]:
-            # Validate pool capacity before loading the encoder or creating outputs.
-            sizes = {p: {label: np.arange(len(rows)) for label, rows in classes.items()}
-                     for p, classes in partitions.items()}
-            rng = np.random.default_rng(0)
-            make_windows(sizes["calibration"]["benign"], [], sizes["reference"]["benign"], size,
-                         config["reference_repeats"], 1, [0], rng)
-            make_windows(sizes["test"]["benign"], sizes["test"]["attack"], sizes["reference"]["benign"],
-                         size, config["reference_repeats"], 1, [0] + config["attacker_ratios"], rng)
+        require_evaluation_capacity(audit["sizes"], config["window_sizes"], config["attacker_ratios"])
         plans.append((seed, partitions, audit, manifest))
     texts = sorted({r["query"] for _, partitions, _, _ in plans
                     for classes in partitions.values() for rows in classes.values() for r in rows})

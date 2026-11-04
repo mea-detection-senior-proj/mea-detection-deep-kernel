@@ -1,3 +1,5 @@
+> Historical plan. Its package locations and migration guidance are superseded by [ADR 0003](adr/0003-restructure-active-code-and-archive-legacy-detectors.md) and the [accepted architecture migration plan](../.scratch/deep-kernel-phase1/architecture-plan.md). For scientific scope and phase sequencing, use [ADR 0001](adr/0001-query-efficiency-and-unseen-attack-evaluation.md) and the [Phase 1 spec](../.scratch/deep-kernel-phase1/spec.md). Retained below as historical context, not current implementation instructions.
+
 # แผนจัดโครงสร้างและการทดลอง Deep Kernel MMD
 
 สถานะ: เริ่ม implementation ทางรัน baseline ใหม่แล้ว โดยยังเก็บโค้ดเดิมและ Pilot ไว้

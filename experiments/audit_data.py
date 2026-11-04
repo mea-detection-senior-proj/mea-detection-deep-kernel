@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 from data_pipeline.datasets import PARTITIONS, context_of, load_dataset, normalize, split_rows
-from data_pipeline.windows import attacker_count
+from data_pipeline.capacity import evaluation_capacity, training_capacity
 
 ROOT = Path(__file__).resolve().parents[1]
 SEEDS = (1, 20, 42)
@@ -54,46 +54,14 @@ def verify_partitions(partitions, policy):
 
 def capacity_rows(dataset, seed, sizes):
     """Capacity means distinct rows within each window, not independent windows."""
-    rows = []
-    for size in WINDOWS:
-        for ratio in RATIOS:
-            na = attacker_count(size, ratio)
-            needs = {"reference_benign": size, "calibration_benign": size,
-                     "test_benign": size, "test_attack": na}
-            pools = {"reference_benign": sizes["reference"]["benign"],
-                     "calibration_benign": sizes["calibration"]["benign"],
-                     "test_benign": sizes["test"]["benign"], "test_attack": sizes["test"]["attack"]}
-            shortages = [f"{key}: {pools[key]} < {need}" for key, need in needs.items() if pools[key] < need]
-            # Benign-only evaluation is required in every condition; the mixed-window
-            # bound below is in addition to that requirement.
-            bounds = [pools["test_attack"] // na]
-            if size > na:
-                bounds.append(pools["test_benign"] // (size - na))
-            rows.append({"dataset": dataset, "seed": seed, "window_size": size,
-                         "requested_ratio": ratio, "attacker_count": na, "actual_ratio": na / size,
-                         "supported": not shortages, "shortages": "; ".join(shortages),
-                         "benign_disjoint_test_windows_row_bound": pools["test_benign"] // size,
-                         "condition_disjoint_test_windows_row_bound": min(bounds),
-                         "disjoint_calibration_windows_row_bound": pools["calibration_benign"] // size})
-    return rows
+    return [{"dataset": dataset, "seed": seed, **evaluation_capacity(sizes, size, ratio)}
+            for size in WINDOWS for ratio in RATIOS]
 
 
 def training_rows(dataset, seed, sizes):
     # Provisional training sizes, not final objective/model choices.
-    result = []
-    for size in (100, 250):
-        for ratio in (1., .01, .05, .1, .25):
-            na = attacker_count(size, ratio)
-            shortages = []
-            for part in ("train", "validation"):
-                # Reference benign and benign portion of incoming window must be disjoint.
-                for label, need in (("benign", 2 * size - na), ("attack", na)):
-                    if sizes[part][label] < need:
-                        shortages.append(f"{part}_{label}: {sizes[part][label]} < {need}")
-            result.append({"dataset": dataset, "seed": seed, "training_window_size": size,
-                           "training_mode": "pure" if ratio == 1 else "mixed", "requested_ratio": ratio,
-                           "attacker_count": na, "supported": not shortages, "shortages": "; ".join(shortages)})
-    return result
+    return [{"dataset": dataset, "seed": seed, **training_capacity(sizes, size, ratio)}
+            for size in (100, 250) for ratio in (1., .01, .05, .1, .25)]
 
 
 def write_csv(path, rows):
