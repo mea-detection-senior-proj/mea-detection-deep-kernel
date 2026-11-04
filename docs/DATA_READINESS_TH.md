@@ -20,7 +20,7 @@
 
 model_leeching มี attack rows ที่ parse context ได้ครบ 10,062 แถว และ 1,866 unique normalized contexts จึงต้องแบ่งตามกลุ่ม source ต่อไป ไม่สุ่มแถวอิสระ ส่วนสอง SST-2 sets ไม่มี source provenance ที่ตรวจได้ในไฟล์ จึงยืนยันได้เพียง ID/text disjointness
 
-ไฟล์ทั้ง 4 ของสอง SST-2 sets มี SHA256 ตรงกับบันทึก `pilot/ADDITIONAL_DATA_PROVENANCE.json` ที่อ้าง dataset revision `7f96e886b424cc8cd384190f65c0cf0c6ea90d94` การตรวจนี้เทียบกับบันทึกในเครื่อง ไม่ได้ยืนยัน remote revision หรือ license ใหม่ ส่วน model_leeching บันทึก hash ปัจจุบันแล้ว แต่ไม่พบบันทึก hash อ้างอิงในไฟล์ provenance ดังกล่าว
+ไฟล์ทั้ง 4 ของสอง SST-2 sets มี SHA256 ตรงกับบันทึก `data_pipeline/provenance/ADDITIONAL_DATA_PROVENANCE.json` ที่อ้าง dataset revision `7f96e886b424cc8cd384190f65c0cf0c6ea90d94` การตรวจนี้เทียบกับบันทึกในเครื่อง ไม่ได้ยืนยัน remote revision หรือ license ใหม่ ส่วน model_leeching บันทึก hash ปัจจุบันแล้ว แต่ไม่พบบันทึก hash อ้างอิงในไฟล์ provenance ดังกล่าว
 
 ## จำนวนต่อ partition: ช่วงต่ำสุด–สูงสุดจาก 3 seeds
 

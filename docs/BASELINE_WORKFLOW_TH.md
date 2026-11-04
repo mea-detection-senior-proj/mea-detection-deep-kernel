@@ -34,13 +34,13 @@ artifacts/                    ผลใหม่และ cache; ไม่เข
 .\.venv\Scripts\python.exe -m experiments.run `
   --config configs/experiments/mmd_smoke.json `
   --device cuda `
-  --embedding-model pilot/cache/bge-small-en-v1.5 `
+  --embedding-model artifacts/models/bge-small-en-v1.5 `
   --output artifacts/my_first_smoke
 
 .\.venv\Scripts\python.exe -m experiments.run `
   --config configs/experiments/mmd_comparison.json `
   --device cuda `
-  --embedding-model pilot/cache/bge-small-en-v1.5 `
+  --embedding-model artifacts/models/bge-small-en-v1.5 `
   --output artifacts/my_mmd_comparison
 
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
@@ -48,7 +48,7 @@ artifacts/                    ผลใหม่และ cache; ไม่เข
 
 Linux ใช้ `python` จาก environment แทน `.\.venv\Scripts\python.exe` และเขียนคำสั่งบรรทัดเดียวได้ ไม่มี Bash เป็นข้อบังคับ
 
-ตัวอย่างใช้ encoder ที่มีอยู่ในเครื่องใต้ Pilot เป็นเพียงไฟล์โมเดล ไม่มีการ import โค้ด Pilot สามารถเปลี่ยนเป็นโฟลเดอร์ encoder อื่นได้ ใช้ `--device cpu` ได้เช่นกัน
+ตัวอย่างใช้ encoder ที่คัดลอกไว้ใต้ `artifacts/models/bge-small-en-v1.5` ไม่มีการอ่านไฟล์หรือ import โค้ดจาก Pilot ข้อมูล provenance สำหรับ audit อยู่ใต้ `data_pipeline/provenance/` ส่วน `pilot/` ยังเก็บไว้ครบ สามารถเปลี่ยนเป็นโฟลเดอร์ encoder อื่นได้ ใช้ `--device cpu` ได้เช่นกัน โมเดลใต้ `artifacts/` ไม่เข้า Git จึงต้องเตรียมเองเมื่อติดตั้งในเครื่องใหม่
 
 หากใช้โมเดลจาก Hugging Face ให้ใส่ `embedding_model` และ `embedding_revision` เป็น commit SHA 40 ตัวใน config ต้องระบุ revision ที่ตรึงไว้จริง มิฉะนั้นโปรแกรมจะปฏิเสธ เพื่อไม่ให้ cache/ผลทดลองใช้โมเดลต่างเวอร์ชันโดยไม่รู้ตัว Config ตัวอย่างจึงต้องใช้ local-model override ตามคำสั่งด้านบน หรือเพิ่ม pinned revision ก่อนรัน
 

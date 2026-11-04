@@ -11,7 +11,7 @@ cd C:\Users\AAA\Documents\mmd-llm-mea-detection
   --config configs/experiments/deep_pure.json `
   --dataset model_leeching `
   --device cuda `
-  --embedding-model pilot/cache/bge-small-en-v1.5 `
+  --embedding-model artifacts/models/bge-small-en-v1.5 `
   --methods rbf multi_rbf deep_kernel `
   --window 250 `
   --seed 42 `
@@ -28,7 +28,9 @@ cd C:\Users\AAA\Documents\mmd-llm-mea-detection
 
 Config `deep_pure.json` เลือกทั้งสามวิธีและใช้ค่าฝึกจากการทดลอง pure-training รอบแรก ตัวอย่าง window 250/seed 42 เปลี่ยนเฉพาะ evaluation window/seed ส่วน training window ยังคง 100
 
-`pilot/cache/...` ในตัวอย่างเป็นเพียงตำแหน่งไฟล์ encoder ที่มีอยู่ในเครื่อง เปลี่ยนเป็น encoder folder อื่นได้ ระบบใหม่ไม่ได้ import โค้ด Pilot
+`artifacts/models/bge-small-en-v1.5` เป็นไฟล์ encoder ที่คัดลอกไว้สำหรับทางรันใหม่ เปลี่ยนเป็น encoder folder อื่นได้ ระบบใหม่ไม่ต้องอ่านไฟล์หรือ import โค้ดจาก `pilot/` ส่วน Pilot และผลเดิมยังเก็บไว้ครบ
+
+หากติดตั้งในเครื่องใหม่ ให้เตรียม local encoder ไว้ในตำแหน่งนี้หรือระบุ `--embedding-model` เป็นโฟลเดอร์ที่มีอยู่จริง ไฟล์ใต้ `artifacts/` ไม่เข้า Git ข้อมูลแหล่งที่มาสำหรับ audit อยู่ที่ `data_pipeline/provenance/ADDITIONAL_DATA_PROVENANCE.json`
 
 ## กติกาการเลือกค่า
 
@@ -102,6 +104,14 @@ Dry-run ตรวจข้อมูลจริงและความเพี
 ## ใช้ protocol lock เดิม
 
 เพิ่ม `--protocol-lock <previous-output>/protocol` และใช้ output ใหม่ ค่าที่กำหนด evaluation protocol ต้องตรงกับ lock เช่น dataset, encoder, dtype, seeds, window sizes, ratios, repeats และ counts
+
+Lock เดิมที่บันทึก encoder ใต้ `pilot/cache/` ยังเป็นหลักฐานของรอบเก่า ไม่แก้ไขย้อนหลัง การเปลี่ยนตำแหน่ง encoder ทำให้ settings และ embedding cache key เปลี่ยน แม้เนื้อหาโมเดลเหมือนเดิม ให้สร้าง lock ใหม่ สำหรับ config `model_leeching_baseline_locked.json` และ `model_leeching_deep_pure_locked.json` ที่ยังระบุ lock รอบแรก ให้เตรียมและเลือก lock ใหม่อย่างชัดเจน:
+
+```powershell
+.\.venv\Scripts\python.exe -m experiments.prepare --config configs/experiments/model_leeching_baseline_locked.json --output artifacts/model_leeching_protocol_standalone
+.\.venv\Scripts\python.exe -m experiments.run --config configs/experiments/model_leeching_baseline_locked.json --protocol-lock artifacts/model_leeching_protocol_standalone --output artifacts/model_leeching_baseline_standalone
+.\.venv\Scripts\python.exe -m experiments.run --config configs/experiments/model_leeching_deep_pure_locked.json --protocol-lock artifacts/model_leeching_protocol_standalone --output artifacts/model_leeching_deep_pure_standalone
+```
 
 หากเปลี่ยนค่าที่ขัดกัน โปรแกรมจะบอกชื่อ field, requested value และ locked value แล้วหยุดก่อนสร้าง output ไม่แก้ lock เดิมให้เอง และไม่ข้ามเงียบ ๆ การเปลี่ยน config ที่มี protocol_lock เดิมอยู่แล้วให้เป็นการทดลองใหม่ควรใช้ config ใหม่ที่ไม่มี protocol_lock
 

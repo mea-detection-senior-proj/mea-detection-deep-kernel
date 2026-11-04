@@ -21,7 +21,7 @@ legacy baselines have not yet been migrated.
 From the repository root (PowerShell, using an existing local encoder):
 
 ```powershell
-.\.venv\Scripts\python.exe -m experiments.run --config configs/experiments/mmd_smoke.json --device cuda --embedding-model pilot/cache/bge-small-en-v1.5 --output artifacts/my_first_smoke
+.\.venv\Scripts\python.exe -m experiments.run --config configs/experiments/mmd_smoke.json --device cuda --embedding-model artifacts/models/bge-small-en-v1.5 --output artifacts/my_first_smoke
 ```
 
 The run command now prepares a shared protocol, runs selected methods, and writes
@@ -39,6 +39,12 @@ copy a dataset into a new folder and select it with `--dataset <new-name>`.
 Use a new output path for every run. Remote encoders require a pinned commit in
 `embedding_revision`. The new protocol intentionally differs from the original
 paper scripts; existing commands and results remain available below.
+The new workflow uses a local encoder under `artifacts/models/bge-small-en-v1.5`
+and audit provenance under `data_pipeline/provenance/`; it does not require `pilot/`.
+Model files under `artifacts/` are not tracked: provision the encoder locally or
+pass another model folder with `--embedding-model`. Existing Pilot code and results
+are retained. Locks recorded with the old encoder path require a new lock when
+using the new path; see the CLI guide above.
 See [workflow and protocol (Thai)](docs/BASELINE_WORKFLOW_TH.md) and
 [restructuring plan (Thai)](docs/RESTRUCTURING_PLAN_TH.md).
 For the first pure-training Deep Kernel comparison, see

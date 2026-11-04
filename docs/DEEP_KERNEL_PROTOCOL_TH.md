@@ -83,6 +83,8 @@ Training RNG แยกจาก validation/calibration/test ชัดเจน �
 
 ## คำสั่ง
 
+คำสั่งด้านล่างบันทึกตำแหน่ง artifacts ของรอบแรก ปัจจุบัน config ใช้ encoder ใต้ `artifacts/models/` แล้ว หากจะรันใหม่ให้ใช้คำสั่งสร้าง lock และ outputs ใหม่ใน [คู่มือ CLI ส่วนใช้ protocol lock เดิม](RUN_EXPERIMENTS_TH.md#ใช้-protocol-lock-เดิม) ไม่ใช้ lock รอบแรกกับ encoder path ใหม่
+
 สำหรับการรันทั่วไป แนะนำ [คำสั่งเดียวพร้อม flags](RUN_EXPERIMENTS_TH.md) คำสั่งแยกด้านล่างยังใช้ได้ แต่ CLI run ปัจจุบันเก็บผลดิบใต้ output/results และสร้างรายงาน output/report ให้อัตโนมัติ เมื่อต้องใช้ summarizer แยกกับผล CLI รุ่นใหม่ ให้ชี้ --runs ไปที่ results/ ของแต่ละ run
 
 รันจากราก repository ใช้ output ใหม่เสมอ:

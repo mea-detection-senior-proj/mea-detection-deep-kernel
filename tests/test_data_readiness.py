@@ -1,10 +1,29 @@
 """Check audit conclusions against explicit small capacity/leakage examples."""
+import json
+from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import patch
 
-from experiments.audit_data import capacity_rows, row_stats, training_rows, verify_partitions
+from experiments.audit_data import capacity_rows, provenance_records, row_stats, training_rows, verify_partitions
 
 
 class ReadinessTests(unittest.TestCase):
+    def test_provenance_loads_without_pilot_directory(self):
+        record = {"revision": "fixture", "files": [
+            {"path": "data\\fixture\\normal\\queries.jsonl", "sha256": "fixture-hash"}]}
+        temporary_root = Path(__file__).resolve().parents[1] / "artifacts/test_tmp"
+        temporary_root.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=temporary_root) as directory:
+            root = Path(directory)
+            path = root / "data_pipeline/provenance/ADDITIONAL_DATA_PROVENANCE.json"
+            path.parent.mkdir(parents=True)
+            path.write_text(json.dumps(record), encoding="utf-8")
+            with patch("experiments.audit_data.ROOT", root):
+                hashes, loaded = provenance_records()
+            self.assertEqual(hashes, {"data/fixture/normal/queries.jsonl": "fixture-hash"})
+            self.assertEqual(loaded, record)
+
     def test_mixed_window_can_fit_when_pure_window_cannot(self):
         sizes = {part: {"benign": 2000, "attack": 50}
                  for part in ("train", "validation", "reference", "calibration", "test")}

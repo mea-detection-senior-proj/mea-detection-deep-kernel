@@ -104,7 +104,7 @@ def write_csv(path, rows):
 
 
 def provenance_records():
-    path = ROOT / "pilot" / "ADDITIONAL_DATA_PROVENANCE.json"
+    path = ROOT / "data_pipeline" / "provenance" / "ADDITIONAL_DATA_PROVENANCE.json"
     if not path.exists():
         return {}, None
     record = json.loads(path.read_text(encoding="utf-8-sig"))
