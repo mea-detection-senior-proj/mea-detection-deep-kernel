@@ -10,12 +10,13 @@ import unittest
 
 import numpy as np
 
-from data_pipeline.datasets import digest
-from data_pipeline.windows import make_windows
-from experiments.artifacts import write_csv, write_json
-from experiments.configuration import load_config
-from experiments.locked import load_draws, protocol_settings, save_draws, sha256
-from experiments.summarize_comparison import summarize
+from mea_detection.identity import code_identity
+from mea_detection.data.datasets import digest
+from mea_detection.data.windows import make_windows
+from mea_detection.experiments.artifacts import write_csv, write_json
+from mea_detection.configuration import load_config
+from mea_detection.experiments.locked import load_draws, protocol_settings, save_draws, sha256
+from mea_detection.reporting.comparison import summarize
 
 
 METHODS = ["rbf", "multi_rbf", "deep_kernel", "learned_rbf", "mlp"]
@@ -46,7 +47,7 @@ class ComparisonReportTests(unittest.TestCase):
         # Reporting accepts every selected method; these are score fixtures, not trained models.
         config.update(methods=list(methods), protocol_lock=str(lock_path))
         lock = {"status": "complete", "protocol": "locked-fixed-window-v1", "settings": protocol_settings(config),
-                "dataset": {"name": dataset}, "files": {}, "cases": [], "seeds": {}}
+                "dataset": {"name": dataset}, "code": code_identity(), "files": {}, "cases": [], "seeds": {}}
         for seed in seeds:
             attack_count = attacks[seed] if isinstance(attacks, dict) else attacks
             lock["seeds"][str(seed)] = {"sizes": {"reference": {"benign": 40}, "calibration": {"benign": 40},
@@ -69,7 +70,7 @@ class ComparisonReportTests(unittest.TestCase):
         output.mkdir()
         write_json(output / "config.json", config)
         meta = {"status": "complete", "protocol": lock["protocol"], "protocol_lock": str(lock_path),
-                "lock_id": lock["lock_id"], "dataset": lock["dataset"],
+                "lock_id": lock["lock_id"], "dataset": lock["dataset"], "code": code_identity(),
                 "cases": [{"seed": c["seed"], "window_size": c["window_size"],
                            "draws_sha256": lock["files"][c["draws"]]} for c in lock["cases"]]}
         write_json(output / "metadata.json", meta)
@@ -218,3 +219,19 @@ class ComparisonReportTests(unittest.TestCase):
         existing.mkdir()
         with self.assertRaises(FileExistsError):
             self.report([run], "existing")
+
+    def test_saved_historical_source_can_report_but_cannot_mix_with_new_source(self):
+        current = self.make_run(dataset="current", methods=["rbf"])
+        historical = self.make_run(dataset="historical", methods=["rbf"])
+        meta = json.loads((historical / "metadata.json").read_text())
+        lock_path = Path(meta["protocol_lock"]) / "lock.json"
+        lock = json.loads(lock_path.read_text())
+        lock["code"]["pipeline_source_sha256"] = "historical-source"
+        lock.pop("lock_id")
+        lock["lock_id"] = digest(json.dumps(lock, sort_keys=True))
+        write_json(lock_path, lock)
+        meta.update(code=lock["code"], lock_id=lock["lock_id"])
+        write_json(historical / "metadata.json", meta)
+        self.report([historical], "historical_report")
+        with self.assertRaisesRegex(ValueError, "source identities"):
+            self.report([current, historical], "mixed_sources")

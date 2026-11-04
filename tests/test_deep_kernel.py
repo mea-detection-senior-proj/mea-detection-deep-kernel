@@ -10,11 +10,13 @@ from unittest.mock import patch
 import numpy as np
 import torch
 
-from detectors.deep_kernel_mmd.model import DeepKernelMMD
-from detectors.deep_kernel_mmd.training import fit_kernel, load_detector, power_objective
-from experiments.locked import load_draws, prepare, verify_lock
-from experiments.run import load_config, run
-from experiments.summarize_comparison import summarize
+from mea_detection.detection.kernels.deep import DeepKernelMMD
+from mea_detection.detection.training import fit_kernel, power_objective
+from mea_detection.detection.checkpoints import load_detector
+from mea_detection.experiments.locked import load_draws, prepare, verify_lock
+from mea_detection.configuration import load_config
+from mea_detection.experiments.locked import run_locked as run
+from mea_detection.reporting.comparison import summarize
 
 
 class DeepKernelTests(unittest.TestCase):
@@ -97,7 +99,7 @@ class LockedRunTests(unittest.TestCase):
             config = load_config(root / "config.json")
             def fake_encode(texts, *args):
                 return np.random.default_rng(1).normal(size=(len(texts), 3)).astype(np.float32), {"fixture": True}
-            with patch("experiments.locked.embed_texts", side_effect=fake_encode):
+            with patch("mea_detection.experiments.locked.embed_texts", side_effect=fake_encode):
                 lock = prepare(config, root / "lock")
             baseline = run(config)
             deep = run({**config, "methods": ["deep_kernel"], "output": str(root / "deep")})

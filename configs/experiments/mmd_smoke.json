@@ -1,6 +1,6 @@
 {
   "dataset": "Meaeq_SST-2",
-  "output": "artifacts/mmd_smoke",
+  "output": "artifacts/migrated_mmd_smoke",
   "methods": [
     "rbf",
     "multi_rbf"
@@ -19,5 +19,6 @@
   "reference_repeats": 2,
   "calibration_windows": 8,
   "test_windows": 4,
-  "target_fpr": 0.05
+  "target_fpr": 0.05,
+  "embedding_model": "artifacts/models/bge-small-en-v1.5"
 }

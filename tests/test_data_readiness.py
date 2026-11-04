@@ -7,9 +7,9 @@ from unittest.mock import patch
 
 import numpy as np
 
-from data_pipeline.capacity import evaluation_capacity, require_evaluation_capacity, require_training_capacity
-from data_pipeline.windows import make_windows
-from experiments.audit_data import capacity_rows, provenance_records, row_stats, training_rows, verify_partitions
+from mea_detection.data.capacity import evaluation_capacity, require_evaluation_capacity, require_training_capacity
+from mea_detection.data.windows import make_windows
+from mea_detection.data.readiness import capacity_rows, provenance_records, row_stats, training_rows, verify_partitions
 
 
 class ReadinessTests(unittest.TestCase):
@@ -51,10 +51,10 @@ class ReadinessTests(unittest.TestCase):
         temporary_root.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(dir=temporary_root) as directory:
             root = Path(directory)
-            path = root / "data_pipeline/provenance/ADDITIONAL_DATA_PROVENANCE.json"
+            path = root / "mea_detection/data/provenance/ADDITIONAL_DATA_PROVENANCE.json"
             path.parent.mkdir(parents=True)
             path.write_text(json.dumps(record), encoding="utf-8")
-            with patch("experiments.audit_data.ROOT", root):
+            with patch("mea_detection.data.readiness.ROOT", root):
                 hashes, loaded = provenance_records()
             self.assertEqual(hashes, {"data/fixture/normal/queries.jsonl": "fixture-hash"})
             self.assertEqual(loaded, record)

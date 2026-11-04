@@ -9,19 +9,30 @@ from unittest.mock import patch
 import numpy as np
 import torch
 
-from data_pipeline.datasets import normalize, split_rows
-from data_pipeline.windows import attacker_count, make_windows
-from detectors.mmd.detector import MMDDetector, mmd2_unbiased
-from evaluation.windows import evaluate
-from experiments.run import load_config, run
+from mea_detection.data.datasets import normalize, split_rows
+from mea_detection.data.windows import attacker_count, make_windows
+from mea_detection.detection.mmd import MMDDetector
+from mea_detection.detection.kernels.fixed import mmd2_unbiased, median_bandwidth
+from mea_detection.evaluation.windows import evaluate
+from mea_detection.configuration import load_config
+from mea_detection.experiments.workflow import execute as run
 
 
 class MMDTests(unittest.TestCase):
     def test_matches_scalar_reference_and_original(self):
-        from MMD_detection import mmd_detector_gpu as original
+        import importlib.util
+        import sys
+        path = Path(__file__).resolve().parents[1] / "old-detectors/MMD_detection/mmd_detector_gpu.py"
+        spec = importlib.util.spec_from_file_location("upstream_mmd_reference", path)
+        original = importlib.util.module_from_spec(spec)
+        sys.modules[spec.name] = original
+        # Read source directly so numerical checks never rewrite archived bytecode.
+        exec(compile(path.read_bytes(), str(path), "exec"), original.__dict__)
         original.np, original.torch = np, torch
         x = torch.tensor([[0., 1.], [2., 3.], [1., 4.]], dtype=torch.float64)
         y = torch.tensor([[3., 2.], [4., 5.], [6., 1.], [2., 0.]], dtype=torch.float64)
+        self.assertEqual(median_bandwidth(y, 3, np.random.default_rng(42)),
+                         original.median_bandwidth(y, 3, np.random.default_rng(42)))
         for bandwidths in ((1.3,), (.65, 1.3, 2.6, 5.2)):
             def kernel(a, b):
                 return np.mean([np.exp(-sum((float(u) - float(v))**2 for u, v in zip(a, b)) / (2 * s*s)) for s in bandwidths])
@@ -30,6 +41,10 @@ class MMDTests(unittest.TestCase):
                         - 2 * sum(kernel(a, b) for a in x for b in y) / 12)
             self.assertAlmostEqual(float(mmd2_unbiased(x, y, bandwidths)), expected, places=12)
             self.assertAlmostEqual(float(mmd2_unbiased(x, y, bandwidths)), original.mmd2_unbiased(x, y, bandwidths), places=12)
+            z = torch.cat((x, y))
+            references = torch.tensor([[0, 1, 2], [1, 2, 3]])
+            expected_score = np.mean([original.mmd2_unbiased(z[draw], y, bandwidths) for draw in references])
+            self.assertAlmostEqual(MMDDetector(bandwidths).score(z, y, references), expected_score, places=12)
 
     def test_repeated_score_is_mean_of_reference_scores(self):
         z = torch.tensor([[0.], [1.], [2.], [5.], [8.], [9.]], dtype=torch.float64)
@@ -128,18 +143,18 @@ class RunnerTests(unittest.TestCase):
             def fake_encoder(texts, *args):
                 z = np.asarray([[len(text), sum(map(ord, text)) % 97] for text in texts], dtype=np.float32)
                 return z, {"fixture": True}
-            with patch("experiments.run.embed_texts", side_effect=fake_encoder):
+            with patch("mea_detection.experiments.locked.embed_texts", side_effect=fake_encoder):
                 resolved = load_config(config_path)
                 first = run(resolved)
                 with self.assertRaises(FileExistsError):
                     run(resolved)
                 second = run({**resolved, "output": str(root / "run2")})
-            for name in ("summary.csv", "seed_42/split_manifest.json", "seed_42/window_10/scores.csv",
-                         "seed_42/window_10/draw_manifest.json"):
+            for name in ("results/summary.csv", "protocol/seed_42/split_manifest.json",
+                         "results/seed_42/window_10/scores.csv"):
                 self.assertEqual((first / name).read_bytes(), (second / name).read_bytes())
-            meta = json.loads((first / "metadata.json").read_text())
+            meta = json.loads((first / "results/metadata.json").read_text())
             self.assertEqual(meta["status"], "complete")
-            with (first / "summary.csv").open() as stream:
+            with (first / "results/summary.csv").open() as stream:
                 self.assertEqual(len(list(csv.DictReader(stream))), 8)
             config_path.write_text(json.dumps({**config, "reference_repeats": 0}))
             with self.assertRaises(ValueError):

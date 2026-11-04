@@ -4,8 +4,9 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from data_pipeline.datasets import load_dataset, split_rows
-from experiments.audit_data import verify_partitions
+from mea_detection.data.io import load_dataset
+from mea_detection.data.datasets import split_rows
+from mea_detection.data.readiness import verify_partitions
 
 
 class DatasetFolderTests(unittest.TestCase):

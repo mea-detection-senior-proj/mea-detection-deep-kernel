@@ -1,3 +1,5 @@
+> Historical document: source locations and commands below predate the migration. Use [current English commands](RUN_EXPERIMENTS.md) and the [migration record](CLEAN_ARCHITECTURE_MIGRATION.md). ADR 0001 governs scientific scope; ADR 0003 supersedes older restructuring guidance.
+
 # Protocol การเปรียบเทียบ RBF / Multi-RBF / Deep Kernel รอบแรก
 
 รันรอบแรกเสร็จแล้ว ดูผลและข้อจำกัดใน [MODEL_LEECHING_COMPARISON_TH.md](MODEL_LEECHING_COMPARISON_TH.md) โดยเฉพาะ actual FPR ที่ยังไม่ตรงเป้าหมายทุก seed

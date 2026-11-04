@@ -1,3 +1,5 @@
+> Historical document: source locations and commands below predate the migration. Use [current English commands](RUN_EXPERIMENTS.md) and the [migration record](CLEAN_ARCHITECTURE_MIGRATION.md). ADR 0001 governs scientific scope; ADR 0003 supersedes older restructuring guidance.
+
 # ความพร้อมของข้อมูลก่อนรัน baseline จริง
 
 ## ขอบเขตและวิธีตรวจ

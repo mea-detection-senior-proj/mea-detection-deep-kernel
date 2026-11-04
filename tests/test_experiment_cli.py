@@ -10,9 +10,10 @@ from unittest.mock import patch
 
 import numpy as np
 
-from experiments.cli import parse_config
-from experiments.configuration import load_config
-from experiments.workflow import execute, preflight
+from mea_detection.cli.run import parse_config
+from mea_detection.configuration import load_config
+from mea_detection.experiments.workflow import execute, preflight
+from mea_detection.cli.main import main
 
 
 class ExperimentCLITests(unittest.TestCase):
@@ -83,7 +84,7 @@ class ExperimentCLITests(unittest.TestCase):
     def test_dry_run_checks_capacity_without_encoder_gpu_or_writes(self):
         config, dry = self.parse("--device", "cuda", "--dry-run")
         before = set(self.root.rglob("*"))
-        with patch("experiments.locked.embed_texts", side_effect=AssertionError("Encoder must not load")), \
+        with patch("mea_detection.experiments.locked.embed_texts", side_effect=AssertionError("Encoder must not load")), \
              patch("torch.cuda._lazy_init", side_effect=AssertionError("GPU must not initialize")), \
              contextlib.redirect_stdout(io.StringIO()):
             plan = execute(config, dry_run=dry)
@@ -99,7 +100,7 @@ class ExperimentCLITests(unittest.TestCase):
         config = load_config(self.path)
         def fake_encoder(texts, *args):
             return np.random.default_rng(123).normal(size=(len(texts), 3)).astype(np.float32), {"fixture": True}
-        with patch("experiments.locked.embed_texts", side_effect=fake_encoder), contextlib.redirect_stdout(io.StringIO()):
+        with patch("mea_detection.experiments.locked.embed_texts", side_effect=fake_encoder), contextlib.redirect_stdout(io.StringIO()):
             output = execute(config)
         self.assertEqual(json.loads((output / "run.json").read_text())["status"], "complete")
         self.assertTrue((output / "results/seed_42/deep_kernel.pt").is_file())
@@ -111,8 +112,8 @@ class ExperimentCLITests(unittest.TestCase):
             execute(config)
         baseline = {**config, "output": str(self.root / "baseline"), "methods": ["rbf"],
                     "protocol_lock": str(output / "protocol"), "training": {**config["training"], "window_size": 999}}
-        with patch("experiments.locked.fit_detector", side_effect=AssertionError("Baseline must not train")), \
-             patch("experiments.locked.embed_texts", side_effect=AssertionError("Reuse must not encode")), \
+        with patch("mea_detection.experiments.locked.fit_detector", side_effect=AssertionError("Baseline must not train")), \
+             patch("mea_detection.experiments.locked.embed_texts", side_effect=AssertionError("Reuse must not encode")), \
              contextlib.redirect_stdout(io.StringIO()):
             selected = execute(baseline)
         self.assertFalse((selected / "protocol").exists())
@@ -126,13 +127,34 @@ class ExperimentCLITests(unittest.TestCase):
 
     def test_failure_records_status_without_overwriting_results(self):
         config = load_config(self.path)
-        with patch("experiments.locked.embed_texts", side_effect=RuntimeError("Encoder unavailable")), \
+        with patch("mea_detection.experiments.locked.embed_texts", side_effect=RuntimeError("Encoder unavailable")), \
              contextlib.redirect_stdout(io.StringIO()), self.assertRaisesRegex(RuntimeError, "Encoder unavailable"):
             execute(config)
         status = json.loads((self.root / "run/run.json").read_text())
         self.assertEqual(status["status"], "failed")
         self.assertEqual(status["phase"], "preparing")
         self.assertFalse((self.root / "run/results").exists())
+
+    def test_public_operations_share_preparation_and_saved_evidence(self):
+        from migration_fixture import fixture_encoder
+        common = ["--config", str(self.path)]
+        with contextlib.redirect_stdout(io.StringIO()), \
+             patch("torch.cuda._lazy_init", side_effect=AssertionError("No GPU")), \
+             patch("mea_detection.experiments.locked.embed_texts", side_effect=AssertionError("No encoder")):
+            before = set(self.root.rglob("*"))
+            main(["run", *common, "--dry-run", "--device", "cuda"])
+            self.assertEqual(set(self.root.rglob("*")), before)
+            main(["audit", "--data-root", str(self.root), "--output", str(self.root / "audit")])
+            self.assertTrue((self.root / "audit/audit.json").is_file())
+        with contextlib.redirect_stdout(io.StringIO()), \
+             patch("mea_detection.experiments.locked.embed_texts", side_effect=fixture_encoder):
+            main(["prepare", *common, "--output", str(self.root / "protocol")])
+        with contextlib.redirect_stdout(io.StringIO()), \
+             patch("mea_detection.experiments.locked.embed_texts", side_effect=AssertionError("Reuse must not encode")):
+            output = main(["run", *common, "--protocol-lock", str(self.root / "protocol")])
+            main(["report", "--runs", str(output / "results"), "--output", str(self.root / "report")])
+        self.assertFalse((output / "protocol").exists())
+        self.assertEqual((output / "report/REPORT.md").read_bytes(), (self.root / "report/REPORT.md").read_bytes())
 
 
 if __name__ == "__main__":

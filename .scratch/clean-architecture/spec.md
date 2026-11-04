@@ -136,6 +136,6 @@ Provide one main end-to-end command and focused audit, preflight, protocol prepa
 - [ADR 0002: upstream fixed-baseline preservation](../../docs/adr/0002-preserve-upstream-fixed-kernel-baselines.md)
 - [ADR 0003: accepted architecture decision](../../docs/adr/0003-restructure-active-code-and-archive-legacy-detectors.md)
 - [Project glossary](../../GLOSSARY.md)
-- [Accepted architecture plan and source/archive mappings](../deep-kernel-phase1/architecture-plan.md)
-- [Architecture interview history](../deep-kernel-phase1/architecture-interview.md)
+- [Accepted architecture plan and source/archive mappings](architecture-plan.md)
+- [Architecture interview history](architecture-interview.md)
 - [Phase 1 scientific spec and subsequent five-method work](../deep-kernel-phase1/spec.md)

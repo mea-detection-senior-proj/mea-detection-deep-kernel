@@ -1,6 +1,6 @@
 {
   "dataset": "model_leeching",
-  "output": "artifacts/mmd_comparison",
+  "output": "artifacts/migrated_mmd_comparison",
   "methods": [
     "rbf",
     "multi_rbf"
@@ -26,5 +26,6 @@
   "reference_repeats": 20,
   "calibration_windows": 200,
   "test_windows": 100,
-  "target_fpr": 0.05
+  "target_fpr": 0.05,
+  "embedding_model": "artifacts/models/bge-small-en-v1.5"
 }

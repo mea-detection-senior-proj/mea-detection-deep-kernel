@@ -3,8 +3,8 @@
   "embedding_model": "artifacts/models/bge-small-en-v1.5",
   "device": "cuda",
   "dtype": "float64",
-  "output": "artifacts/model_leeching_deep_pure_v1",
-  "protocol_lock": "artifacts/model_leeching_protocol_v1",
+  "output": "artifacts/migrated_model_leeching_deep_pure_v1",
+  "protocol_lock": null,
   "methods": [
     "deep_kernel"
   ],
