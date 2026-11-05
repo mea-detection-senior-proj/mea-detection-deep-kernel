@@ -1,0 +1,21 @@
+{
+  "status": "blocked_resource_projection",
+  "gate": {
+    "status": "blocked_projection",
+    "projected_total_seconds": 1267.1267305060464,
+    "gate_seconds": 1200,
+    "elapsed_seconds": 26.16563230000611,
+    "benchmark_max_stream_seconds": 0.0660436999896774
+  },
+  "completed_real_query_parity_streams": 3,
+  "calibration_streams_executed": 5,
+  "calibration_scores_persisted": false,
+  "threshold": null,
+  "detection_rates": null,
+  "held_out_benign_fpr": null,
+  "alert_changes": null,
+  "detection_delays": null,
+  "peak_ram_bytes": null,
+  "peak_gpu_bytes": null,
+  "note": "Stopped before completing calibration or any mixed-order/benign evaluation. Null means unmeasured. No statistical outcome is inferred from preflight parity checks."
+}

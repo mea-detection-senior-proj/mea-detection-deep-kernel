@@ -1,0 +1,3 @@
+# Preserve byte-level provenance across Windows checkouts.
+* text=auto eol=lf
+*.png binary

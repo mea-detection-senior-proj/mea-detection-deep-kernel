@@ -1,0 +1,7 @@
+{
+  "status": "blocked_projection",
+  "projected_total_seconds": 1267.1267305060464,
+  "gate_seconds": 1200,
+  "elapsed_seconds": 26.16563230000611,
+  "benchmark_max_stream_seconds": 0.0660436999896774
+}
