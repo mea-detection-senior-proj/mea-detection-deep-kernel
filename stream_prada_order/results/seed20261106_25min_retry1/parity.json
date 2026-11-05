@@ -1,0 +1,20 @@
+[
+  {
+    "seed": 0,
+    "max_w_abs_error": 0.0,
+    "growing_size": 159,
+    "alert_step": 102
+  },
+  {
+    "seed": 1,
+    "max_w_abs_error": 0.0,
+    "growing_size": 135,
+    "alert_step": 102
+  },
+  {
+    "seed": 2,
+    "max_w_abs_error": 0.0,
+    "growing_size": 157,
+    "alert_step": 102
+  }
+]

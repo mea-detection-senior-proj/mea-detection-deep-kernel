@@ -1,3 +1,5 @@
 # Preserve byte-level provenance across Windows checkouts.
 * text=auto eol=lf
 *.png binary
+# Evidence is hashed byte-for-byte. Preserve historical Windows artifacts too.
+results/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

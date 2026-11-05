@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "stream_rows": 9000,
+  "paired_rows": 9000,
+  "benign_streams": 200,
+  "calibration_streams": 200,
+  "schedule_hashes_reconstructed": 9000,
+  "artifact_hashes_verified": 14,
+  "source_hashes_verified": 5,
+  "archives_verified": 3,
+  "note": "Audit of saved evidence; no new queries or detector runs."
+}

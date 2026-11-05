@@ -1,0 +1,10 @@
+{
+  "status": "failed_before_calibration",
+  "error": "ValueError: relative --config path could not be made relative to absolute ROOT while constructing provenance metadata",
+  "config": "stream_prada_order/config_25min.json",
+  "resource_gate_seconds": 1500,
+  "metadata_written": false,
+  "calibration_completed": false,
+  "evaluation_completed": false,
+  "action": "Preserve this failed attempt, fix path handling with regression test, then use a new result directory under the existing 25-minute authorization."
+}

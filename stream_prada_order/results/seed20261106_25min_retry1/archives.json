@@ -1,0 +1,23 @@
+{
+  "benign_scores.csv.gz": {
+    "sha256": "db374b78a6c08e9f0c92275ced59bbe9d81fb203ea2a35d4225a340a75cfe841",
+    "uncompressed_name": "benign_scores.csv",
+    "uncompressed_sha256": "cec44ef3eb53c6a507aa8be62fbff121d15abb479c07435fac86814b29be3585",
+    "bytes": 2536,
+    "uncompressed_bytes": 6128
+  },
+  "paired_differences.csv.gz": {
+    "sha256": "45d00120d25f7a2d41b2a6c1df2e443fb09043bdc09cf37ee0b3dd864d8fdafe",
+    "uncompressed_name": "paired_differences.csv",
+    "uncompressed_sha256": "9209b04d0af7d250a3a8962e6a6432ee005250967e7e74ce60dcdc8f52081410",
+    "bytes": 269507,
+    "uncompressed_bytes": 878851
+  },
+  "stream_scores.csv.gz": {
+    "sha256": "e0cec2c806aa452527b2597d1ad13614a77abe4335b834b41666333d427e5e93",
+    "uncompressed_name": "stream_scores.csv",
+    "uncompressed_sha256": "439becd2eb94cbbe494127f7f9a57f604f249aa71cb198c53e01b7987100a061",
+    "bytes": 757153,
+    "uncompressed_bytes": 1881654
+  }
+}

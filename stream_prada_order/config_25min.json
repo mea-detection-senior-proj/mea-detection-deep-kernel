@@ -1,0 +1,20 @@
+{
+  "seed": 20261106,
+  "stream_length": 256,
+  "benign_prefix": 110,
+  "attack_ratios": [0.1, 0.25, 0.5],
+  "permutations": 1000,
+  "pilot_permutations": 5,
+  "calibration_streams": 200,
+  "benign_eval_streams": 200,
+  "pool_limit": 1000,
+  "resource_gate_seconds": 1500,
+  "projection_safety_factor": 2.0,
+  "embedding_batch_size": 64,
+  "model": "BAAI/bge-small-en-v1.5",
+  "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "max_seq_length": 512,
+  "reference_blob": "5f951afa8cc750c5497e4efd793100db0648ad6a",
+  "normal_sha256": "2c7b6377db11481d0708607a972b94d8aa0ad0fc16d7c842881773fd4fc7fb77",
+  "attacker_sha256": "ac90d6f69cadfa5c960f35bb71ad909983842939adfb5dcbc9f327ca13bbb942"
+}

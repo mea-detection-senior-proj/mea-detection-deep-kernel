@@ -1,0 +1,16 @@
+{
+  "benign_scores.csv": "cec44ef3eb53c6a507aa8be62fbff121d15abb479c07435fac86814b29be3585",
+  "calibration.json": "6badfba4058ae7f36df1ae224670fd948bd016ff91261b54854b58d3538f98d1",
+  "example_traces.json": "d83c15e0fb17ddc70198600af72c827522d2188184401c13f931a509204ad049",
+  "gate.json": "6cd35cebeb71ce7814ed9cc82d4fa3b4790dd13f4a0a27ab4c1a49d4bced9ace",
+  "metadata.json": "07ba737fd4943e95ea5a26b6b364c81f9c7b10f599484e92cf878296219805f3",
+  "paired_differences.csv": "9209b04d0af7d250a3a8962e6a6432ee005250967e7e74ce60dcdc8f52081410",
+  "paired_differences.png": "12d0f35994bc40763b49668238b23019a0dedf0ad30d2bd234406f188ab8a75d",
+  "parity.json": "0109b3f15b18e1b294b9fe6474f8bdf8e1c9d42c8a38b22e425e540907997257",
+  "pilot_gate_ratio_0.1.json": "54e698b6452b9b67311ae5596733cccb55ada6d4139f4970c1bde04647698efe",
+  "pilot_gate_ratio_0.25.json": "4af8a703a75608f98f032e2d408a626c714109cdcfad0c898a8c24a423ee1229",
+  "pilot_gate_ratio_0.5.json": "433f9fae9a85e7c29a1ba1485d41dd083e05786130532b98fefc20b60909833a",
+  "rates_scores_fpr.png": "c585672fb340deab92529930ae0617312835e4baa93d5f26a9cfef6677a775d6",
+  "stream_scores.csv": "439becd2eb94cbbe494127f7f9a57f604f249aa71cb198c53e01b7987100a061",
+  "summary.json": "1536a6c212f1d680711df1accdc1407bf9b50d17abd6dcd52c5e124ece92834f"
+}

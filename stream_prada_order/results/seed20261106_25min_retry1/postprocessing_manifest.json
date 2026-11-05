@@ -1,0 +1,15 @@
+{
+  "sources_sha256": {
+    "validate_results.py": "aba5963312ee47cba6ce07f56ad72d114686fc43fd8f3e8b99de1e79aa8fc126",
+    "analyze_results.py": "375adef3455dd6cdd85e93f4932a575d8e3b9527914a46aa26965ba0a12a8769",
+    "plot_trajectories.py": "3826ddaa493e020ef85a86d2d1bbcb0e61eb39edc67c85fc1a16031cb72fd093"
+  },
+  "artifacts_sha256": {
+    "archives.json": "4be49844b84322602c118b5bb7b131c3433e2cf721236cf19d4b7336a4938a56",
+    "validation.json": "fc4af4ece53cf35f7de5669757c61d0e6326d7f2b91d33d1db3d75f7971fe94f",
+    "supplemental_summary.json": "31c095b83db0361e72f692bb53b6f3f715bcc2b42eb2ebe4c099e0adbdadc259",
+    "alarm_outcomes.png": "f5ceb1eb585435ebce15821497232d3942d0e984887d69929d4a3a6922f60e3a",
+    "example_trajectories.png": "882ea86c411fd10e29dc4fff6e665592524c28fdc1d9567c80f65a1b4e40c3eb"
+  },
+  "note": "Postprocessing only; original runner manifest and executed source hashes are retained unchanged."
+}

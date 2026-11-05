@@ -40,7 +40,11 @@ def sha(path):
 
 
 def json_write(path, value):
-    Path(path).write_text(json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False), encoding='utf-8')
+    Path(path).write_text(json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False), encoding='utf-8', newline='\n')
+
+
+def source_file_hashes(paths):
+    return {str(Path(p).resolve().relative_to(ROOT)): sha(p) for p in paths}
 
 
 def make_orders(prefix, benign, attack, rng):
@@ -176,7 +180,7 @@ def run(args):
     def deadline():
         if time.perf_counter() - started >= gate:
             json_write(out / 'gate.json', {'status': 'blocked_elapsed_gate', 'elapsed_seconds': time.perf_counter()-started})
-            raise RuntimeError('20-minute resource gate reached; approval required')
+            raise RuntimeError(f'{gate}-second resource gate reached; approval required')
     reference = ROOT / 'PRADA/prada_stream_detector.py'
     ref_blob = subprocess.check_output(['git', 'hash-object', str(reference)], text=True).strip()
     if ref_blob != cfg['reference_blob']:
@@ -242,7 +246,7 @@ def run(args):
                 'embedding_sha256': hashlib.sha256(embeddings.tobytes()).hexdigest(),
                 'embedding_seconds': embedding_seconds, 'matrix_estimate_bytes': matrix_estimate,
                 'available_ram_bytes': available, 'free_gpu_bytes_before': gpu_free,
-                'source_files_sha256': {str(p.relative_to(ROOT)): sha(p) for p in [Path(__file__), args.config, ROOT/'pilot/protocol.py', ROOT/'PRADA/prada_detector.py', reference]},
+                'source_files_sha256': source_file_hashes([Path(__file__), args.config, ROOT/'pilot/protocol.py', ROOT/'PRADA/prada_detector.py', reference]),
                 'interpretation': 'Simulated offline schedules; fixed sets per ratio, conditional permutation uncertainty; no chronological API claims.'}
     json_write(out / 'metadata.json', metadata)
     # Real-embedding parity is a hard gate before calibration/evaluation.
@@ -275,7 +279,7 @@ def run(args):
             json_write(out/'gate.json', {'status': 'passed' if projected <= gate else 'blocked_projection', 'projected_total_seconds': projected,
                                        'gate_seconds': gate, 'elapsed_seconds': time.perf_counter()-started, 'benchmark_max_stream_seconds': max(timings)})
             if projected > gate:
-                raise RuntimeError('Projected total exceeds 20-minute gate; approval required')
+                raise RuntimeError(f'Projected total exceeds {gate}-second gate; approval required')
     threshold = float(np.percentile(cal_scores, 95))
     json_write(out/'calibration.json', {'scores': cal_scores, 'p95_threshold': threshold, 'delta': 1-threshold})
     benign = []
@@ -333,7 +337,7 @@ def run(args):
                                                               'status': 'passed' if projected <= gate else 'blocked_projection'})
                 if projected > gate:
                     write_csv(out/'partial_stream_scores.csv', rows)
-                    raise RuntimeError('Pilot projects beyond 20-minute gate; approval required')
+                    raise RuntimeError(f'Pilot projects beyond {gate}-second gate; approval required')
             if (permutation+1) % 100 == 0:
                 print(f'ratio={ratio}: {permutation+1}/{cfg["permutations"]}, elapsed={time.perf_counter()-started:.1f}s', flush=True)
     write_csv(out/'stream_scores.csv', rows)

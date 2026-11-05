@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "projected_total_seconds": 1250.8739032126468,
+  "gate_seconds": 1500,
+  "elapsed_seconds": 22.359302099997876,
+  "benchmark_max_stream_seconds": 0.06538129999535158
+}

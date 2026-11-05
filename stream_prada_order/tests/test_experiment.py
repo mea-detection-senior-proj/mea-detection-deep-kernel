@@ -1,4 +1,5 @@
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -13,6 +14,17 @@ import prada_stream_detector as official
 
 
 class ProtocolTests(unittest.TestCase):
+    def test_relative_config_provenance_matches_absolute_path(self):
+        relative = Path('stream_prada_order/config_25min.json')
+        self.assertEqual(exp.source_file_hashes([relative]),
+                         exp.source_file_hashes([ROOT / relative]))
+
+    def test_json_artifacts_use_canonical_lf_bytes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'artifact.json'
+            exp.json_write(path, {'value': [1, 2]})
+            self.assertNotIn(b'\r', path.read_bytes())
+
     def test_orders_preserve_membership_prefix_and_onset(self):
         prefix, benign, attack = np.arange(110), np.arange(110, 192), np.arange(192, 256)
         for seed in range(5):

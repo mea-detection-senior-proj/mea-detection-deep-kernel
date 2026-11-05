@@ -1,0 +1,513 @@
+{
+  "any_order_alert_change": [
+    {
+      "attack_ratio": 0.1015625,
+      "changed_triplets": 549,
+      "triplets": 1000,
+      "percent": 54.9,
+      "wilson95_conditional": [
+        0.5180304041955376,
+        0.5795945734728781
+      ]
+    },
+    {
+      "attack_ratio": 0.25,
+      "changed_triplets": 496,
+      "triplets": 1000,
+      "percent": 49.6,
+      "wilson95_conditional": [
+        0.46508589340292905,
+        0.5269447206649553
+      ]
+    },
+    {
+      "attack_ratio": 0.5,
+      "changed_triplets": 0,
+      "triplets": 1000,
+      "percent": 0.0,
+      "wilson95_conditional": [
+        2.168404344971009e-19,
+        0.0038267584855551234
+      ]
+    }
+  ],
+  "paired_alert_rate_difference": [
+    {
+      "attack_ratio": 0.1015625,
+      "a": "random",
+      "b": "clustered",
+      "a_only_alerts": 204,
+      "b_only_alerts": 182,
+      "rate_delta_b_minus_a": -0.022,
+      "normal95_conditional_mean_difference": [
+        -0.06050228908758153,
+        0.016502289087581536
+      ],
+      "absolute_difference_upper95_from_disagreement_wilson": 0.41655513793984755,
+      "distance_mae_range": [
+        0.057766570296942016,
+        0.08186208407084147
+      ]
+    },
+    {
+      "attack_ratio": 0.1015625,
+      "a": "random",
+      "b": "interleaved",
+      "a_only_alerts": 209,
+      "b_only_alerts": 193,
+      "rate_delta_b_minus_a": -0.016,
+      "normal95_conditional_mean_difference": [
+        -0.055304298242320304,
+        0.023304298242320304
+      ],
+      "absolute_difference_upper95_from_disagreement_wilson": 0.4327078111028579,
+      "distance_mae_range": [
+        0.05958918005812402,
+        0.08091133295320997
+      ]
+    },
+    {
+      "attack_ratio": 0.1015625,
+      "a": "clustered",
+      "b": "interleaved",
+      "a_only_alerts": 152,
+      "b_only_alerts": 158,
+      "rate_delta_b_minus_a": 0.006,
+      "normal95_conditional_mean_difference": [
+        -0.028523989452920694,
+        0.04052398945292069
+      ],
+      "absolute_difference_upper95_from_disagreement_wilson": 0.3393465231592832,
+      "distance_mae_range": [
+        0.055028622758154774,
+        0.08416901265873629
+      ]
+    },
+    {
+      "attack_ratio": 0.25,
+      "a": "random",
+      "b": "clustered",
+      "a_only_alerts": 143,
+      "b_only_alerts": 263,
+      "rate_delta_b_minus_a": 0.12,
+      "normal95_conditional_mean_difference": [
+        0.08119508928912347,
+        0.15880491071087652
+      ],
+      "absolute_difference_upper95_from_disagreement_wilson": 0.43674072546033715,
+      "distance_mae_range": [
+        0.06870025735275419,
+        0.10186166447751663
+      ]
+    },
+    {
+      "attack_ratio": 0.25,
+      "a": "random",
+      "b": "interleaved",
+      "a_only_alerts": 191,
+      "b_only_alerts": 191,
+      "rate_delta_b_minus_a": 0.0,
+      "normal95_conditional_mean_difference": [
+        -0.038326311793346834,
+        0.038326311793346834
+      ],
+      "absolute_difference_upper95_from_disagreement_wilson": 0.4125116596370649,
+      "distance_mae_range": [
+        0.06660683377116335,
+        0.09802359214016035
+      ]
+    },
+    {
+      "attack_ratio": 0.25,
+      "a": "clustered",
+      "b": "interleaved",
+      "a_only_alerts": 162,
+      "b_only_alerts": 42,
+      "rate_delta_b_minus_a": -0.12,
+      "normal95_conditional_mean_difference": [
+        -0.14700129000743617,
+        -0.09299870999256384
+      ],
+      "absolute_difference_upper95_from_disagreement_wilson": 0.23008642576116703,
+      "distance_mae_range": [
+        0.06638787026498832,
+        0.10500033918549033
+      ]
+    },
+    {
+      "attack_ratio": 0.5,
+      "a": "random",
+      "b": "clustered",
+      "a_only_alerts": 0,
+      "b_only_alerts": 0,
+      "rate_delta_b_minus_a": 0.0,
+      "normal95_conditional_mean_difference": null,
+      "absolute_difference_upper95_from_disagreement_wilson": 0.0038267584855551234,
+      "distance_mae_range": [
+        0.04333092231376498,
+        0.0837429843989073
+      ]
+    },
+    {
+      "attack_ratio": 0.5,
+      "a": "random",
+      "b": "interleaved",
+      "a_only_alerts": 0,
+      "b_only_alerts": 0,
+      "rate_delta_b_minus_a": 0.0,
+      "normal95_conditional_mean_difference": null,
+      "absolute_difference_upper95_from_disagreement_wilson": 0.0038267584855551234,
+      "distance_mae_range": [
+        0.04239219146616319,
+        0.08272127544178683
+      ]
+    },
+    {
+      "attack_ratio": 0.5,
+      "a": "clustered",
+      "b": "interleaved",
+      "a_only_alerts": 0,
+      "b_only_alerts": 0,
+      "rate_delta_b_minus_a": 0.0,
+      "normal95_conditional_mean_difference": null,
+      "absolute_difference_upper95_from_disagreement_wilson": 0.0038267584855551234,
+      "distance_mae_range": [
+        0.040548908476736034,
+        0.07897921835674959
+      ]
+    }
+  ],
+  "first_alert_steps": [
+    {
+      "attack_ratio": 0.1015625,
+      "ordering": "random",
+      "observed_steps": [
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        140,
+        141,
+        144,
+        146,
+        147,
+        148,
+        150,
+        151,
+        153,
+        162,
+        170
+      ],
+      "prefix_false_alarms": 0
+    },
+    {
+      "attack_ratio": 0.1015625,
+      "ordering": "clustered",
+      "observed_steps": [
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        137,
+        139,
+        141,
+        144
+      ],
+      "prefix_false_alarms": 0
+    },
+    {
+      "attack_ratio": 0.1015625,
+      "ordering": "interleaved",
+      "observed_steps": [
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        135,
+        136,
+        137,
+        139,
+        141,
+        142,
+        144,
+        150,
+        151,
+        163
+      ],
+      "prefix_false_alarms": 0
+    },
+    {
+      "attack_ratio": 0.25,
+      "ordering": "random",
+      "observed_steps": [
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        170,
+        172,
+        173,
+        176,
+        178,
+        179,
+        195,
+        203,
+        204
+      ],
+      "prefix_false_alarms": 0
+    },
+    {
+      "attack_ratio": 0.25,
+      "ordering": "clustered",
+      "observed_steps": [
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        144,
+        148,
+        149,
+        153
+      ],
+      "prefix_false_alarms": 0
+    },
+    {
+      "attack_ratio": 0.25,
+      "ordering": "interleaved",
+      "observed_steps": [
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        172,
+        174,
+        177,
+        180,
+        192,
+        197,
+        201
+      ],
+      "prefix_false_alarms": 0
+    },
+    {
+      "attack_ratio": 0.5,
+      "ordering": "random",
+      "observed_steps": [
+        102
+      ],
+      "prefix_false_alarms": 1000
+    },
+    {
+      "attack_ratio": 0.5,
+      "ordering": "clustered",
+      "observed_steps": [
+        102
+      ],
+      "prefix_false_alarms": 1000
+    },
+    {
+      "attack_ratio": 0.5,
+      "ordering": "interleaved",
+      "observed_steps": [
+        102
+      ],
+      "prefix_false_alarms": 1000
+    }
+  ],
+  "calibration_strict_exceedances": 10,
+  "calibration_streams": 200,
+  "stream_runtime_seconds": {
+    "mean": 0.02850727243334889,
+    "p95": 0.05694043999828864,
+    "max": 0.09744470000441652,
+    "sum": 256.56545190014003
+  },
+  "interpretation": "Conditional offline permutation evidence only; any alert includes prefix false positives. Rate-difference intervals are normal intervals for paired Monte Carlo means."
+}

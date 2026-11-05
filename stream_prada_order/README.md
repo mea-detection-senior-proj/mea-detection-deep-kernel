@@ -1,5 +1,13 @@
 # Stream PRADA order sensitivity
 
+Completed approved run: `results/seed20261106_25min_retry1` contains 9,000 mixed
+streams (1,000 permutations per ordering per ratio), 200 calibration streams,
+and 200 held-out benign streams. Runtime was 305.14 seconds. At least one ordering
+changed the alert in 54.9% of triplets at 10.15625% attacks and 49.6% at 25%.
+Held-out benign FPR was 17%. Every 50% schedule first alarmed on benign query 102,
+before attack onset 111. Its 100% any-alert rate is not 100% attack detection.
+No threshold or prefix was retuned after observing these limitations.
+
 This directory belongs only to `experiment/stream-prada-order`. Never integrate
 it into `main` or another integration branch, open a PR, push without explicit
 authorization, or transfer its commits. Before every commit verify the branch.
@@ -13,6 +21,7 @@ Run from the isolated worktree root:
 ```powershell
 conda run --no-capture-output -n senior python -m unittest discover -s stream_prada_order/tests -v
 conda run --no-capture-output -n senior python stream_prada_order/experiment.py `
+  --config stream_prada_order/config_25min.json `
   --data-root '../llm-mea/data/model_leeching' `
   --output stream_prada_order/results/new_run
 ```
@@ -28,10 +37,14 @@ applies normalized embeddings with no query prefix and maximum length 512.
 Model file hashes and the resulting embedding hash are recorded. Floating point
 reproduction across different hardware/library versions is not guaranteed.
 
-The configuration is frozen before the first run. Existing result directories
+The original `config.json` retains its 1,200-second gate and blocked evidence.
+The user explicitly approved a 25-minute gate for continuation;
+`config_25min.json` changes only that value to 1,500 seconds. All experimental
+settings, seeds, query pools, model/data hashes and safety factor remain fixed.
+Existing result directories
 are never overwritten. The runner verifies branch, upstream Git blob, dataset
 hashes, source grouping, finite normalized embeddings, memory availability,
-CUDA execution, and real-query reference parity. The 1,200-second gate covers
+CUDA execution, and real-query reference parity. The configured time gate covers
 setup, encoding and stream evaluation. Five calibration timings and five paired
 pilot permutations per ratio project the remaining work with a 2x safety factor;
 an excessive projection stops for user approval. A deadline is checked between
@@ -104,6 +117,40 @@ benign list followed by the attack list. Runtime is measured per stream and for
 the complete run; peak working set includes Python, model and shared matrices.
 GPU memory statistics describe this process's PyTorch allocation, not total
 device use. See `REPORT_TH.md` and `PROGRESS.md` for results and verification.
+
+Full CSV tables are committed as lossless `.csv.gz` files, with hashes for both
+compressed and original bytes. The runner's original `artifact_hashes.json`
+continues to describe uncompressed outputs. The audit transparently reads either
+form, reconstructs every schedule from its seed, checks original source hashes,
+and recomputes threshold/rate/alert/delay and selected trajectory summaries:
+
+```powershell
+conda run --no-capture-output -n senior python stream_prada_order/validate_results.py stream_prada_order/results/seed20261106_25min_retry1
+```
+
+For a new completed run, add `--pack` to create reproducible gzip copies before
+staging. The directory's `.gitignore` excludes uncompressed CSVs. A `--audit-output`
+path can save a new audit without overwriting any existing file. Evidence files
+have Git text conversion disabled: this preserves the original blocked run's
+Windows CRLF bytes and keeps all recorded hashes valid after a fresh checkout.
+New runner JSON is explicitly LF. The initial commit had normalized evidence
+while retaining hashes of the Windows bytes; continuation restores those exact
+hashed bytes in Git without changing any measured values or original manifests.
+
+Regenerate supplemental summaries and descriptive graphs from saved outputs:
+
+```powershell
+conda run --no-capture-output -n senior python stream_prada_order/analyze_results.py stream_prada_order/results/seed20261106_25min_retry1
+conda run --no-capture-output -n senior python stream_prada_order/plot_trajectories.py stream_prada_order/results/seed20261106_25min_retry1
+```
+
+Use `alarm_outcomes.png` for the first-alarm breakdown, `example_trajectories.png`
+for the preselected permutation-zero examples, and `paired_differences.png`
+for aggregate trajectory changes. The runner's original `rates_scores_fpr.png`
+labels its any-alert field as detection rate and includes prefix false alarms;
+interpret it together with the explicit prefix counts. `postprocessing_manifest.json`
+records the added tools and output hashes separately from the original runner
+manifest. `REPORT_PREFLIGHT_TH.md` preserves the report before budget approval.
 
 The first run stopped at the initial resource projection gate. Rebuild only its
 null assessment and resource graph without executing the experiment:
