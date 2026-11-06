@@ -1,0 +1,6 @@
+{
+  "announced_max_seconds": 120,
+  "expected_ram_bytes": 2147483648,
+  "expected_gpu_peak_bytes": 1073741824,
+  "purpose": "Recover missing timing and nested-horizon traces; unchanged frozen model, source, query membership and threshold."
+}

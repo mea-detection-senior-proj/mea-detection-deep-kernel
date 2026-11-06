@@ -1,0 +1,8 @@
+{
+  "source_sha256": "1a42d373c5641d29e51018a055e37d98a26dbc66e74dc7bc27bd0e527097cd9a",
+  "phase_a_source_sha256": "281c4698ff4de05a4e148db348db4add3a001d33e79234794fbcab91dc95f595",
+  "input_manifest_sha256": "e39548d85bc1915bcf8e79b3ab5488f1bc8bd00f5431f230dbc50ec34984d347",
+  "model_runs": 0,
+  "detector_runs": 0,
+  "original_example_traces_sha256": "d83c15e0fb17ddc70198600af72c827522d2188184401c13f931a509204ad049"
+}

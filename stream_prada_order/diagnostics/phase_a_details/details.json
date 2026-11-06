@@ -1,0 +1,84 @@
+{
+  "by_pool": {
+    "calibration": {
+      "streams": 200,
+      "ever_alerts": 10,
+      "final_w_below_threshold": 0,
+      "alerted_then_recovered_by_end": 10,
+      "minimum_w_at_first_test": 24,
+      "mean_early_distance": 0.9209601272096728,
+      "mean_late_distance": 0.8420634538302949,
+      "kept_at_first_alert_range": [
+        99,
+        158
+      ]
+    },
+    "benign": {
+      "streams": 200,
+      "ever_alerts": 34,
+      "final_w_below_threshold": 5,
+      "alerted_then_recovered_by_end": 29,
+      "minimum_w_at_first_test": 22,
+      "mean_early_distance": 0.9211535384896957,
+      "mean_late_distance": 0.8389017009628671,
+      "kept_at_first_alert_range": [
+        98,
+        227
+      ]
+    }
+  },
+  "prefix_distances_at_first_test": {
+    "0.1": {
+      "raw_samples": 101,
+      "kept_samples": 98,
+      "removed_samples": 3,
+      "raw_mean": 0.9285558184774796,
+      "raw_std": 0.09967306801915347,
+      "filtered_mean": 0.9387215619184532,
+      "filtered_std": 0.08218944792997016,
+      "filtered_skew": -0.31183175982642375,
+      "filtered_excess_kurtosis": 0.7990376286207921
+    },
+    "0.25": {
+      "raw_samples": 101,
+      "kept_samples": 99,
+      "removed_samples": 2,
+      "raw_mean": 0.9275206716934054,
+      "raw_std": 0.09964842859316322,
+      "filtered_mean": 0.9348793770327712,
+      "filtered_std": 0.0857954726668201,
+      "filtered_skew": -0.7745978509992473,
+      "filtered_excess_kurtosis": 0.7518721855797024
+    },
+    "0.5": {
+      "raw_samples": 101,
+      "kept_samples": 100,
+      "removed_samples": 1,
+      "raw_mean": 0.9168719121135107,
+      "raw_std": 0.1254981953022117,
+      "filtered_mean": 0.9226376157999039,
+      "filtered_std": 0.11202552278577042,
+      "filtered_skew": -1.0973595228964192,
+      "filtered_excess_kurtosis": 1.3944260932088142
+    }
+  },
+  "descriptive_score_feature_spearman": {
+    "calibration": {
+      "source_groups": -0.17622467641129283,
+      "effective_groups_hhi": -0.1914873648767354,
+      "largest_group_fraction": 0.05288207254473021,
+      "mean_words": -0.00883046748945473
+    },
+    "benign": {
+      "source_groups": -0.06281355584014811,
+      "effective_groups_hhi": -0.11578256353465084,
+      "largest_group_fraction": -0.014841054373687058,
+      "mean_words": 0.03605455779909258
+    }
+  },
+  "caveats": [
+    "Recovery at final W does not cancel a previous stream alert.",
+    "Distance summaries and feature correlations are descriptive, not causal explanations.",
+    "No alternative threshold or revised detector is evaluated."
+  ]
+}

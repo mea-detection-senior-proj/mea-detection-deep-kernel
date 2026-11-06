@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "tests": {
+    "new": 10,
+    "original": 8,
+    "total": 18
+  },
+  "replay_original_scores_matched": 400,
+  "maximum_score_error": 0.0,
+  "original_evidence_files_preserved": 31,
+  "existing_configurations_modified": 0,
+  "main_sha": "5fb5e07d750a73a0a663a174433bab931ae7568a",
+  "graphs_visually_inspected": 4,
+  "new_detector_implemented": false,
+  "test_threshold_tuned": false,
+  "pushed": false,
+  "existing_source_files_modified": 0,
+  "phase_a_graphs_reproduced_byte_for_byte_without_model": 3
+}

@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "encoder_rerun": true,
+  "detector_streams_replayed": 400,
+  "embedding_hash_matches_original": true,
+  "embedding_sha256": "cdad29963dacdc2a6504d6ec1e041368abf038d6ebac03083d7f698565793ff8",
+  "maximum_original_score_abs_error": 0.0,
+  "threshold_unchanged": 0.06419320835771236,
+  "seconds": 25.584129099996062,
+  "announced_budget_seconds": 120,
+  "peak_process_working_set_bytes": 1501954048,
+  "gpu_peak_allocated_bytes": 713179648,
+  "gpu_peak_reserved_bytes": 924844032,
+  "torch": "2.14.1+cu132",
+  "sentence_transformers": "5.7.0",
+  "note": "Exact recovery of omitted timing. No new mixed streams, threshold fitting or detector changes."
+}

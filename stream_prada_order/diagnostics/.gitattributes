@@ -1,0 +1,2 @@
+# Preserve diagnostic manifests and original CSV byte hashes on Windows.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
