@@ -1,0 +1,13 @@
+{
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Home",
+               "Version":  "10.0.26300",
+               "BuildNumber":  "26300",
+               "OSArchitecture":  "64-bit",
+               "TotalVisibleMemorySize":  66869600,
+               "FreePhysicalMemory":  38834604
+           },
+    "gpu":  "NVIDIA GeForce RTX 4060 Ti, 8188 MiB, 6584 MiB, 617.42",
+    "client_date":  "2026-11-07",
+    "scope":  "Read-only hardware inventory; no model or CUDA kernel execution"
+}

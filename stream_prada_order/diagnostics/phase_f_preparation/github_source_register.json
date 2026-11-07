@@ -1,0 +1,65 @@
+{
+  "client_date": "2026-11-07",
+  "repository": "sliu11-byte/MEA-Bench",
+  "commit": "947c5d7988a5ffd4cc425dfbae3532fd2c160a5b",
+  "tree_sha": "561a641bf4248d18e608246ddbc96424d2d57bce",
+  "commit_date": "2026-09-30T21:53:52Z",
+  "metadata_only": true,
+  "recursive_tree_truncated": false,
+  "tree_entries": 404,
+  "files": [
+    {
+      "path": "README.md",
+      "git_blob_sha": "6e9d14e020932d4e572fbc1d9bc7c1b19316f5af",
+      "bytes": 24055,
+      "url": "https://github.com/sliu11-byte/MEA-Bench/blob/947c5d7988a5ffd4cc425dfbae3532fd2c160a5b/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "81d1130850c940577dce342ec348b939b98cb0d3",
+      "bytes": 1079,
+      "url": "https://github.com/sliu11-byte/MEA-Bench/blob/947c5d7988a5ffd4cc425dfbae3532fd2c160a5b/LICENSE"
+    },
+    {
+      "path": "attacks/core/manifest.py",
+      "git_blob_sha": "1521e132af63e578c71890ad5008038a5bbe9f06",
+      "bytes": 856,
+      "url": "https://github.com/sliu11-byte/MEA-Bench/blob/947c5d7988a5ffd4cc425dfbae3532fd2c160a5b/attacks/core/manifest.py"
+    },
+    {
+      "path": "benchmark/manifests.py",
+      "git_blob_sha": "9cf10a1db4bb1da8191fc246a4ebf6eb5f04e4f9",
+      "bytes": 3115,
+      "url": "https://github.com/sliu11-byte/MEA-Bench/blob/947c5d7988a5ffd4cc425dfbae3532fd2c160a5b/benchmark/manifests.py"
+    },
+    {
+      "path": "benchmark/registry.py",
+      "git_blob_sha": "5abe1d1ae21ea151df1d1a9de4522ab4952a41b9",
+      "bytes": 3452,
+      "url": "https://github.com/sliu11-byte/MEA-Bench/blob/947c5d7988a5ffd4cc425dfbae3532fd2c160a5b/benchmark/registry.py"
+    },
+    {
+      "path": "requirements.txt",
+      "git_blob_sha": "487255fe475623ccee1cc200856f8a9b496f7e42",
+      "bytes": 522,
+      "url": "https://github.com/sliu11-byte/MEA-Bench/blob/947c5d7988a5ffd4cc425dfbae3532fd2c160a5b/requirements.txt"
+    }
+  ],
+  "observations": {
+    "manifest_schema_version": "mea_experiment_manifest_v1",
+    "manifest_version_check_is_not_full_field_validation": true,
+    "shared_teacher_transcript": [
+      "seqkd",
+      "lord",
+      "soda",
+      "gad"
+    ],
+    "method_specific_acquisition": [
+      "qedks",
+      "model_leeching"
+    ],
+    "native_attack_traffic_chronology_not_verified": true,
+    "data_license_not_inferred_from_code_mit": true,
+    "commands_executed": []
+  }
+}

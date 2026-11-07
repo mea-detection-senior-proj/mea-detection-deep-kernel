@@ -1,0 +1,42 @@
+{
+  "model_weight_bytes_bf16_arithmetic_only": 3087428608,
+  "model_weight_gib": 2.875391960144043,
+  "single_sequence_kv_bytes_arithmetic_only": 62390272,
+  "kv_assumed_input_tokens": 2048,
+  "kv_assumed_new_tokens": 128,
+  "kv_mib": 59.5,
+  "model_runtime_measured": false,
+  "fit_outer_bundles": 20,
+  "calibration_outer_bundles": 100,
+  "validation_outer_bundles": 40,
+  "final_test_outer_bundles": 200,
+  "benign_stream_targets": [
+    20,
+    100,
+    40,
+    200
+  ],
+  "attack_stream_targets": [
+    12,
+    0,
+    30,
+    150
+  ],
+  "outer_bundles_total": 360,
+  "stream_observations_total": 552,
+  "max_query_events_if_every_stream_length256": 141312,
+  "calibration_5pct_rank_n100": 96,
+  "minimum_calibration_finite_at5pct": 19,
+  "zero_fp_minimum_n_for_one_sided95upper_le5pct": 59,
+  "zero_fp_upper_n59": 0.049507609888227,
+  "prob_zero_fp_if_true_fpr5pct_n59": 0.048494525249423104,
+  "fpr_exact_twosided95_k10_n200": [
+    0.024234165472108552,
+    0.0900275377013513
+  ],
+  "tpr_exact_twosided95_k25_n50": [
+    0.35527299712990856,
+    0.6447270028700914
+  ],
+  "counts_are_future_feasibility_targets_not_observed": true
+}

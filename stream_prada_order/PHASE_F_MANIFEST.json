@@ -1,0 +1,22 @@
+{
+  "phase": "F new traffic dataset planning and bounded metadata preparation",
+  "baseline_commit": "9394f6e440c74122f9bb3bbe921830733e38b51d",
+  "decision": {
+    "public_metadata_schema_assessment": "GO",
+    "dataset_payload_acquisition": "NO-GO until documented prerequisites",
+    "model_extraction_training_full_experiment": "Not authorized or executed"
+  },
+  "files": {
+    "stream_prada_order/PHASE_F_DATA_PLAN_TH.md": "66a6ea457e0092924b0df9a782ffdfcda5d6127736a44262cf52fa3a723aa82a",
+    "stream_prada_order/PHASE_F_FEASIBILITY_TH.md": "58b102501a1faba23b4ceb8b99eb59907609f17616c8edfb0ad21e3072b260e4",
+    "stream_prada_order/PHASE_F_PROTOCOL_TH.md": "854577e59db4f9283a38f384369c658e64f65c08c9bc1eaf4b92804bd18dfe90",
+    "stream_prada_order/diagnostics/phase_f_preparation/artifact_hashes.json": "cd35567ef70b4eafc1391d0a1bd1adb2ec0e29d335f3a54a91f05c7c048ee4df",
+    "stream_prada_order/diagnostics/phase_f_preparation/environment.json": "bf8f95dd586cbb2d120ba138137aa700735e9eccebf502c9688c967f0423df2e",
+    "stream_prada_order/diagnostics/phase_f_preparation/github_source_register.json": "06b0b87cf05ac0533a72b133cad54061a2107c197642d44684ac42a4198a01b6",
+    "stream_prada_order/diagnostics/phase_f_preparation/hardware.json": "a5056bdf376ff13e7fbf0f16cbfc153eb238d6401f65550c3476326559e5157d",
+    "stream_prada_order/diagnostics/phase_f_preparation/pinned_document_provenance.json": "a0e2ca7012501a5e0fa7ed8caa83a18505315277c0d2c1acdb4899d8f6da3efc",
+    "stream_prada_order/diagnostics/phase_f_preparation/planning_calculations.json": "8358cabc1adcb8fd58c135d6ddd730ff2b3e3ebccc89a66935648f94564a4994",
+    "stream_prada_order/diagnostics/phase_f_preparation/public_metadata.json": "32f0ea2dd9269d10be35d5684dd531d9f0acaf59a7485f1d55cf62fe3f26cd0e",
+    "stream_prada_order/diagnostics/phase_f_preparation/verification.json": "9aa8af62fe18229a51adef5b976017fc4af4933f6202fa2e37ac753faa87ef66"
+  }
+}

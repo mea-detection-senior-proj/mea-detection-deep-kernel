@@ -1,0 +1,57 @@
+{
+  "scope": "Read only public pinned README/license/config; no data/model tensors",
+  "requests": [
+    {
+      "label": "wildchat_readme",
+      "url": "https://huggingface.co/datasets/allenai/WildChat-1M/raw/7d6490e462285cf85d91eabea0f9a954fbddcd1f/README.md",
+      "bytes": 11168,
+      "sha256": "0bbf0494bdf60a3d8f644c155cb3c5f8fb21cb247045008f99bfc261e7e15162"
+    },
+    {
+      "label": "wildchat_license",
+      "url": "https://huggingface.co/datasets/allenai/WildChat-1M/raw/7d6490e462285cf85d91eabea0f9a954fbddcd1f/LICENSE.md",
+      "bytes": 19947,
+      "sha256": "a7c7f6bdb20d261b8726c7594afb5832b36926e0cabfa116c41f58625bbc776c"
+    },
+    {
+      "label": "qwen_license",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/raw/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/LICENSE",
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    {
+      "label": "qwen_config",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/raw/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json",
+      "bytes": 660,
+      "sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+      "config": {
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151645,
+        "hidden_act": "silu",
+        "hidden_size": 1536,
+        "initializer_range": 0.02,
+        "intermediate_size": 8960,
+        "max_position_embeddings": 32768,
+        "max_window_layers": 21,
+        "model_type": "qwen2",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 2,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sliding_window": 32768,
+        "tie_word_embeddings": true,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.43.1",
+        "use_cache": true,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      }
+    }
+  ],
+  "seconds": 1.2456349999993108
+}

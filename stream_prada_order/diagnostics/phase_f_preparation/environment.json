@@ -1,0 +1,28 @@
+{
+  "python": "3.11.17",
+  "executable": "C:\\Users\\varic\\anaconda3\\envs\\senior\\python.exe",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "torch": "2.14.1+cu132",
+    "sentence-transformers": "5.7.0",
+    "transformers": "5.20.2",
+    "huggingface-hub": "1.33.0",
+    "datasets": null,
+    "pyarrow": null,
+    "vllm": null,
+    "accelerate": null,
+    "psutil": "7.2.2"
+  },
+  "torch_cuda_build": "13.2",
+  "cuda_is_available": true,
+  "cuda_kernel_probe_executed": false,
+  "ram_total_bytes": 68474470400,
+  "ram_available_bytes": 39236046848,
+  "workspace_disk_free_bytes": 1026629992448,
+  "platform_python": "Windows-10-10.0.26300-SP0",
+  "head": "9394f6e440c74122f9bb3bbe921830733e38b51d",
+  "main_sha": "5fb5e07d750a73a0a663a174433bab931ae7568a",
+  "no_packages_installed": true,
+  "no_models_loaded": true
+}

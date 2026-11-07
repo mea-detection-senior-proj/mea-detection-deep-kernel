@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "scope": "Phase F planning and bounded public metadata only",
+  "deliverables": [
+    "PHASE_F_DATA_PLAN_TH.md",
+    "PHASE_F_PROTOCOL_TH.md",
+    "PHASE_F_FEASIBILITY_TH.md"
+  ],
+  "exact_source_revision_pins_verified": 4,
+  "pinned_document_hashes_recorded": 4,
+  "declared_wildchat_schema_recorded": true,
+  "mea_data_license_and_run_independence_still_unverified": true,
+  "new_traffic_artifact_revision": null,
+  "planning_quota_and_calibration_uncertainty_arithmetic_checked": true,
+  "document_unicode_and_local_links_checked": true,
+  "old_results_and_configs_unchanged": true,
+  "main_unchanged": true,
+  "metadata_only_go": true,
+  "payload_acquisition_go": false,
+  "private_logs_accessed": false,
+  "dataset_payload_downloads": 0,
+  "model_weight_downloads": 0,
+  "victim_requests": 0,
+  "extraction_runs": 0,
+  "training_runs": 0,
+  "detector_evaluations": 0,
+  "packages_installed": 0,
+  "cuda_kernel_probe_executed": false,
+  "new_analysis_code_or_tests_required": false,
+  "pushed": false
+}
