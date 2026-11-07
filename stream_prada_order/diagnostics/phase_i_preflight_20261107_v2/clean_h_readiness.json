@@ -1,0 +1,62 @@
+{
+  "schema_version": "qwen-offline-readiness-v1",
+  "status": "BLOCKED",
+  "codes": [
+    "explicit_private_storage_required",
+    "snapshot_missing",
+    "valid_explicit_approval_and_evidence_required"
+  ],
+  "snapshot": {
+    "status": "blocked",
+    "codes": [
+      "snapshot_missing"
+    ],
+    "bytes_read": 0,
+    "verified_files": []
+  },
+  "environment": {
+    "status": "passed_static_only",
+    "codes": [],
+    "python": "3.11.17",
+    "system": "Windows",
+    "packages": {
+      "torch": "2.14.1+cu132",
+      "transformers": "5.20.2",
+      "tokenizers": "0.23.3",
+      "huggingface-hub": "1.33.0",
+      "safetensors": "0.8.0",
+      "numpy": "2.4.6",
+      "psutil": "7.2.2",
+      "jinja2": "3.1.6"
+    },
+    "static_api_symbols": {
+      "qwen2_class": true,
+      "chat_template": true,
+      "generate": true
+    },
+    "imports_kernel_bf16_generation_compatibility": "unverified_no_execution",
+    "torch_or_transformers_imported_by_check": false
+  },
+  "resources": {
+    "available_ram_bytes": 37538820096,
+    "disk_free_bytes": 1026627883008,
+    "gpu_free_bytes": 6710886400,
+    "gpu_name": "NVIDIA GeForce RTX 4060 Ti",
+    "driver": "617.42"
+  },
+  "checkout": {
+    "branch": "experiment/stream-prada-order",
+    "head": "8d32d46bb1496862ddf36017b7eea811c01dc51c",
+    "clean": true,
+    "main_unchanged": true
+  },
+  "approval_valid": false,
+  "real_execution_enabled": false,
+  "native_inference_verified": false,
+  "victim_requests": 0,
+  "model_weights_loaded": 0,
+  "private_traffic_scanned": false,
+  "static_checks_are_not_authorization_to_execute": true,
+  "observed_utc": "2026-11-07T12:36:09.890676+00:00",
+  "model_runtime_modules_imported": []
+}

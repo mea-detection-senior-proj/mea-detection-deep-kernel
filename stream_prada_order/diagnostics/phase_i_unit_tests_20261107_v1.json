@@ -1,0 +1,24 @@
+{
+  "scope": "Phase I offline metadata/tool tests only; no inference, weights or GPU operations",
+  "status": "passed",
+  "tests_run": 11,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "seconds": 0.12678380002034828,
+  "test_ids": [
+    "test_phase_i_check.PhaseICheckTests.test_default_does_not_search_unconfigured_drives",
+    "test_phase_i_check.PhaseICheckTests.test_dirty_checkout_is_rejected_before_creating_output",
+    "test_phase_i_check.PhaseICheckTests.test_disk_check_does_not_create_the_proposed_directory",
+    "test_phase_i_check.PhaseICheckTests.test_download_plan_rejects_path_traversal",
+    "test_phase_i_check.PhaseICheckTests.test_exact_download_plan_is_arithmetic_not_execution",
+    "test_phase_i_check.PhaseICheckTests.test_hash_read_budget_is_shared_across_explicit_candidates",
+    "test_phase_i_check.PhaseICheckTests.test_hub_precedence_and_explicit_legacy_roots",
+    "test_phase_i_check.PhaseICheckTests.test_network_cache_is_refused",
+    "test_phase_i_check.PhaseICheckTests.test_root_budget_is_bounded",
+    "test_phase_i_check.PhaseICheckTests.test_same_snapshot_from_cache_and_explicit_location_is_not_rehashed",
+    "test_phase_i_check.PhaseICheckTests.test_xdg_is_supported_and_h_default_difference_is_visible"
+  ],
+  "checker_sha256": "c6e28a367e4629bb883a3ae53d07246a944683149bd6706702b7d9499a96c3e5",
+  "test_source_sha256": "24ac3a50dd5cc463a05ff60de60dbaae970e9086898eed7586f75b1bc22cba62"
+}

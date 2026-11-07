@@ -1,0 +1,23 @@
+{
+  "workspace": {
+    "existing_ancestor": "D:\\MU\\Y3S3-Y4S1\\Senior Project\\Deep-Kernel",
+    "free_bytes": 1026627870720,
+    "total_bytes": 2000397791232
+  },
+  "cache_volumes": [
+    {
+      "existing_ancestor": "c:\\users\\varic\\.cache\\huggingface\\hub",
+      "free_bytes": 199102238720,
+      "total_bytes": 999045459968
+    }
+  ],
+  "proposed_destination": "D:\\MU\\Y3S3-Y4S1\\Senior Project\\Deep-Kernel\\stream_prada_order\\traffic_local\\qwen_snapshots\\989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "proposed_destination_volume": {
+    "existing_ancestor": "D:\\MU\\Y3S3-Y4S1\\Senior Project\\Deep-Kernel\\stream_prada_order\\traffic_local",
+    "free_bytes": 1026627870720,
+    "total_bytes": 2000397791232
+  },
+  "pilot_store_created": false,
+  "acl_or_privacy_approval_created": false,
+  "grant_created_or_claimed": false
+}

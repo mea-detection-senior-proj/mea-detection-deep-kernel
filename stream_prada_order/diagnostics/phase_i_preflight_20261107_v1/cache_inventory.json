@@ -1,0 +1,29 @@
+{
+  "schema_version": "phase-i-initial-cache-v1",
+  "observed_utc": "2026-11-07T12:30:39.261292+00:00",
+  "python": "C:\\Users\\varic\\anaconda3\\envs\\senior\\python.exe",
+  "allowlisted_environment": {
+    "HF_HOME": null,
+    "HF_HUB_CACHE": null,
+    "HUGGINGFACE_HUB_CACHE": null,
+    "XDG_CACHE_HOME": null,
+    "TRANSFORMERS_CACHE": null,
+    "PYTORCH_TRANSFORMERS_CACHE": null,
+    "PYTORCH_PRETRAINED_BERT_CACHE": null
+  },
+  "installed_hub_home": "C:\\Users\\varic\\.cache\\huggingface",
+  "installed_hub_cache": "C:\\Users\\varic\\.cache\\huggingface\\hub",
+  "user_provided_locations": [],
+  "configured_cache_inventory": [
+    {
+      "origin": "installed_hub_effective",
+      "cache": "C:\\Users\\varic\\.cache\\huggingface\\hub",
+      "cache_exists": true,
+      "qwen_model_dir_exists": false,
+      "exact_snapshot": "C:\\Users\\varic\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-1.5B-Instruct\\snapshots\\989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "snapshot_exists": false
+    }
+  ],
+  "scope": "Exact model paths only; no disk crawl, private logs, weights, or network",
+  "git_still_clean": true
+}

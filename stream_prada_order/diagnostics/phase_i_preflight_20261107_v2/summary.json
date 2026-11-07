@@ -1,0 +1,23 @@
+{
+  "status": "NO-GO_REAL_PILOT",
+  "snapshot_hashes_verified": false,
+  "clean_h_readiness_codes": [
+    "explicit_private_storage_required",
+    "snapshot_missing",
+    "valid_explicit_approval_and_evidence_required"
+  ],
+  "cpu_import_result": "passed_import_only",
+  "cpu_import_gate_failure": null,
+  "pip_check_exit_code": 0,
+  "runtime_gpu_kernel_bf16_model_load_generation": "unverified",
+  "weights_downloaded": 0,
+  "weights_loaded": 0,
+  "gpu_kernels_executed": 0,
+  "victim_requests": 0,
+  "attacks": 0,
+  "student_training": 0,
+  "participant_records": 0,
+  "approval_grants_created_or_claimed": 0,
+  "checkout_remained_clean": true,
+  "historical_frozen_sources_unchanged": true
+}

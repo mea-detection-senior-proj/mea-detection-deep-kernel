@@ -1,0 +1,26 @@
+{
+  "schema_version": "phase-i-entry-v1",
+  "observed_utc": "2026-11-07T12:36:09.621622+00:00",
+  "checkout": {
+    "branch": "experiment/stream-prada-order",
+    "head": "8d32d46bb1496862ddf36017b7eea811c01dc51c",
+    "clean": true,
+    "main_unchanged": true
+  },
+  "frozen": {
+    "status": "passed",
+    "frozen_h_commit": "8d32d46bb1496862ddf36017b7eea811c01dc51c",
+    "manifests": {
+      "G": {
+        "manifest_sha256": "f7bbc4f324744e53cbd8ef9a6e180e933d67d9957f932b839e9fb333c1c83d31",
+        "files_verified": 39
+      },
+      "H": {
+        "manifest_sha256": "ae8ab331a3f41ba35077dfc82deb102f46c9a65e6a02bc5f8687d1ef146cd9fa",
+        "files_verified": 46
+      }
+    },
+    "runtime_code_sha256": "d163635f0a490a016b7a1fc4a0ce378d464577cd91ec99fe8f08804f9cd6dc87"
+  },
+  "checker_source_sha256": "c6e28a367e4629bb883a3ae53d07246a944683149bd6706702b7d9499a96c3e5"
+}

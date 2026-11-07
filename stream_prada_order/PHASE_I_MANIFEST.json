@@ -1,0 +1,82 @@
+{
+  "schema_version": "phase-i-deliverables-v1",
+  "branch": "experiment/stream-prada-order",
+  "base_head": "8d32d46bb1496862ddf36017b7eea811c01dc51c",
+  "main_sha_unchanged": "5fb5e07d750a73a0a663a174433bab931ae7568a",
+  "self_excluded": true,
+  "file_count": 18,
+  "files": {
+    "stream_prada_order/PHASE_I_BLOCKERS_TH.md": {
+      "sha256": "00f43aed51cc3154b4a46bcde639177adae7a0ac7bf4c7b86d650474dc5a09d4",
+      "bytes": 11446
+    },
+    "stream_prada_order/PHASE_I_READINESS_TH.md": {
+      "sha256": "dff4063c18cd745b7816f8ab9ce23b32341b8b865d5b40dad16a041b4a8b3634",
+      "bytes": 12316
+    },
+    "stream_prada_order/diagnostics/phase_i_final_checks_20261107.json": {
+      "sha256": "b5eac9cbd9e2b81a7a3695a79dd3842bcc4beb3392091fae5513cb88963c27df",
+      "bytes": 1490
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v1/cache_inventory.json": {
+      "sha256": "680270810c2ec02ce723997fbee96d47a9ee6697220ad0af9aebe700f1dfe163",
+      "bytes": 1129
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v1/clean_h_readiness.json": {
+      "sha256": "672238995aaa8b0856fa2599e37e5b4bba64c239c41e772b1dae6941c9cbd5ea",
+      "bytes": 1785
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v1/cpu_import_probe.json": {
+      "sha256": "58e65c2f4453a8418dec314e4f617655f894fbf317db448fb291cb68aef6697b",
+      "bytes": 625
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v2/artifact_hashes.json": {
+      "sha256": "3590345784ba5ddea6bb22afa9ee5a919809a7cf881032bf188b56f0bdd383e6",
+      "bytes": 733
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v2/cache_inventory.json": {
+      "sha256": "3d928b876e1e5bcfd26f92552b3588071b8d4e419f6ffa6f64d15f328731cb44",
+      "bytes": 1104
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v2/clean_h_readiness.json": {
+      "sha256": "65926f4786f4a5d9b81820b43bedc65aed750c7c083da61585c72c2a4e66356a",
+      "bytes": 1692
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v2/cpu_import_probe.json": {
+      "sha256": "93a57cd35dca349098e53146a3cacf584b8ec1e7e1d7b7fb6f7d048fcaedcdc6",
+      "bytes": 678
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v2/download_plan.json": {
+      "sha256": "1f92b651e77b655eb14f8c3d6829bb8b6f950216214b05f6258dccbe280f461a",
+      "bytes": 3838
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v2/entry.json": {
+      "sha256": "eee97dc9517f42dad72df313246be7c87aa690dfba24cda1dc28d3274b5f66d3",
+      "bytes": 883
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v2/pip_check.json": {
+      "sha256": "1c39345b281ff355fa88f44b51a1501a15991ea9be79096f48a6c9585669074a",
+      "bytes": 145
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v2/storage_metadata.json": {
+      "sha256": "d8904a9296abb07753a2b169a918dfe57646bbf687cf9898c7477d5be823b3cf",
+      "bytes": 843
+    },
+    "stream_prada_order/diagnostics/phase_i_preflight_20261107_v2/summary.json": {
+      "sha256": "9187dbe13239d104a622700ab272b10959b61c538031ab2aaa91c4387fc3710f",
+      "bytes": 695
+    },
+    "stream_prada_order/diagnostics/phase_i_unit_tests_20261107_v1.json": {
+      "sha256": "2bd900bec667676246a310c3cc6a42ca8955f0bcad1b02ba71247b7073d2cddf",
+      "bytes": 1436
+    },
+    "stream_prada_order/phase_i_check.py": {
+      "sha256": "c6e28a367e4629bb883a3ae53d07246a944683149bd6706702b7d9499a96c3e5",
+      "bytes": 13906
+    },
+    "stream_prada_order/tests/test_phase_i_check.py": {
+      "sha256": "24ac3a50dd5cc463a05ff60de60dbaae970e9086898eed7586f75b1bc22cba62",
+      "bytes": 5133
+    }
+  }
+}

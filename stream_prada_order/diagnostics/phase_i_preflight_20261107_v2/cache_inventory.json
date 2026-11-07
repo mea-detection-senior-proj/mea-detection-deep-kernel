@@ -1,0 +1,35 @@
+{
+  "allowlisted_environment": {
+    "HF_HOME": null,
+    "HF_HUB_CACHE": null,
+    "HUGGINGFACE_HUB_CACHE": null,
+    "XDG_CACHE_HOME": null,
+    "TRANSFORMERS_CACHE": null,
+    "PYTORCH_TRANSFORMERS_CACHE": null,
+    "PYTORCH_PRETRAINED_BERT_CACHE": null
+  },
+  "user_provided_locations": [],
+  "schema_version": "phase-i-cache-inventory-v1",
+  "observed_utc": "2026-11-07T12:36:09.891719+00:00",
+  "candidates": [
+    {
+      "origin": "effective_hub_cache",
+      "cache": "c:\\users\\varic\\.cache\\huggingface\\hub",
+      "model_dir_exists": false,
+      "snapshot": "C:\\Users\\varic\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-1.5B-Instruct\\snapshots\\989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "verification": {
+        "status": "blocked",
+        "codes": [
+          "snapshot_missing"
+        ],
+        "bytes_read": 0,
+        "verified_files": []
+      }
+    }
+  ],
+  "bytes_read": 0,
+  "max_total_bytes": 8589934592,
+  "seconds": 0.0,
+  "all_required_hashes_verified": false,
+  "scope": "Only explicitly configured cache/model paths; no filesystem crawl or private logs."
+}

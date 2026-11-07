@@ -1,0 +1,7 @@
+{
+  "exit_code": 0,
+  "stdout": "No broken requirements found.\n",
+  "stderr_suppressed": false,
+  "seconds_gate": 20,
+  "network_requests": 0
+}

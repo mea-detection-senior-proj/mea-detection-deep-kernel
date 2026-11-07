@@ -1,0 +1,22 @@
+{
+  "scope": "CPU import-only; no model/tokenizer construction, weights or CUDA kernels",
+  "observed_utc": "2026-11-07T12:36:26.309085+00:00",
+  "gate_seconds": 45,
+  "ram_cap_bytes": 1073741824,
+  "seconds": 16.405999999959022,
+  "observed_peak_bytes": 785035264,
+  "exit_code": 0,
+  "gate_failure": null,
+  "result": {
+    "status": "passed_import_only",
+    "torch_version": "2.14.1+cu132",
+    "torch_build_cuda": "13.2",
+    "cuda_initialized": false,
+    "qwen_class_imported": "Qwen2ForCausalLM",
+    "model_or_tokenizer_constructed": false,
+    "weights_loaded": 0,
+    "victim_requests": 0,
+    "gpu_kernels_executed": 0,
+    "peak_working_set_bytes": 784912384
+  }
+}
