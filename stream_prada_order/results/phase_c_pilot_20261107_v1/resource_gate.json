@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "projected_total_seconds": 498.8023417673365,
+  "gate_seconds": 1200,
+  "pilot_p95_stream_seconds": 0.02388031998707447,
+  "pilot_streams": 135,
+  "remaining_streams": 9773,
+  "safety_factor": 2.0
+}

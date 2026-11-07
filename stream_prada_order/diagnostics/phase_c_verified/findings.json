@@ -1,0 +1,319 @@
+{
+  "outer_cohorts": 8,
+  "evaluation_streams": 7200,
+  "detection": [
+    {
+      "attack_count": 26,
+      "ordering": "random",
+      "outer_cohorts": 8,
+      "schedules": 800,
+      "any_alerts": 2,
+      "prefix_alarms": 0,
+      "eligible_schedules": 800,
+      "post_onset_detections": 2,
+      "post_onset_rate": 0.0025,
+      "median_detected_delay": 61.5,
+      "detected_delay_n": 2,
+      "right_censored": 798,
+      "mean_max_score": 0.023941730272167446
+    },
+    {
+      "attack_count": 26,
+      "ordering": "clustered",
+      "outer_cohorts": 8,
+      "schedules": 800,
+      "any_alerts": 2,
+      "prefix_alarms": 0,
+      "eligible_schedules": 800,
+      "post_onset_detections": 2,
+      "post_onset_rate": 0.0025,
+      "median_detected_delay": 33.0,
+      "detected_delay_n": 2,
+      "right_censored": 798,
+      "mean_max_score": 0.023637244419179634
+    },
+    {
+      "attack_count": 26,
+      "ordering": "interleaved",
+      "outer_cohorts": 8,
+      "schedules": 800,
+      "any_alerts": 2,
+      "prefix_alarms": 0,
+      "eligible_schedules": 800,
+      "post_onset_detections": 2,
+      "post_onset_rate": 0.0025,
+      "median_detected_delay": 50.0,
+      "detected_delay_n": 2,
+      "right_censored": 798,
+      "mean_max_score": 0.02389482979930334
+    },
+    {
+      "attack_count": 64,
+      "ordering": "random",
+      "outer_cohorts": 8,
+      "schedules": 800,
+      "any_alerts": 21,
+      "prefix_alarms": 0,
+      "eligible_schedules": 800,
+      "post_onset_detections": 21,
+      "post_onset_rate": 0.02625,
+      "median_detected_delay": 130.0,
+      "detected_delay_n": 21,
+      "right_censored": 779,
+      "mean_max_score": 0.025224334608501608
+    },
+    {
+      "attack_count": 64,
+      "ordering": "clustered",
+      "outer_cohorts": 8,
+      "schedules": 800,
+      "any_alerts": 62,
+      "prefix_alarms": 0,
+      "eligible_schedules": 800,
+      "post_onset_detections": 62,
+      "post_onset_rate": 0.0775,
+      "median_detected_delay": 55.0,
+      "detected_delay_n": 62,
+      "right_censored": 738,
+      "mean_max_score": 0.029082129574779313
+    },
+    {
+      "attack_count": 64,
+      "ordering": "interleaved",
+      "outer_cohorts": 8,
+      "schedules": 800,
+      "any_alerts": 21,
+      "prefix_alarms": 0,
+      "eligible_schedules": 800,
+      "post_onset_detections": 21,
+      "post_onset_rate": 0.02625,
+      "median_detected_delay": 118.0,
+      "detected_delay_n": 21,
+      "right_censored": 779,
+      "mean_max_score": 0.02504658754499419
+    },
+    {
+      "attack_count": 128,
+      "ordering": "random",
+      "outer_cohorts": 8,
+      "schedules": 800,
+      "any_alerts": 198,
+      "prefix_alarms": 0,
+      "eligible_schedules": 800,
+      "post_onset_detections": 198,
+      "post_onset_rate": 0.2475,
+      "median_detected_delay": 108.0,
+      "detected_delay_n": 198,
+      "right_censored": 602,
+      "mean_max_score": 0.041206347589916995
+    },
+    {
+      "attack_count": 128,
+      "ordering": "clustered",
+      "outer_cohorts": 8,
+      "schedules": 800,
+      "any_alerts": 288,
+      "prefix_alarms": 0,
+      "eligible_schedules": 800,
+      "post_onset_detections": 288,
+      "post_onset_rate": 0.36,
+      "median_detected_delay": 96.0,
+      "detected_delay_n": 288,
+      "right_censored": 512,
+      "mean_max_score": 0.0451304917372024
+    },
+    {
+      "attack_count": 128,
+      "ordering": "interleaved",
+      "outer_cohorts": 8,
+      "schedules": 800,
+      "any_alerts": 221,
+      "prefix_alarms": 0,
+      "eligible_schedules": 800,
+      "post_onset_detections": 221,
+      "post_onset_rate": 0.27625,
+      "median_detected_delay": 111.0,
+      "detected_delay_n": 221,
+      "right_censored": 579,
+      "mean_max_score": 0.04133298088761226
+    }
+  ],
+  "paired": [
+    {
+      "attack_count": 26,
+      "a": "random",
+      "b": "clustered",
+      "changed_alerts": 4,
+      "pairs": 800,
+      "mean_cohort_changed_fraction": 0.005,
+      "cohort_changed_fraction_range": [
+        0.0,
+        0.03
+      ],
+      "mean_paired_rate_difference_b_minus_a": 0.0,
+      "mean_score_delta_b_minus_a": -0.00030448585298781266,
+      "mean_growing_symmetric_difference": 12.57,
+      "mean_distance_mae": 0.07685570027419895,
+      "mean_w_mae": 0.0030110517219557424
+    },
+    {
+      "attack_count": 26,
+      "a": "random",
+      "b": "interleaved",
+      "changed_alerts": 4,
+      "pairs": 800,
+      "mean_cohort_changed_fraction": 0.005,
+      "cohort_changed_fraction_range": [
+        0.0,
+        0.02
+      ],
+      "mean_paired_rate_difference_b_minus_a": 0.0,
+      "mean_score_delta_b_minus_a": -4.690047286410606e-05,
+      "mean_growing_symmetric_difference": 12.275,
+      "mean_distance_mae": 0.07601629805773058,
+      "mean_w_mae": 0.0028162006539054264
+    },
+    {
+      "attack_count": 26,
+      "a": "clustered",
+      "b": "interleaved",
+      "changed_alerts": 2,
+      "pairs": 800,
+      "mean_cohort_changed_fraction": 0.0025,
+      "cohort_changed_fraction_range": [
+        0.0,
+        0.01
+      ],
+      "mean_paired_rate_difference_b_minus_a": 0.0,
+      "mean_score_delta_b_minus_a": 0.00025758538012370655,
+      "mean_growing_symmetric_difference": 2.44,
+      "mean_distance_mae": 0.07497915110722475,
+      "mean_w_mae": 0.0021786321742706047
+    },
+    {
+      "attack_count": 64,
+      "a": "random",
+      "b": "clustered",
+      "changed_alerts": 55,
+      "pairs": 800,
+      "mean_cohort_changed_fraction": 0.06875,
+      "cohort_changed_fraction_range": [
+        0.0,
+        0.46
+      ],
+      "mean_paired_rate_difference_b_minus_a": 0.05125,
+      "mean_score_delta_b_minus_a": 0.0038577949662777057,
+      "mean_growing_symmetric_difference": 13.9725,
+      "mean_distance_mae": 0.08343388718611325,
+      "mean_w_mae": 0.005140303897449393
+    },
+    {
+      "attack_count": 64,
+      "a": "random",
+      "b": "interleaved",
+      "changed_alerts": 32,
+      "pairs": 800,
+      "mean_cohort_changed_fraction": 0.04,
+      "cohort_changed_fraction_range": [
+        0.0,
+        0.32
+      ],
+      "mean_paired_rate_difference_b_minus_a": 0.0,
+      "mean_score_delta_b_minus_a": -0.00017774706350742034,
+      "mean_growing_symmetric_difference": 13.7575,
+      "mean_distance_mae": 0.08103077391750527,
+      "mean_w_mae": 0.0031045781781509573
+    },
+    {
+      "attack_count": 64,
+      "a": "clustered",
+      "b": "interleaved",
+      "changed_alerts": 41,
+      "pairs": 800,
+      "mean_cohort_changed_fraction": 0.051250000000000004,
+      "cohort_changed_fraction_range": [
+        0.0,
+        0.32
+      ],
+      "mean_paired_rate_difference_b_minus_a": -0.05125,
+      "mean_score_delta_b_minus_a": -0.004035542029785125,
+      "mean_growing_symmetric_difference": 2.32,
+      "mean_distance_mae": 0.08214936931818433,
+      "mean_w_mae": 0.0044851439537635495
+    },
+    {
+      "attack_count": 128,
+      "a": "random",
+      "b": "clustered",
+      "changed_alerts": 212,
+      "pairs": 800,
+      "mean_cohort_changed_fraction": 0.265,
+      "cohort_changed_fraction_range": [
+        0.03,
+        0.51
+      ],
+      "mean_paired_rate_difference_b_minus_a": 0.1125,
+      "mean_score_delta_b_minus_a": 0.0039241441472854036,
+      "mean_growing_symmetric_difference": 14.1625,
+      "mean_distance_mae": 0.07701427296017681,
+      "mean_w_mae": 0.007038475236922548
+    },
+    {
+      "attack_count": 128,
+      "a": "random",
+      "b": "interleaved",
+      "changed_alerts": 179,
+      "pairs": 800,
+      "mean_cohort_changed_fraction": 0.22375,
+      "cohort_changed_fraction_range": [
+        0.0,
+        0.46
+      ],
+      "mean_paired_rate_difference_b_minus_a": 0.02875,
+      "mean_score_delta_b_minus_a": 0.00012663329769526389,
+      "mean_growing_symmetric_difference": 14.005,
+      "mean_distance_mae": 0.07609251241135757,
+      "mean_w_mae": 0.005735419829229596
+    },
+    {
+      "attack_count": 128,
+      "a": "clustered",
+      "b": "interleaved",
+      "changed_alerts": 89,
+      "pairs": 800,
+      "mean_cohort_changed_fraction": 0.11124999999999999,
+      "cohort_changed_fraction_range": [
+        0.01,
+        0.35
+      ],
+      "mean_paired_rate_difference_b_minus_a": -0.08375,
+      "mean_score_delta_b_minus_a": -0.00379751084959014,
+      "mean_growing_symmetric_difference": 0.825,
+      "mean_distance_mae": 0.0731190193783784,
+      "mean_w_mae": 0.004091397710701667
+    }
+  ],
+  "changed_triplets": [
+    {
+      "attack_count": 26,
+      "changed": 5,
+      "triplets": 800,
+      "fraction": 0.00625
+    },
+    {
+      "attack_count": 64,
+      "changed": 64,
+      "triplets": 800,
+      "fraction": 0.08
+    },
+    {
+      "attack_count": 128,
+      "changed": 240,
+      "triplets": 800,
+      "fraction": 0.3
+    }
+  ],
+  "caveat": "Descriptive conditional schedules on 8 reused-article cohorts, not 800 independent population trials; delays condition on detections.",
+  "source_sha256": "441c4ab6ae4f34f7dd5c54b3ff5c83e0554140fb915cf36a34c8778cf75eb0c7",
+  "input_manifest_sha256": "9d081d0669ae69f71f363d607d5f6a71424b76569cfbe9ac8a78eb0610fc7c55"
+}

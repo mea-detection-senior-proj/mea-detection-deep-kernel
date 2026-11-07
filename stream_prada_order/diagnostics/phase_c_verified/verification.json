@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "mixed_rows": 9900,
+  "pair_rows": 9900,
+  "control_cohorts": 11,
+  "calibration_cohorts": 12,
+  "schedule_hashes_reconstructed": 9900,
+  "full_traces_checked": 9923,
+  "encoder_or_detector_reruns": 0,
+  "validation_passed": true,
+  "resource_passed": true,
+  "evaluation_scored": true
+}

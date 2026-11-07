@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "control_alerts": 0,
+  "prefix_alerts": 0,
+  "controls": 3,
+  "rule": "zero control alarms and zero pre-attack prefix alarms; frozen before scoring",
+  "evaluation_encoded_at_gate": false,
+  "evaluation_scored_at_gate": false
+}

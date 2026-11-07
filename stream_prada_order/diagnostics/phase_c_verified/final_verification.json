@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "unit_tests": 36,
+  "full_trace_audit": {
+    "status": "passed",
+    "mixed_rows": 9900,
+    "pair_rows": 9900,
+    "control_cohorts": 11,
+    "calibration_cohorts": 12,
+    "schedule_hashes_reconstructed": 9900,
+    "full_traces_checked": 9923,
+    "encoder_or_detector_reruns": 0,
+    "validation_passed": true,
+    "resource_passed": true,
+    "evaluation_scored": true
+  },
+  "published_artifact_audit": {
+    "status": "passed",
+    "mixed_rows": 9900,
+    "pair_rows": 9900,
+    "control_cohorts": 11,
+    "calibration_cohorts": 12,
+    "schedule_hashes_reconstructed": 9900,
+    "full_traces_checked": 0,
+    "encoder_or_detector_reruns": 0,
+    "validation_passed": true,
+    "resource_passed": true,
+    "evaluation_scored": true
+  },
+  "findings_verified": true,
+  "plots_visually_inspected": 2,
+  "existing_tracked_files_changed": 0,
+  "evaluation_false_positive_controls": 0,
+  "evaluation_control_cohorts": 8,
+  "prefix_alarms_in_all_mixed_streams": 0,
+  "encoder_or_detector_reruns_for_audit": 0,
+  "pushed": false
+}

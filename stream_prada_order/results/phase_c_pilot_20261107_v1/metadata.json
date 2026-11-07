@@ -1,0 +1,261 @@
+{
+  "phase": "C bounded exploratory pilot v1",
+  "status": "completed_bounded_pilot",
+  "config": {
+    "phase": "C bounded exploratory pilot v1",
+    "seed": 20261107,
+    "dataset": "model_leeching",
+    "cohort_certificate": "stream_prada_order/diagnostics/phase_b_plan/proposed_article_model_leeching_12_3_8.json.gz",
+    "certificate_sha256": "25970769c8e5128aa974ae00eae723ec56ffe984169a7499f38ca0ee49649b53",
+    "calibration_cohorts": 12,
+    "validation_cohorts": 3,
+    "evaluation_cohorts": 8,
+    "stream_length": 256,
+    "prefix_length": 110,
+    "attack_counts": [
+      26,
+      64,
+      128
+    ],
+    "permutations": 100,
+    "validation_pilot_permutations": 5,
+    "threshold_percentile": 95,
+    "threshold_method": "linear",
+    "resource_gate_seconds": 1200,
+    "resource_safety_factor": 2.0,
+    "resource_projection_statistic": "p95 validation pilot stream seconds",
+    "validation_max_control_alerts": 0,
+    "validation_max_prefix_alerts": 0,
+    "model": "BAAI/bge-small-en-v1.5",
+    "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "max_seq_length": 512,
+    "encode_batch_size": 64,
+    "device": "cuda",
+    "distance_device": "cpu",
+    "torch_threads": 1,
+    "parity_w_absolute_tolerance": 2e-05,
+    "between_cohort_bootstrap_draws": 2000,
+    "evaluation_is_fresh_confirmation": false
+  },
+  "config_sha256": "5b8238cad4f6b06efd4156e215e98fc873d7225ce1ab39f455715ee00f95bcc6",
+  "freeze_commit": "c62768dd26818e1ffb68c854dda4d51dfe87cc23",
+  "source_sha256": "284e20fcc80a2c91b66a3031bf6eb6c32a2c599aa5a0edfb8522b35df7ec0496",
+  "main_sha": "5fb5e07d750a73a0a663a174433bab931ae7568a",
+  "inputs": {
+    "processed_files": {
+      "model_leeching/normal": {
+        "sha256": "2c7b6377db11481d0708607a972b94d8aa0ad0fc16d7c842881773fd4fc7fb77",
+        "bytes": 1243911
+      },
+      "model_leeching/attacker": {
+        "sha256": "ac90d6f69cadfa5c960f35bb71ad909983842939adfb5dcbc9f327ca13bbb942",
+        "bytes": 13149047
+      },
+      "ME_BERT_boolq_wiki/normal": {
+        "sha256": "276ea0cbb06f1992f5877aa727f3e7f421984536201347cb278b7be94c6e95a4",
+        "bytes": 6835026
+      },
+      "ME_BERT_boolq_wiki/attacker": {
+        "sha256": "f29c09558fac9c083ac06dab10ac853bae164107ea369a99c45995454cd8b759",
+        "bytes": 1650640
+      }
+    },
+    "official_lookup_files": {
+      "squad_train_v1.1.json": {
+        "url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json",
+        "sha256": "3527663986b8295af4f7fcdff1ba1ff3f72d07d61a20f487cb238a6ef92fd955",
+        "bytes": 30288272
+      },
+      "squad_dev_v1.1.json": {
+        "url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json",
+        "sha256": "95aa6a52d5d6a735563366753ca50492a658031da74f301ac5238b03966972c9",
+        "bytes": 4854279
+      }
+    },
+    "row_audit": {
+      "model_leeching/normal": {
+        "rows": 10062,
+        "unique_texts": 9900,
+        "unique_ids": 9962,
+        "article_mapped_rows": 10062,
+        "distinct_mapped_titles": 30
+      },
+      "model_leeching/attacker": {
+        "rows": 10062,
+        "unique_texts": 9923,
+        "unique_ids": 9962,
+        "article_mapped_rows": 10062,
+        "distinct_mapped_titles": 30
+      },
+      "ME_BERT_boolq_wiki/normal": {
+        "rows": 9427,
+        "unique_texts": 9427,
+        "unique_ids": 9427,
+        "article_mapped_rows": 4,
+        "distinct_mapped_titles": 4
+      },
+      "ME_BERT_boolq_wiki/attacker": {
+        "rows": 1885,
+        "unique_texts": 1885,
+        "unique_ids": 1885,
+        "article_mapped_rows": 2,
+        "distinct_mapped_titles": 2
+      }
+    },
+    "boolq_original_title_lookup": "Original Google bucket train.jsonl returned HTTP 403; no title guesses. Exact passage matches to official SQuAD only are eligible for article mapping."
+  },
+  "model_files_sha256": {
+    "1_Pooling\\config.json": "d1caf60c96f5fba2157c0c26b76d80818fad6cf0b8eb5e73ec372ff9818eba5c",
+    "config.json": "094f8e891b932f2000c92cfc663bac4c62069f5d8af5b5278c4306aef3084750",
+    "config_sentence_transformers.json": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56",
+    "model.safetensors": "3c9f31665447c8911517620762200d2245a2518d6e7208acc78cd9db317e21ad",
+    "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+    "README.md": "ddb964361a55c6e5dfca6361615854b260c9c960205d04c7520151aaa1d75837",
+    "sentence_bert_config.json": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf",
+    "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+    "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+    "tokenizer_config.json": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+    "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+  },
+  "environment": {
+    "torch": "2.14.1+cu132",
+    "scipy": "1.17.1",
+    "numpy": "2.4.6",
+    "sentence_transformers": "5.7.0",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti"
+  },
+  "gpu_free_before": 7418675200,
+  "ram_available_before": 39782199296,
+  "maximum_single_cohort_matrix_bytes": 589824,
+  "evaluation_encoded": true,
+  "evaluation_scored": true,
+  "cohort_group_counts": [
+    {
+      "cohort": 0,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 1,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 2,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 3,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 4,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 5,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 6,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 7,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 8,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 9,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 10,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 11,
+      "split": "calibration",
+      "source_groups": 1
+    },
+    {
+      "cohort": 12,
+      "split": "validation",
+      "source_groups": 1
+    },
+    {
+      "cohort": 13,
+      "split": "validation",
+      "source_groups": 1
+    },
+    {
+      "cohort": 14,
+      "split": "validation",
+      "source_groups": 1
+    },
+    {
+      "cohort": 15,
+      "split": "final_test_partition_not_fresh_confirmation",
+      "source_groups": 1
+    },
+    {
+      "cohort": 16,
+      "split": "final_test_partition_not_fresh_confirmation",
+      "source_groups": 2
+    },
+    {
+      "cohort": 17,
+      "split": "final_test_partition_not_fresh_confirmation",
+      "source_groups": 2
+    },
+    {
+      "cohort": 18,
+      "split": "final_test_partition_not_fresh_confirmation",
+      "source_groups": 2
+    },
+    {
+      "cohort": 19,
+      "split": "final_test_partition_not_fresh_confirmation",
+      "source_groups": 2
+    },
+    {
+      "cohort": 20,
+      "split": "final_test_partition_not_fresh_confirmation",
+      "source_groups": 2
+    },
+    {
+      "cohort": 21,
+      "split": "final_test_partition_not_fresh_confirmation",
+      "source_groups": 2
+    },
+    {
+      "cohort": 22,
+      "split": "final_test_partition_not_fresh_confirmation",
+      "source_groups": 2
+    }
+  ],
+  "caveat": "Exploratory reused articles. Calibration/validation have one article per cohort; 7/8 evaluation cohorts combine two articles. No iid-population/FPR guarantee.",
+  "reason": null,
+  "total_seconds": 273.45611449997523,
+  "process_peak_working_set_bytes": 1521033216,
+  "gpu_peak_allocated_bytes": 713179648,
+  "gpu_peak_reserved_bytes": 924844032,
+  "prior_tracked_files_unchanged": true,
+  "full_local_trace_hashes": {
+    "full_traces_calibration.jsonl.gz": "3c52be746ed238ffd52821a1c87c9c93a67511a09e444ae9c55fb86767c9cdd6",
+    "full_traces_evaluation.jsonl.gz": "4f90f42ccdf1e9a3df803d9e40145021fde99da7154bb85afec6a1dd2828f3c5",
+    "full_traces_validation.jsonl.gz": "3ec5debc3d045c613de54952f4d87ff56fc1008c4caa5efcc831cb28736e6e5c"
+  }
+}

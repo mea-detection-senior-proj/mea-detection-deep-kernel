@@ -1,0 +1,7 @@
+{
+  "queries": 3072,
+  "seconds": 2.739175599999726,
+  "query_order_sha256": "b20c6a0a0aad62fd633eee045a41509ec0e7f8eb2856cae738c41f5cfcc33b45",
+  "raw_text_order_sha256": "6e511c8308131359b35e23072a1b6973f8302edd04b492e75fafbe5bf30f9c65",
+  "embedding_sha256": "4ef515f41b7a9a5c31c1fbf5b3c436e7059284764142d0a2422b6d8d43eb7335"
+}
