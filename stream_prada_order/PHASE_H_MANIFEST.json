@@ -1,0 +1,194 @@
+{
+  "schema_version": "phase-h-deliverables-v1",
+  "branch": "experiment/stream-prada-order",
+  "base_head": "3b2d291ca5c6dea7a86e2aa6ad944a13e5715dd0",
+  "main_sha_unchanged": "5fb5e07d750a73a0a663a174433bab931ae7568a",
+  "self_excluded": true,
+  "file_count": 46,
+  "files": {
+    "stream_prada_order/PHASE_H_DESIGN_V1.md": {
+      "sha256": "df79085e013f505b94ae2006eb0bfcde1d6730b69adc29da36a5e10ad04db59f",
+      "bytes": 4544
+    },
+    "stream_prada_order/PHASE_H_IMPLEMENTATION_TH.md": {
+      "sha256": "cdce37e7bb0519d9c5a6623d57f8620d0ba809f621100e8db103bb05ca8700dc",
+      "bytes": 15589
+    },
+    "stream_prada_order/PHASE_H_READINESS_TH.md": {
+      "sha256": "ec3165c0d610a002e5efe97c7c9dfebdf77a9f5ca8d9aa5decd982c00605ab69",
+      "bytes": 12810
+    },
+    "stream_prada_order/diagnostics/phase_h_final_checks_20261107.json": {
+      "sha256": "dfdb9ff7c123fcdd0e82ffaea6c2f6150b14bd3098d216c68e3ad128861444eb",
+      "bytes": 1038
+    },
+    "stream_prada_order/diagnostics/phase_h_license_metadata_20261107_v1.json": {
+      "sha256": "40bb79d6733a56c9541c190cf3e2807c989001a2dc12f98d78fe5d44e537e1c4",
+      "bytes": 314
+    },
+    "stream_prada_order/diagnostics/phase_h_metadata_20261107_v1/generation_config.json": {
+      "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+      "bytes": 242
+    },
+    "stream_prada_order/diagnostics/phase_h_metadata_20261107_v1/receipt.json": {
+      "sha256": "f2233902005180abe78fc80d4ad20305bf1e27d0ef6260e90b7da4081c30b7cd",
+      "bytes": 823
+    },
+    "stream_prada_order/diagnostics/phase_h_metadata_20261107_v1/tokenizer_config.json": {
+      "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "bytes": 7305
+    },
+    "stream_prada_order/diagnostics/phase_h_readiness_20261107_v1.json": {
+      "sha256": "460ece85b11a3cea1220f8d705b64bb02c7cf5143d645afc93df104070a5bb03",
+      "bytes": 1684
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v1/artifact_hashes.json": {
+      "sha256": "d0747c60601774c60c090e288739efcfb049c80167f3a80caa088608bc201bae",
+      "bytes": 273
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v1/preflight.json": {
+      "sha256": "ffed707aafb6f1e43e3629855f7c52c2802506bd7bb8d414260b9fac12ac7cca",
+      "bytes": 3209
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v1/test_results.json": {
+      "sha256": "97bed0b5af8acdb57d35fa7f47c0b5a43782ce3ccf32c53afe9111cd232f269f",
+      "bytes": 17211
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v1/verification.json": {
+      "sha256": "ced4580ee94debeca0ccee79f534b1e1005d91a85bd2ae69e350ad3ec25a6fe4",
+      "bytes": 518
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v2/artifact_hashes.json": {
+      "sha256": "1327a73b50cfc43a019ceae654da2247b03aee6b9ea74b410f67e4ebea92c0fe",
+      "bytes": 273
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v2/preflight.json": {
+      "sha256": "a240d58a67e89de2a0abd941c84b33e0fb20e32d4313ee316677ed05177f0ef2",
+      "bytes": 3209
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v2/test_results.json": {
+      "sha256": "30bd0e3827c3cafa8db2f904423f676f31d7247f3ca6ed2249ec69f0de12ad05",
+      "bytes": 17329
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v2/verification.json": {
+      "sha256": "0936503dae6bb39c8e3cff5f1c65aea8d624224eb7e5e1c308070602e469f3c1",
+      "bytes": 518
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v3/artifact_hashes.json": {
+      "sha256": "2ec9da9028b80b9865f8611376074ff040eb902b2c3d0032b23c4032e0f31851",
+      "bytes": 273
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v3/preflight.json": {
+      "sha256": "9d87c955aa78e68078fb298625eb696086f81822cf0f3541ff689f84dc43e7d8",
+      "bytes": 3209
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v3/test_results.json": {
+      "sha256": "ff7ab8708d090c29e6bb99a05d14fba77b740ca62c2e5db50173b56ff6f8ab73",
+      "bytes": 17448
+    },
+    "stream_prada_order/diagnostics/phase_h_verification_20261107_v3/verification.json": {
+      "sha256": "438b78341c508c935de5f26c2b0fc015cc64f7fd9f4390193628f12564e48c05",
+      "bytes": 518
+    },
+    "stream_prada_order/phase_h_verify.py": {
+      "sha256": "737d953a35018c81ba8823cbbfb2aeab42eb56f1d89b5daae55adc7fd3586219",
+      "bytes": 6281
+    },
+    "stream_prada_order/tests/phase_h_crash_probe.py": {
+      "sha256": "a8e7d76ba36d67e99280c8331328e4f77e776ced3f5454e204f5dff0b7680d6a",
+      "bytes": 735
+    },
+    "stream_prada_order/tests/phase_h_helpers.py": {
+      "sha256": "988f072b9ff4581138529ea609b5fcac184f1a9cd5f3d7ca29b9a79d0eb5d37c",
+      "bytes": 3146
+    },
+    "stream_prada_order/tests/test_phase_h_backend.py": {
+      "sha256": "61a51dda6735a2de0fc68b930d689c3e23b9f7b87e54a7675ba0d84b6c88ed42",
+      "bytes": 3004
+    },
+    "stream_prada_order/tests/test_phase_h_integration.py": {
+      "sha256": "9d1dbcbc5f24ff10620f6d7da226fb434a4813726cd5ce3a7e1561ae470008ca",
+      "bytes": 6859
+    },
+    "stream_prada_order/tests/test_phase_h_policy.py": {
+      "sha256": "c01f38d892304b3a333124ba2dcca2af0550fcd5d284b375c2dddcb5ae3d5b28",
+      "bytes": 5092
+    },
+    "stream_prada_order/tests/test_phase_h_readiness.py": {
+      "sha256": "b44a47e08ee348653efb9f571c94307ee3657dde83b5251d4162bf45a6c33cf1",
+      "bytes": 4194
+    },
+    "stream_prada_order/tests/test_phase_h_supervisor.py": {
+      "sha256": "166ac00f5e60efa9ea859128345a3f62ef01dafcd33d22002be83145090ee51b",
+      "bytes": 5531
+    },
+    "stream_prada_order/traffic_runtime/QWEN_LICENSE.txt": {
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "bytes": 11343
+    },
+    "stream_prada_order/traffic_runtime/README.md": {
+      "sha256": "f9e8ba06bb48aea8273d29367b14f2119e399917c191436055ff221a67c516fd",
+      "bytes": 6036
+    },
+    "stream_prada_order/traffic_runtime/__init__.py": {
+      "sha256": "4d7d4be96be967225872113ecce5901a8252a65f951446bcaf798dda3a6d5c30",
+      "bytes": 105
+    },
+    "stream_prada_order/traffic_runtime/__main__.py": {
+      "sha256": "42eb14b0865aad5b4dbade72402397fd7b2e910fab329ece00e4613ffb4855d5",
+      "bytes": 1808
+    },
+    "stream_prada_order/traffic_runtime/adapter.py": {
+      "sha256": "4769b53bff6445253232e0d3711118fe0723ab7a845a7e333c9dd0442e87927c",
+      "bytes": 5682
+    },
+    "stream_prada_order/traffic_runtime/audit.py": {
+      "sha256": "379e1e0c7f54e36e9d286e171f42da7a9df6c788b0f69f5074ac3ed0c3bcf673",
+      "bytes": 3759
+    },
+    "stream_prada_order/traffic_runtime/backend.py": {
+      "sha256": "add2fbf6605fe9043e83df56e977704c8a59145fa64feb1c34f21b120d641737",
+      "bytes": 4738
+    },
+    "stream_prada_order/traffic_runtime/collector.py": {
+      "sha256": "67c84297b84ce84162abc1dff5a68ca187d0931ec8fffe635b4971e2cbd68617",
+      "bytes": 7862
+    },
+    "stream_prada_order/traffic_runtime/environment_lock_v1.json": {
+      "sha256": "458230e2634b0f8290d1328745a0fd4b492ae4b1d9d2014f01bd7b2aca18cf6b",
+      "bytes": 493
+    },
+    "stream_prada_order/traffic_runtime/policy.py": {
+      "sha256": "b8e493a5c1a79fc94f969766f88f2ac4c6f5f80a39430552ec11fee6718487be",
+      "bytes": 8758
+    },
+    "stream_prada_order/traffic_runtime/profile_v1.json": {
+      "sha256": "cb23faa3abb299190c4c8a698f7049f56f433b6772edae2de115f06ea1e68800",
+      "bytes": 4410
+    },
+    "stream_prada_order/traffic_runtime/readiness.py": {
+      "sha256": "a31028e514c3ff864561a6013a96fd384be8a4f649d7717d71a5b0ab72438fe3",
+      "bytes": 7821
+    },
+    "stream_prada_order/traffic_runtime/snapshot_lock_v1.json": {
+      "sha256": "1dc22fd7b94a773318564890554d1084210d85c812a674265f58e3503f340e1f",
+      "bytes": 1555
+    },
+    "stream_prada_order/traffic_runtime/storage.py": {
+      "sha256": "355d12a8dab0ad470014fbc3fae762a41ba6482a93f45748af6f9797f25f71f0",
+      "bytes": 3496
+    },
+    "stream_prada_order/traffic_runtime/supervisor.py": {
+      "sha256": "72c8cf07dd2dee4a5cd6a6b56b61444b9189177cc9ccefefd5f3e438540d6496",
+      "bytes": 9764
+    },
+    "stream_prada_order/traffic_runtime/winjob.py": {
+      "sha256": "577b5c6dd59e23f31ae54a59268978afe81a7ccb0aba8d2a69839a9fe307278c",
+      "bytes": 3004
+    },
+    "stream_prada_order/traffic_runtime/worker.py": {
+      "sha256": "b8ec30fcd2f32cb1bf338ff6fb0537a2bebc137dee3b023a34ff048bbb46c85d",
+      "bytes": 5738
+    }
+  }
+}

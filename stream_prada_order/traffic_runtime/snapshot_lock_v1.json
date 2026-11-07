@@ -1,0 +1,49 @@
+{
+  "schema_version": "qwen-snapshot-lock-v1",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "files": {
+    "LICENSE": {
+      "bytes": 11343,
+      "git_blob_sha1": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab",
+      "sha256": null
+    },
+    "config.json": {
+      "bytes": 660,
+      "git_blob_sha1": "f81ead14ab072d65a07817f83a3ee0e5a1890d10",
+      "sha256": null
+    },
+    "generation_config.json": {
+      "bytes": 242,
+      "git_blob_sha1": "dfc11073787daf1b0f9c0f1499487ab5f4c93738",
+      "sha256": null
+    },
+    "merges.txt": {
+      "bytes": 1671839,
+      "git_blob_sha1": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+      "sha256": null
+    },
+    "model.safetensors": {
+      "bytes": 3087467144,
+      "git_blob_sha1": "9127f71e7314df0064f469223749e5f237e06463",
+      "sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+    },
+    "tokenizer.json": {
+      "bytes": 7031645,
+      "git_blob_sha1": "443909a61d429dff23010e5bddd28ff530edda00",
+      "sha256": null
+    },
+    "tokenizer_config.json": {
+      "bytes": 7305,
+      "git_blob_sha1": "07bfe0640cb5a0037f9322287fbfc682806cf672",
+      "sha256": null
+    },
+    "vocab.json": {
+      "bytes": 2776833,
+      "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "sha256": null
+    }
+  },
+  "source_evidence_sha256": "32f0ea2dd9269d10be35d5684dd531d9f0acaf59a7485f1d55cf62fe3f26cd0e",
+  "source_response_sha256": "c6663beec949ee69cd0ebe9a23b43602932b37fb53e9b7e66366d0500aa917d2"
+}

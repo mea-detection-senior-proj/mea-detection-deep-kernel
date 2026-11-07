@@ -1,0 +1,20 @@
+{
+  "scope": "public configuration metadata only; no model/tokenizer execution",
+  "logical_gets": 2,
+  "received_payload_bytes": 7547,
+  "seconds": 0.6870000000053551,
+  "records": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/raw/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json",
+      "bytes": 7305,
+      "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "git_blob_sha1": "07bfe0640cb5a0037f9322287fbfc682806cf672"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/raw/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json",
+      "bytes": 242,
+      "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+      "git_blob_sha1": "dfc11073787daf1b0f9c0f1499487ab5f4c93738"
+    }
+  ]
+}

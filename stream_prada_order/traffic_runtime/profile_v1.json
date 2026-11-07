@@ -1,0 +1,58 @@
+{
+  "schema_version": "qwen-runtime-profile-v1",
+  "identity": {
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+  },
+  "system_message": "You are Qwen, created by Alibaba Cloud. You are a helpful assistant.",
+  "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n",
+  "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+  "conversation_mode": "single_turn_system_user",
+  "dtype": "bfloat16",
+  "device": "cuda:0",
+  "attention": "eager",
+  "generation": {
+    "do_sample": false,
+    "num_beams": 1,
+    "num_return_sequences": 1,
+    "max_new_tokens": 128,
+    "min_new_tokens": 0,
+    "repetition_penalty": 1.0,
+    "length_penalty": 1.0,
+    "use_cache": true,
+    "bos_token_id": 151643,
+    "pad_token_id": 151643,
+    "eos_token_id": [
+      151645,
+      151643
+    ]
+  },
+  "decode": {
+    "skip_special_tokens": true,
+    "clean_up_tokenization_spaces": false
+  },
+  "limits": {
+    "max_requests": 4,
+    "max_attempts": 4,
+    "max_attempts_per_request": 1,
+    "max_sessions": 1,
+    "max_input_tokens": 2048,
+    "max_output_tokens": 128,
+    "max_total_input_tokens": 8192,
+    "max_total_output_tokens": 512,
+    "max_query_bytes": 65536,
+    "max_response_bytes": 16384,
+    "max_run_seconds": 120,
+    "min_gpu_free_bytes": 6442450944,
+    "max_gpu_reserved_bytes": 5905580032,
+    "min_running_gpu_free_bytes": 536870912,
+    "min_available_ram_bytes": 8589934592,
+    "max_worker_tree_bytes": 8589934592,
+    "max_snapshot_bytes": 8589934592,
+    "max_logical_storage_bytes": 4194304,
+    "max_physical_storage_bytes": 20971520,
+    "min_disk_free_bytes": 1073741824
+  }
+}
