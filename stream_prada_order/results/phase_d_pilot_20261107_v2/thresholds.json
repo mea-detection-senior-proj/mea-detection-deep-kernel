@@ -1,0 +1,378 @@
+{
+  "calibration_cohorts": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "stream_maxima": {
+    "original": [
+      0.013968242545422171,
+      0.01761511502970381,
+      0.02229253101150641,
+      0.015065488881189304,
+      0.02407453873295673,
+      0.019413194869350114,
+      0.01607026910444953,
+      0.0322837991076127
+    ],
+    "rolling_32": [
+      0.17625321479837763,
+      0.10066471022404166,
+      0.0576237474470076,
+      0.07479582762366888,
+      0.10511964233957716,
+      0.08467412420513387,
+      0.07020147944482313,
+      0.11853131116736582
+    ],
+    "rolling_64": [
+      0.08740002644085632,
+      0.06501621576890804,
+      0.04660245719615985,
+      0.04057435883834859,
+      0.04729487803754262,
+      0.03911206507468956,
+      0.0532756837122641,
+      0.05859844769691791
+    ],
+    "rolling_100": [
+      0.06124566071634807,
+      0.05061287733837405,
+      0.03469598409543795,
+      0.03762473948581713,
+      0.03214699299996571,
+      0.03947824165301761,
+      0.03296374562358817,
+      0.038799258291330574
+    ],
+    "cusum_upper_k0.5": [
+      7.987911798424239,
+      5.837847173075468,
+      9.243755472581967,
+      6.0933603072908165,
+      8.986328454717626,
+      7.066958940634059,
+      15.139384982747824,
+      3.682526947846327
+    ],
+    "cusum_lower_k0.5": [
+      15.950502005990895,
+      13.465110022591059,
+      29.513218124734053,
+      13.65053570789231,
+      12.900165351986214,
+      42.199090250084076,
+      8.872550822211089,
+      99.60923111716008
+    ],
+    "cusum_two_sided_k0.5": [
+      15.950502005990895,
+      13.465110022591059,
+      29.513218124734053,
+      13.65053570789231,
+      12.900165351986214,
+      42.199090250084076,
+      15.139384982747824,
+      99.60923111716008
+    ],
+    "cusum_upper_k1.0": [
+      4.581784163482782,
+      5.337847173075468,
+      8.743755472581967,
+      3.9248581325546397,
+      2.9863284547176248,
+      4.676413438530865,
+      8.639384982747822,
+      3.182526947846327
+    ],
+    "cusum_lower_k1.0": [
+      8.812255077562737,
+      7.577495461063712,
+      21.169895339105775,
+      8.340182512997014,
+      8.793336126195861,
+      18.560434922010998,
+      7.872550822211089,
+      44.19934791180397
+    ],
+    "cusum_two_sided_k1.0": [
+      8.812255077562737,
+      7.577495461063712,
+      21.169895339105775,
+      8.340182512997014,
+      8.793336126195861,
+      18.560434922010998,
+      8.639384982747822,
+      44.19934791180397
+    ]
+  },
+  "thresholds": {
+    "original": [
+      {
+        "alpha": 0.05,
+        "n": 8,
+        "rank": 9,
+        "finite": false,
+        "threshold": null,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.2,
+        "n": 8,
+        "rank": 8,
+        "finite": true,
+        "threshold": 0.0322837991076127,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.4,
+        "n": 8,
+        "rank": 6,
+        "finite": true,
+        "threshold": 0.02229253101150641,
+        "strict_calibration_exceedances": 2
+      }
+    ],
+    "rolling_32": [
+      {
+        "alpha": 0.05,
+        "n": 8,
+        "rank": 9,
+        "finite": false,
+        "threshold": null,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.2,
+        "n": 8,
+        "rank": 8,
+        "finite": true,
+        "threshold": 0.17625321479837763,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.4,
+        "n": 8,
+        "rank": 6,
+        "finite": true,
+        "threshold": 0.10511964233957716,
+        "strict_calibration_exceedances": 2
+      }
+    ],
+    "rolling_64": [
+      {
+        "alpha": 0.05,
+        "n": 8,
+        "rank": 9,
+        "finite": false,
+        "threshold": null,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.2,
+        "n": 8,
+        "rank": 8,
+        "finite": true,
+        "threshold": 0.08740002644085632,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.4,
+        "n": 8,
+        "rank": 6,
+        "finite": true,
+        "threshold": 0.05859844769691791,
+        "strict_calibration_exceedances": 2
+      }
+    ],
+    "rolling_100": [
+      {
+        "alpha": 0.05,
+        "n": 8,
+        "rank": 9,
+        "finite": false,
+        "threshold": null,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.2,
+        "n": 8,
+        "rank": 8,
+        "finite": true,
+        "threshold": 0.06124566071634807,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.4,
+        "n": 8,
+        "rank": 6,
+        "finite": true,
+        "threshold": 0.03947824165301761,
+        "strict_calibration_exceedances": 2
+      }
+    ],
+    "cusum_upper_k0.5": [
+      {
+        "alpha": 0.05,
+        "n": 8,
+        "rank": 9,
+        "finite": false,
+        "threshold": null,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.2,
+        "n": 8,
+        "rank": 8,
+        "finite": true,
+        "threshold": 15.139384982747824,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.4,
+        "n": 8,
+        "rank": 6,
+        "finite": true,
+        "threshold": 8.986328454717626,
+        "strict_calibration_exceedances": 2
+      }
+    ],
+    "cusum_lower_k0.5": [
+      {
+        "alpha": 0.05,
+        "n": 8,
+        "rank": 9,
+        "finite": false,
+        "threshold": null,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.2,
+        "n": 8,
+        "rank": 8,
+        "finite": true,
+        "threshold": 99.60923111716008,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.4,
+        "n": 8,
+        "rank": 6,
+        "finite": true,
+        "threshold": 29.513218124734053,
+        "strict_calibration_exceedances": 2
+      }
+    ],
+    "cusum_two_sided_k0.5": [
+      {
+        "alpha": 0.05,
+        "n": 8,
+        "rank": 9,
+        "finite": false,
+        "threshold": null,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.2,
+        "n": 8,
+        "rank": 8,
+        "finite": true,
+        "threshold": 99.60923111716008,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.4,
+        "n": 8,
+        "rank": 6,
+        "finite": true,
+        "threshold": 29.513218124734053,
+        "strict_calibration_exceedances": 2
+      }
+    ],
+    "cusum_upper_k1.0": [
+      {
+        "alpha": 0.05,
+        "n": 8,
+        "rank": 9,
+        "finite": false,
+        "threshold": null,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.2,
+        "n": 8,
+        "rank": 8,
+        "finite": true,
+        "threshold": 8.743755472581967,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.4,
+        "n": 8,
+        "rank": 6,
+        "finite": true,
+        "threshold": 5.337847173075468,
+        "strict_calibration_exceedances": 2
+      }
+    ],
+    "cusum_lower_k1.0": [
+      {
+        "alpha": 0.05,
+        "n": 8,
+        "rank": 9,
+        "finite": false,
+        "threshold": null,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.2,
+        "n": 8,
+        "rank": 8,
+        "finite": true,
+        "threshold": 44.19934791180397,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.4,
+        "n": 8,
+        "rank": 6,
+        "finite": true,
+        "threshold": 18.560434922010998,
+        "strict_calibration_exceedances": 2
+      }
+    ],
+    "cusum_two_sided_k1.0": [
+      {
+        "alpha": 0.05,
+        "n": 8,
+        "rank": 9,
+        "finite": false,
+        "threshold": null,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.2,
+        "n": 8,
+        "rank": 8,
+        "finite": true,
+        "threshold": 44.19934791180397,
+        "strict_calibration_exceedances": 0
+      },
+      {
+        "alpha": 0.4,
+        "n": 8,
+        "rank": 6,
+        "finite": true,
+        "threshold": 18.560434922010998,
+        "strict_calibration_exceedances": 2
+      }
+    ]
+  },
+  "validation_scored_at_freeze": false,
+  "parameter_selection": "none"
+}

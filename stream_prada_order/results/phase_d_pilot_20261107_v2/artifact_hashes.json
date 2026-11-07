@@ -1,0 +1,12 @@
+{
+  "development_traces.json.gz": "6ecc56a2ff10baeb9e7baf96e43272ba6778ad04cede1682477056f1b42f0c95",
+  "distance_fit.json": "805c79422b7cb838462cb523f85762f990363d361c29819d195402e693cf97b6",
+  "input_provenance.json": "9abf9fa4573fc74c1ae54f6a269a2fbb81eea67098c5a21d4d9537033f723248",
+  "metadata.json": "06b82edc424d76fa2faf11c63d5dbf28687214b515e77e206fb73a9e0e607ef9",
+  "per_stream.csv.gz": "7cb0218a02f6902ef6e775346a78d00983400b53f5727a19108c73117a7cc8ea",
+  "phase_d_comparison.png": "dcdd814407fd427d13a2bfb13303409a05dfc8c038e94cd4a03a46614a12f5bb",
+  "preflight.json": "f81e1abe803f4ee0d3e4e9943a11b5ed1f520d45fe915505a1452787b14825f2",
+  "summary.json": "faeb30eac2a2aa4079dea7af63d8d6a0de939cb8bbe94aec8028ec7769045bd1",
+  "thresholds.json": "c1170049979609212691dbae5f0ffd921d9179cb26c79bf0233134cf8959256d",
+  "upstream_parity.json": "7c87b6f67005ccc36c793f0180678fbd9151b81053d993212b89c8168902ca90"
+}

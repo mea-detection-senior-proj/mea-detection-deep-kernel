@@ -1,0 +1,41 @@
+{
+  "phase": "D bounded sequential development pilot",
+  "baseline_commit": "c6cc77d1a7803ddc11e4331b61513bb6240204c6",
+  "preservation": "All pre-existing tracked files unchanged; Original PRADA and Phase C evaluation not modified or rerun.",
+  "attempts": {
+    "v1": "Pre-score provenance gate failure, zero data rows; frozen source snapshots retained.",
+    "v2": "Completed 285 numeric inputs, 10 candidates, 3 operating levels, 8190 rows."
+  },
+  "files": {
+    "stream_prada_order/PHASE_D_DESIGN_TH.md": "d8d1be4acd7301af0629da4fb5dbcb6ec556c7bbd1f874952bb4da5bf54ebcaf",
+    "stream_prada_order/PHASE_D_REPORT_TH.md": "4b9594ba7aad03bdf55ee4f1d0d8a02f06f11a501826016c6e07ea64d5dcd7e0",
+    "stream_prada_order/diagnostics/phase_d_verified/PHASE_D_TABLES.md": "7d6e8a404585453b092fa129ca1a4cf8b9d06b36314308fc8c1ec4aa3dea6568",
+    "stream_prada_order/diagnostics/phase_d_verified/artifact_hashes.json": "ca02711a7b66b21420fb0ca69534c835634d7e094966f0dc67c50d6b9c72c562",
+    "stream_prada_order/diagnostics/phase_d_verified/final_verification.json": "5013c5bd49c16b91931a9672ffed139234edb43a0e04d0cfdbb10cc8666e5186",
+    "stream_prada_order/diagnostics/phase_d_verified/phase_d_cohort_variability.png": "f230eef3064f083afe216b79463b82308147b027cb580c8196bdfaa302821d7a",
+    "stream_prada_order/diagnostics/phase_d_verified/verification.json": "d4d274322af72bb0e56478941825d2717799fee7a8eef369b72076d1398c4bf5",
+    "stream_prada_order/phase_d_audit.py": "ec35ee0a31c441ffe5050b7eb1752d314cf97e4230b057b1dfe5f5a788f1b734",
+    "stream_prada_order/phase_d_config_v1.json": "a36dec344550eddf5d8255681e8caa01f08640523f46d09e98acb75638908683",
+    "stream_prada_order/phase_d_pilot.py": "a904343b2453e8bebc3524f7b03fd188d9b96e511c2077652c339f5fad4f8926",
+    "stream_prada_order/results/phase_d_pilot_20261107_v1/PHASE_D_DESIGN_TH.md.frozen.txt": "f7c2ca9a8955254ac7a53426c3c52c8846c53b013301381a9dd66aba64e7e2fc",
+    "stream_prada_order/results/phase_d_pilot_20261107_v1/artifact_hashes.json": "72245877182f56891e9ee3239897bbf38af822c12bdd878d7abf018b6cfbf0a3",
+    "stream_prada_order/results/phase_d_pilot_20261107_v1/metadata.json": "cd545c2ee6623be8ae584f4fa18f67410938a7b3d17a02bbc518fdd5b54a0566",
+    "stream_prada_order/results/phase_d_pilot_20261107_v1/phase_d_config_v1.json.frozen.txt": "a36dec344550eddf5d8255681e8caa01f08640523f46d09e98acb75638908683",
+    "stream_prada_order/results/phase_d_pilot_20261107_v1/phase_d_pilot.py.frozen.txt": "152b4b25a41565d9f22687d2ba4a99ec30e182b58b7160eacd1c539ab7af696c",
+    "stream_prada_order/results/phase_d_pilot_20261107_v1/preflight.json": "fa0b367ed156ee2083346a7f31845a8e0c5198bf475afc69032068a4a7dd10fb",
+    "stream_prada_order/results/phase_d_pilot_20261107_v1/test_phase_d.py.frozen.txt": "6b41cc4724f19360fd228301802b08d91e5f352c6de38e7873803d59be2530ba",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/artifact_hashes.json": "b060ef02bc34aa39cd995dbd95add9369e9916a770a649b80e3ebf2679dc46ee",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/development_traces.json.gz": "6ecc56a2ff10baeb9e7baf96e43272ba6778ad04cede1682477056f1b42f0c95",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/distance_fit.json": "805c79422b7cb838462cb523f85762f990363d361c29819d195402e693cf97b6",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/input_provenance.json": "9abf9fa4573fc74c1ae54f6a269a2fbb81eea67098c5a21d4d9537033f723248",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/metadata.json": "06b82edc424d76fa2faf11c63d5dbf28687214b515e77e206fb73a9e0e607ef9",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/per_stream.csv.gz": "7cb0218a02f6902ef6e775346a78d00983400b53f5727a19108c73117a7cc8ea",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/phase_d_comparison.png": "dcdd814407fd427d13a2bfb13303409a05dfc8c038e94cd4a03a46614a12f5bb",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/preflight.json": "f81e1abe803f4ee0d3e4e9943a11b5ed1f520d45fe915505a1452787b14825f2",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/summary.json": "faeb30eac2a2aa4079dea7af63d8d6a0de939cb8bbe94aec8028ec7769045bd1",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/thresholds.json": "c1170049979609212691dbae5f0ffd921d9179cb26c79bf0233134cf8959256d",
+    "stream_prada_order/results/phase_d_pilot_20261107_v2/upstream_parity.json": "7c87b6f67005ccc36c793f0180678fbd9151b81053d993212b89c8168902ca90",
+    "stream_prada_order/tests/test_phase_d.py": "42d9a633b312303b1b5d6687dab307acdf1f56666c26a4ec8a9b3a78e681b31d",
+    "stream_prada_order/tests/test_phase_d_audit.py": "e52a2df9070260853fa34f6988fb16693a9e936b08d99a063f9f6e3b3b0bd5d3"
+  }
+}

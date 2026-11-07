@@ -1,0 +1,23 @@
+{
+  "frozen_sources": {
+    "stream_prada_order/phase_d_pilot.py": "a904343b2453e8bebc3524f7b03fd188d9b96e511c2077652c339f5fad4f8926",
+    "stream_prada_order/phase_d_config_v1.json": "a36dec344550eddf5d8255681e8caa01f08640523f46d09e98acb75638908683",
+    "stream_prada_order/PHASE_D_DESIGN_TH.md": "d8d1be4acd7301af0629da4fb5dbcb6ec556c7bbd1f874952bb4da5bf54ebcaf",
+    "stream_prada_order/tests/test_phase_d.py": "42d9a633b312303b1b5d6687dab307acdf1f56666c26a4ec8a9b3a78e681b31d"
+  },
+  "available_ram_bytes": 40109305856,
+  "minimum_ram_bytes": 1073741824,
+  "resource_gate_seconds": 120,
+  "encoder_runs": 0,
+  "gpu_required": false,
+  "python": "3.11.17",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "cpu": "Intel64 Family 6 Model 191 Stepping 2, GenuineIntel",
+  "main_sha": "5fb5e07d750a73a0a663a174433bab931ae7568a",
+  "head_before_run": "c6cc77d1a7803ddc11e4331b61513bb6240204c6",
+  "projected_statistic_seconds": 25.389275199908298,
+  "benchmark_p95": 0.04250089999986813,
+  "projection_covers": "285 all-candidate statistic paths; full attempt also bounded by deadline",
+  "passed": true
+}

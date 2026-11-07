@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "published_numeric_inputs": 285,
+  "reproduced_calibration_scores": 80,
+  "reproduced_validation_rows": 8190,
+  "candidates": 10,
+  "operating_levels": 3,
+  "fit_calibration_validation_outer_n": [
+    4,
+    8,
+    3
+  ],
+  "five_percent_finite_thresholds": 0,
+  "encoder_runs": 0,
+  "original_upstream_detector_reruns": 0,
+  "phase_c_evaluation_opened": false,
+  "audit_seconds": 11.574609100003727,
+  "source_sha256": "ec35ee0a31c441ffe5050b7eb1752d314cf97e4230b057b1dfe5f5a788f1b734",
+  "input_artifact_manifest_sha256": "b060ef02bc34aa39cd995dbd95add9369e9916a770a649b80e3ebf2679dc46ee"
+}

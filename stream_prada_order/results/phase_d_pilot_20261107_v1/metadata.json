@@ -1,0 +1,93 @@
+{
+  "status": "failed_hard_gate",
+  "reason": "ValueError: Frozen source drift: PRADA/prada_detector.py",
+  "seconds": 2.1270091000187676,
+  "rows": 0,
+  "config": {
+    "phase": "D bounded sequential development pilot v1",
+    "input_run": "stream_prada_order/results/phase_c_pilot_20261107_v1",
+    "phase_c_commit": "c6cc77d1a7803ddc11e4331b61513bb6240204c6",
+    "fit_cohorts": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "calibration_cohorts": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "validation_cohorts": [
+      12,
+      13,
+      14
+    ],
+    "prohibited_cohorts": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "permutations": 10,
+    "attack_counts": [
+      26,
+      64,
+      128
+    ],
+    "rolling_lengths": [
+      32,
+      64,
+      100
+    ],
+    "cusum_k": [
+      0.5,
+      1.0
+    ],
+    "cusum_sides": [
+      "upper",
+      "lower",
+      "two_sided"
+    ],
+    "sigma_floor": 0.01,
+    "first_test_query": 102,
+    "prefix_length": 110,
+    "stream_length": 256,
+    "alphas": [
+      0.05,
+      0.2,
+      0.4
+    ],
+    "calibration_method": "ceil((n+1)*(1-alpha)); augmented infinity; strict crossing",
+    "resource_gate_seconds": 120,
+    "resource_safety_factor": 2,
+    "minimum_available_ram_bytes": 1073741824,
+    "parity_w_tolerance": 2e-05,
+    "selection": "none; report all candidates; no evaluation or retuning"
+  },
+  "frozen_sources": {
+    "stream_prada_order/phase_d_pilot.py": "152b4b25a41565d9f22687d2ba4a99ec30e182b58b7160eacd1c539ab7af696c",
+    "stream_prada_order/phase_d_config_v1.json": "a36dec344550eddf5d8255681e8caa01f08640523f46d09e98acb75638908683",
+    "stream_prada_order/PHASE_D_DESIGN_TH.md": "f7c2ca9a8955254ac7a53426c3c52c8846c53b013301381a9dd66aba64e7e2fc",
+    "stream_prada_order/tests/test_phase_d.py": "6b41cc4724f19360fd228301802b08d91e5f352c6de38e7873803d59be2530ba"
+  },
+  "frozen_sources_unchanged": true,
+  "prior_tracked_files_unchanged": true,
+  "main_unchanged": true,
+  "process_peak_working_set_bytes": 102019072,
+  "encoder_runs": 0,
+  "upstream_detector_reruns": 0,
+  "new_sequential_statistics_evaluated": true,
+  "phase_c_evaluation_used": false,
+  "pushed": false,
+  "new_detector_is_experimental": true
+}

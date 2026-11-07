@@ -1,0 +1,6 @@
+{
+  "traces": 285,
+  "max_w_abs_error": 0.0,
+  "passed": true,
+  "scope": "Recompute cumulative W from hashed saved BGE distance paths; upstream encoder/Growing Set inherited unchanged."
+}
