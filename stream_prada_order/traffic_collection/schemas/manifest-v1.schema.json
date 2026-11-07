@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:stream-prada:traffic:manifest-v1.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "traffic-manifest-v1"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+    },
+    "traffic_kind": {
+      "enum": [
+        "mock",
+        "real"
+      ]
+    },
+    "label": {
+      "enum": [
+        "benign",
+        "attack"
+      ]
+    },
+    "collector_revision": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "protocol_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "actor_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source_group_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "victim": {
+      "type": "object",
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_./-]{1,160}$"
+        },
+        "model_revision": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "tokenizer_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_./-]{1,160}$"
+        },
+        "tokenizer_revision": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        }
+      },
+      "required": [
+        "model_id",
+        "model_revision",
+        "tokenizer_id",
+        "tokenizer_revision"
+      ],
+      "additionalProperties": false
+    },
+    "authorization": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+        },
+        "evidence_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "record_id",
+        "evidence_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+          },
+          "content_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "license_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+          },
+          "provenance_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "document_id",
+          "content_sha256",
+          "license_id",
+          "provenance_sha256"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "task_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "split": {
+      "enum": [
+        "fit",
+        "calibration",
+        "validation",
+        "final_test",
+        "development"
+      ]
+    },
+    "acquisition": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "method_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}$"
+            },
+            "code_revision": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$"
+            },
+            "configuration_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "lineage_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "query_pool_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "response_dependent": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "method_id",
+            "code_revision",
+            "configuration_sha256",
+            "lineage_sha256",
+            "query_pool_sha256",
+            "response_dependent"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "budget": {
+      "type": "object",
+      "properties": {
+        "max_requests": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_attempts": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_attempts_per_request": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "max_session_attempts": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_query_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1048576
+        },
+        "max_response_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1048576
+        },
+        "max_logical_storage_bytes": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "max_requests",
+        "max_attempts",
+        "max_attempts_per_request",
+        "max_session_attempts",
+        "max_query_bytes",
+        "max_response_bytes",
+        "max_logical_storage_bytes"
+      ],
+      "additionalProperties": false
+    },
+    "retry_policy": {
+      "const": "not_sent_only"
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "traffic_kind",
+    "label",
+    "collector_revision",
+    "protocol_sha256",
+    "actor_sha256",
+    "source_group_sha256",
+    "victim",
+    "authorization",
+    "sources",
+    "task_ids",
+    "split",
+    "acquisition",
+    "budget",
+    "retry_policy"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,3 @@
+# Private event databases, content blobs, approvals and credentials stay local.
+*
+!.gitignore

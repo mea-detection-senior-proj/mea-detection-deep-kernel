@@ -1,0 +1,43 @@
+{
+  "schema_version": "traffic-manifest-v1",
+  "run_id": "run1",
+  "traffic_kind": "mock",
+  "label": "benign",
+  "collector_revision": "1111111111111111111111111111111111111111",
+  "protocol_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+  "actor_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+  "source_group_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+  "victim": {
+    "model_id": "mock-victim",
+    "model_revision": "2222222222222222222222222222222222222222",
+    "tokenizer_id": "mock-tokenizer",
+    "tokenizer_revision": "3333333333333333333333333333333333333333"
+  },
+  "authorization": {
+    "record_id": "test-only",
+    "evidence_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+  },
+  "sources": [
+    {
+      "document_id": "doc1",
+      "content_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+      "license_id": "numeric-fixture-only",
+      "provenance_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+    }
+  ],
+  "task_ids": [
+    "task1"
+  ],
+  "split": "development",
+  "acquisition": null,
+  "budget": {
+    "max_requests": 300,
+    "max_attempts": 310,
+    "max_attempts_per_request": 2,
+    "max_session_attempts": 300,
+    "max_query_bytes": 4096,
+    "max_response_bytes": 4096,
+    "max_logical_storage_bytes": 8388608
+  },
+  "retry_policy": "not_sent_only"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "phase-g-final-checks-v1",
+  "status": "passed",
+  "branch": "experiment/stream-prada-order",
+  "base_head": "3683a0213de0a825620c0524fece7f488724e70e",
+  "main_sha": "5fb5e07d750a73a0a663a174433bab931ae7568a",
+  "prior_tracked_git_diff_empty": true,
+  "latest_frozen_source_hashes_match": true,
+  "all_historical_receipt_artifact_hashes_match": true,
+  "receipt_hashes": {
+    "1": "95af129fdd6b68d402d46a44e7aa685ef9ab0e7253d6aaf9319b9b2d8d23b15c",
+    "2": "2a648721e52231ffc3935df0648791c7120c1a47a661f4d6a31072793b1f5714",
+    "3": "21db1d5d201fc7b9d6bbddcd0ab3b20a9ea8387157c16eee29efceab9282d1bb"
+  },
+  "new_markdown_local_links_checked": 10,
+  "new_files_are_utf8_lf": true,
+  "private_store_files_in_new_git_paths": 0,
+  "private_stores_scanned": false,
+  "latest_test_verification_sha256": "ae2a95a6dcfbe00221ec6880c3d9c287f3bc20569b5b065c96513c5bc3b83c55",
+  "scope": "Final source/evidence/Git path checks only; no victim, data acquisition, models or new experiment."
+}

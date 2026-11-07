@@ -1,0 +1,15 @@
+{
+  "identity": {
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "tokenizer_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+  },
+  "execution_enabled": false,
+  "local_files_only": true,
+  "trust_remote_code": false,
+  "batch_size": 1,
+  "max_input_tokens": 2048,
+  "max_new_tokens": 128,
+  "runtime_bridge_implemented": false
+}
