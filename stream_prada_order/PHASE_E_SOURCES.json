@@ -1,0 +1,42 @@
+{
+  "checked_on_client_date": "2026-11-07",
+  "scope": "Primary public cards, documentation and license pages only; no dataset files downloaded or agreements accepted",
+  "sources": [
+    {
+      "name": "WildChat-1M",
+      "url": "https://huggingface.co/datasets/allenai/WildChat-1M",
+      "license": "ODC-BY; individual content rights require separate consideration",
+      "access": "Public card; full toxic variant requires approval; no file access performed",
+      "provenance": "Conversation/turn identifiers, timestamps, hashed-IP metadata; conversation_hash is not unique",
+      "unknown": "Independent natural-session counts, benign intent labels, exposure overlap and common support"
+    },
+    {
+      "name": "ODC-BY 1.0",
+      "url": "https://opendatacommons.org/licenses/by/1-0/",
+      "finding": "Database attribution license; individual contents and other rights are not all covered"
+    },
+    {
+      "name": "LMSYS-Chat-1M",
+      "url": "https://huggingface.co/datasets/lmsys/lmsys-chat-1m",
+      "license": "Custom dataset agreement, prohibited transfers, model-specific output terms, non-identification",
+      "access": "Login, HF information sharing and agreement acceptance required; not accepted",
+      "provenance": "Conversation IDs/model/language; short conversations and no decontamination stated by card",
+      "unknown": "Reliable independent-user grouping and sufficient natural long sessions"
+    },
+    {
+      "name": "MEA-Bench",
+      "url": "https://github.com/sliu11-byte/MEA-Bench",
+      "license_url": "https://github.com/sliu11-byte/MEA-Bench#license",
+      "license": "Original code/docs MIT; upstream data/model licenses retained",
+      "access": "Public repository; execution/model endpoints may require separate credentials/model access",
+      "role": "Candidate extraction implementations and manifest/provenance schema, not a verified independent traffic cohort"
+    },
+    {
+      "name": "MEA-Bench query pool",
+      "url": "https://huggingface.co/datasets/watermarkproject/lord-mea-benchmark",
+      "license": "Blanket query-data license not established by inspected card",
+      "access": "Public according to upstream README; viewer schema error observed; no data files downloaded",
+      "unknown": "Exact source terms, chronology, run independence, response adaptivity and overlap with prior datasets"
+    }
+  ]
+}

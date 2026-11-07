@@ -1,0 +1,71 @@
+{
+  "data_and_lookup": {
+    "processed_files": {
+      "model_leeching/normal": {
+        "sha256": "2c7b6377db11481d0708607a972b94d8aa0ad0fc16d7c842881773fd4fc7fb77",
+        "bytes": 1243911
+      },
+      "model_leeching/attacker": {
+        "sha256": "ac90d6f69cadfa5c960f35bb71ad909983842939adfb5dcbc9f327ca13bbb942",
+        "bytes": 13149047
+      },
+      "ME_BERT_boolq_wiki/normal": {
+        "sha256": "276ea0cbb06f1992f5877aa727f3e7f421984536201347cb278b7be94c6e95a4",
+        "bytes": 6835026
+      },
+      "ME_BERT_boolq_wiki/attacker": {
+        "sha256": "f29c09558fac9c083ac06dab10ac853bae164107ea369a99c45995454cd8b759",
+        "bytes": 1650640
+      }
+    },
+    "official_lookup_files": {
+      "squad_train_v1.1.json": {
+        "url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json",
+        "sha256": "3527663986b8295af4f7fcdff1ba1ff3f72d07d61a20f487cb238a6ef92fd955",
+        "bytes": 30288272
+      },
+      "squad_dev_v1.1.json": {
+        "url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json",
+        "sha256": "95aa6a52d5d6a735563366753ca50492a658031da74f301ac5238b03966972c9",
+        "bytes": 4854279
+      }
+    },
+    "row_audit": {
+      "model_leeching/normal": {
+        "rows": 10062,
+        "unique_texts": 9900,
+        "unique_ids": 9962,
+        "article_mapped_rows": 10062,
+        "distinct_mapped_titles": 30
+      },
+      "model_leeching/attacker": {
+        "rows": 10062,
+        "unique_texts": 9923,
+        "unique_ids": 9962,
+        "article_mapped_rows": 10062,
+        "distinct_mapped_titles": 30
+      },
+      "ME_BERT_boolq_wiki/normal": {
+        "rows": 9427,
+        "unique_texts": 9427,
+        "unique_ids": 9427,
+        "article_mapped_rows": 4,
+        "distinct_mapped_titles": 4
+      },
+      "ME_BERT_boolq_wiki/attacker": {
+        "rows": 1885,
+        "unique_texts": 1885,
+        "unique_ids": 1885,
+        "article_mapped_rows": 2,
+        "distinct_mapped_titles": 2
+      }
+    },
+    "boolq_original_title_lookup": "Original Google bucket train.jsonl returned HTTP 403; no title guesses. Exact passage matches to official SQuAD only are eligible for article mapping."
+  },
+  "selected_growth_log_hashes": {
+    "full_traces_calibration.jsonl.gz": "3c52be746ed238ffd52821a1c87c9c93a67511a09e444ae9c55fb86767c9cdd6",
+    "full_traces_validation.jsonl.gz": "3ec5debc3d045c613de54952f4d87ff56fc1008c4caa5efcc831cb28736e6e5c"
+  },
+  "phase_d_manifest_sha256": "b060ef02bc34aa39cd995dbd95add9369e9916a770a649b80e3ebf2679dc46ee",
+  "phase_c_evaluation_opened": false
+}

@@ -1,0 +1,15 @@
+{
+  "associations.json": "30aa9df2113b19a28697f0b2fc97bd206a4cd010d501d574ad2ab6122db9e42c",
+  "fit_parameters.json": "1195331d7a693bf3333a818c011adfc7d099cd02d8881e01b0a22689286b07e0",
+  "growth_paths.json.gz": "da7ae0b8ec7119bf6dc6adfaf6c477100c8e4fc05d24bccd0a7e0caf4dc15e15",
+  "input_provenance.json": "02b540934f90e6989264128f2644dfff133fdb3d8d935fb817a3e4e3db7d3247",
+  "length_distance_growth_paths.png": "8c3280c26bde43ef11f76d4094ba7f495e851c1a19c589c04028c1ae8a683f97",
+  "metadata.json": "9b264481502609df968dd438eed755578bb2fa62de4d231107629d3a69c692b8",
+  "per_stream.csv.gz": "1b9106780073e95afe4d5771102457d24e0476acd20b5164d8d2a6dc8a16b4be",
+  "phase_d_parity.json": "38105c82c1b4cf232bc64a0fe94d0b2e191ad2cab8efa864ad4479709ef87bcc",
+  "preflight.json": "f76047edcb07bbe31fcccee3c5df1e473b6e0954f9f3ffba22f91a13cb24a2f2",
+  "query_metadata.json.gz": "583f85bc25f529fdcfda88217d98b6d9b3244a64b27725df56f1a0344d9f6beb",
+  "shortcut_controls.png": "7b289bccc8927e94297b651f5c18e37817669ba3c81e0597b91a54620efb5c93",
+  "summary.json.gz": "640c7893c3ea218ce1bd3971714865377257a40e963558b8fe2d91d36c4a8a51",
+  "thresholds.json": "0640394cb1f39c7aea2511595690f689735e7ea4e37884a58eac037f7fba7d23"
+}

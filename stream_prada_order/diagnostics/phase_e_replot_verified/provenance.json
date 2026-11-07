@@ -1,0 +1,13 @@
+{
+  "source_sha256": "c8ea5565c088351b564380b67f81ebd3cc757b614237871b9df10d3055a555de",
+  "plot_source_sha256": "12238cb77f54db20087a2a784aba0a7833b717bb0b50ab30bfbc08234133afce",
+  "input_artifact_manifest_sha256": "bfb19dc1132f0c7806476c556a230f048a22171b1eb9ac2df7fabeaabb08336f",
+  "seconds": 3.881355599995004,
+  "raw_queries_required": false,
+  "encoder_runs": 0,
+  "audit_status": "passed",
+  "matches_original_bytes": {
+    "length_distance_growth_paths.png": true,
+    "shortcut_controls.png": true
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "status": "completed_bounded_shortcut_analysis",
+  "reason": null,
+  "seconds": 7.023887299990747,
+  "rows": 13923,
+  "config": {
+    "phase": "E bounded development shortcut analysis v1",
+    "phase_d_commit": "00de6e6320d9e5797e0e5f917f9cb1ac456dc5f1",
+    "phase_d_run": "stream_prada_order/results/phase_d_pilot_20261107_v2",
+    "fit_cohorts": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "calibration_cohorts": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "development_cohorts": [
+      12,
+      13,
+      14
+    ],
+    "cusum_k": [
+      0.5,
+      1.0
+    ],
+    "alphas": [
+      0.05,
+      0.2,
+      0.4
+    ],
+    "sigma_floor": 0.01,
+    "length_bins": [
+      0,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "suffix_shuffles": [
+      17,
+      29
+    ],
+    "permutations": 10,
+    "stream_length": 256,
+    "prefix_length": 110,
+    "resource_gate_seconds": 120,
+    "minimum_available_ram_bytes": 1073741824,
+    "selection": "none; all prior data are development; no Phase C evaluation scoring"
+  },
+  "frozen_sources": {
+    "stream_prada_order/phase_e_analysis.py": "e80cbc05ffdefff7c4a6f19a448fda445dce5244f2065ee6860a407530abaff1",
+    "stream_prada_order/phase_e_config_v1.json": "cea73900c295febd5a0e08465932e09ccdcdb44af235d8d855f6fc0277bed749",
+    "stream_prada_order/PHASE_E_PROTOCOL_TH.md": "d629f08169cabc2b3c3bbc33ca6e41c1579b4592ae510800a507c62037756afa",
+    "stream_prada_order/tests/test_phase_e.py": "c08804cd4509861004475831fd9f6ec9951209c842faf7d3bf085d4fe9383c35",
+    "stream_prada_order/phase_e_plots.py": "12238cb77f54db20087a2a784aba0a7833b717bb0b50ab30bfbc08234133afce"
+  },
+  "prior_tracked_files_unchanged": true,
+  "frozen_sources_unchanged": true,
+  "main_unchanged": true,
+  "process_peak_working_set_bytes": 250785792,
+  "encoder_runs": 0,
+  "victim_calls": 0,
+  "upstream_detector_reruns": 0,
+  "phase_c_evaluation_used": false,
+  "new_data_downloaded": false,
+  "pushed": false
+}

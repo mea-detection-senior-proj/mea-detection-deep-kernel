@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "traces_reproduced": 285,
+  "query_metadata_rows": 4224,
+  "calibration_scores_reproduced": 136,
+  "validation_rows_reproduced": 13923,
+  "candidates": 17,
+  "operating_levels": 3,
+  "outer_development_cohorts": 3,
+  "growth_paths_checked": 285,
+  "phase_d_parity_rows": 2457,
+  "association_and_common_support_reproduced": true,
+  "encoder_runs": 0,
+  "victim_calls": 0,
+  "upstream_detector_reruns": 0,
+  "raw_queries_required_for_audit": false,
+  "phase_c_evaluation_opened": false,
+  "audit_seconds": 2.397101599985035,
+  "source_sha256": "265aab5d9a86b976ac72640f5fbaa03b957d796a029e53a70f5213638b9f8acc",
+  "input_artifact_manifest_sha256": "bfb19dc1132f0c7806476c556a230f048a22171b1eb9ac2df7fabeaabb08336f"
+}
