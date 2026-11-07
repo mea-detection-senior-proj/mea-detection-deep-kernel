@@ -1,0 +1,38 @@
+{
+  "proofs": {
+    "benign": {
+      "lower": 23,
+      "upper": 23,
+      "solver_status": 2,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "seconds": 0.01815109999733977,
+      "dominant_groups_fixed_to_single_cohorts": 16,
+      "remaining_groups": 14,
+      "status": "optimal_certified"
+    },
+    "pure_attack": {
+      "lower": 23,
+      "upper": 23,
+      "solver_status": 2,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "seconds": 0.01228979998268187,
+      "dominant_groups_fixed_to_single_cohorts": 16,
+      "remaining_groups": 14,
+      "status": "optimal_certified"
+    },
+    "paired_control_mixed": {
+      "lower": 23,
+      "upper": 23,
+      "solver_status": 2,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "seconds": 0.009783199988305569,
+      "dominant_groups_fixed_to_single_cohorts": 16,
+      "remaining_groups": 14,
+      "status": "optimal_certified"
+    }
+  },
+  "source_sha256": "7e8d512c8fcd0fd1f78ded8c3a83c514b44a987acf9d1432a0b68a42803777e6",
+  "input_groups_sha256": "badae7fdf9538ceace5556d9ee5e9e90cdd8368fba0fedbc474c5d903a630165",
+  "detector_runs": 0,
+  "encoder_runs": 0
+}

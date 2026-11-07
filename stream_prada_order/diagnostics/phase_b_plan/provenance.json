@@ -1,0 +1,7 @@
+{
+  "source_sha256": "9ed5077e4e15b535f046c36f5884e4908665ab4236e6b0eb63723e2ef45ba67f",
+  "input_groups_sha256": "badae7fdf9538ceace5556d9ee5e9e90cdd8368fba0fedbc474c5d903a630165",
+  "encoder_runs": 0,
+  "detector_runs": 0,
+  "note": "These are feasibility certificates, not detector results or final experiment configurations."
+}

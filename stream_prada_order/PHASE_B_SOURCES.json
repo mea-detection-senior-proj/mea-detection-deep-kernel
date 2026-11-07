@@ -1,0 +1,53 @@
+{
+  "verified_as_of_client_date": "2026-11-07",
+  "sources": [
+    {
+      "name": "Processed MMD MEA artifact (current two datasets)",
+      "url": "https://huggingface.co/datasets/ShuzeLiu11/mmd-llm-mea-detection-data",
+      "known_local_artifact_revision": "7f96e886b424cc8cd384190f65c0cf0c6ea90d94",
+      "license_status": "Card labels it mixed-source-research-artifact; source datasets retain their own licenses. Code MIT is not a dataset license.",
+      "role": "Already available processed query pools; exact local file hashes are in Phase B provenance."
+    },
+    {
+      "name": "Official SQuAD 1.1 source lookup and possible expansion",
+      "url": "https://rajpurkar.github.io/SQuAD-explorer/",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "role": "Official question IDs, contexts and article titles; train/dev JSON downloaded solely to a cache outside Git for provenance matching. Additional questions are QA proxies, not newly observed API traces or automatically new attacks."
+    },
+    {
+      "name": "Official BoolQ",
+      "url": "https://github.com/google-research-datasets/boolean-questions",
+      "readme_blob": "b0e32f57faec237c573000cea99fef4241c1c350",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "metadata_access_status": "Official train.jsonl bucket returned HTTP 403. Original title mapping remains incomplete. No guessed article IDs."
+    },
+    {
+      "name": "WikiText source family for the wiki attack artifact",
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext",
+      "license_status": "Card header says CC BY-SA 3.0 and GFDL; narrative licensing section links CC BY-SA 4.0. Resolve exact release/license notices before a new redistribution or derivative release.",
+      "provenance_status": "Exact source-row/article mapping for all 1885 processed attack prompts is not supplied in local JSONL. WikiText corpus was not downloaded."
+    },
+    {
+      "name": "WildChat-1M",
+      "url": "https://huggingface.co/datasets/allenai/WildChat-1M",
+      "license": "ODC-BY 1.0 (dataset card)",
+      "license_url": "https://opendatacommons.org/licenses/by/1-0/",
+      "role": "Candidate real user LLM conversations for future benign-session cohorts; user/time/content de-duplication and label audit still needed. Database license does not itself resolve every content right. No data downloaded."
+    },
+    {
+      "name": "MEA-Bench and its query-pool artifact",
+      "url": "https://github.com/sliu11-byte/MEA-Bench",
+      "data_url": "https://huggingface.co/datasets/watermarkproject/lord-mea-benchmark",
+      "license_status": "Repository original code/documentation MIT; third-party datasets retain upstream terms. Data card did not establish a blanket query-pool license.",
+      "role": "Candidate larger recorded/generated attack-query pools with manifests. Source independence, derivation and data license remain unaudited; not counted as available cohorts. No data downloaded."
+    },
+    {
+      "name": "LMSYS-Chat-1M",
+      "url": "https://huggingface.co/datasets/lmsys/lmsys-chat-1m",
+      "license_status": "Custom LMSYS-Chat-1M Dataset License Agreement, including transfer/redistribution restrictions and model-specific output terms.",
+      "role": "Alternative real LLM conversation source with stronger distribution restrictions; conversation IDs are not proof of independent users. No data downloaded or agreement accepted."
+    }
+  ]
+}

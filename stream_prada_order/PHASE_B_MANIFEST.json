@@ -1,0 +1,32 @@
+{
+  "baseline_commit": "5d9e8591e0c8177f102dbb57327c73abac360120",
+  "client_date": "2026-11-07",
+  "files_sha256": {
+    "stream_prada_order/PHASE_B_FEASIBILITY_TH.md": "a9bb5bdfed4718e9213a920ce507afbb59503afea5041ba45a899541132a4b57",
+    "stream_prada_order/PHASE_B_SOURCES.json": "afd231bc33b1691992f48a3d8dc28e24450e30401c9eabfa7666899da71b419e",
+    "stream_prada_order/PHASE_C_PLAN_TH.md": "eec33829add2aed78e4c7615ae3fae4bf5966fe7f2a920844ed83000d8425bb3",
+    "stream_prada_order/diagnostics/phase_b/failure.json": "769bc7c072b58f3be02bba154f259c75f41579215e32ececafa5684e2c01c59f",
+    "stream_prada_order/diagnostics/phase_b_plan/artifact_hashes.json": "46c4d67999a8d7d2854cc7ae57b23dd054a20f49156aa2c8e49c63c1ff7aa997",
+    "stream_prada_order/diagnostics/phase_b_plan/capacity_uncertainty.png": "a32330436d95ce98a7c6335c6a2367e03fe9bcd945c0e7c3646849b92e9fbd39",
+    "stream_prada_order/diagnostics/phase_b_plan/proposed_allocations.json": "88d07da72eaa9c61bb099d2d59b507e353a7e4e662e768f995b129b27555c523",
+    "stream_prada_order/diagnostics/phase_b_plan/proposed_article_model_leeching_12_3_8.json.gz": "25970769c8e5128aa974ae00eae723ec56ffe984169a7499f38ca0ee49649b53",
+    "stream_prada_order/diagnostics/phase_b_plan/proposed_passage_ME_BERT_boolq_wiki_20_4_10.json.gz": "26af167700e804be5f19542681e0b73de9d3ebac34537fd6ddca389c27e7a1c1",
+    "stream_prada_order/diagnostics/phase_b_plan/proposed_passage_model_leeching_20_4_14.json.gz": "2f1f093d27fa57a04fc3ec3f5d4058ce30979b7cb3b15a14f60c806811bb4659",
+    "stream_prada_order/diagnostics/phase_b_plan/provenance.json": "91a4156e5915b9ef11dd6f4a0dd4807f6c475e9f29ec7389034b69745b294153",
+    "stream_prada_order/diagnostics/phase_b_plan/verification.json": "0d5bb9b10ba651be52bf8a6cdeb32f2c878939a7f92a93b02b8dd4b3b3142958",
+    "stream_prada_order/diagnostics/phase_b_verified/.gitignore": "b6c9d2ddc6b96e8b7d1d839dd94d9cbe2db7c56b9e7d37c5286ff49728f9569a",
+    "stream_prada_order/diagnostics/phase_b_verified/allocation_scenarios.json": "9ec9a8f416b3b122622f2f985bb10fb368e7c813c851189184cbf080195b40a9",
+    "stream_prada_order/diagnostics/phase_b_verified/article_optimality.json": "01b185c5773492ec7aec0d97edf7aa7ae16532d8d01e3f0b588bf7e2be5c9a5c",
+    "stream_prada_order/diagnostics/phase_b_verified/artifact_hashes.json": "c23a309a8a9e22594d9e257f8d69f69538efd2d92216db95cd87f973a595e339",
+    "stream_prada_order/diagnostics/phase_b_verified/capacity.json": "becc49bd1c9848a7930a8ef232b3e20e5acb2b32b9d9187446791f74628ce088",
+    "stream_prada_order/diagnostics/phase_b_verified/provenance.json": "f35129e43e7c6b06a9fda24863403210ff6753b116bc31b0e3b09f527e054bbc",
+    "stream_prada_order/diagnostics/phase_b_verified/source_overlap.json": "ec010eb44d0bbdfd01579c31dbf002426c880fcf85f723e500775f48b50db7a5",
+    "stream_prada_order/diagnostics/phase_b_verified/uncertainty.json": "7e9382b777ace0ed0ebcf3959aff5a7d244b12231c511b9ac13903e40444bfce",
+    "stream_prada_order/phase_b_feasibility.py": "890829431db208d9c6282f64df29bc9d540df01824b3929ce1248d73ec94dfa4",
+    "stream_prada_order/phase_b_optimality.py": "7e8d512c8fcd0fd1f78ded8c3a83c514b44a987acf9d1432a0b68a42803777e6",
+    "stream_prada_order/phase_b_plan.py": "9ed5077e4e15b535f046c36f5884e4908665ab4236e6b0eb63723e2ef45ba67f",
+    "stream_prada_order/tests/test_phase_b_feasibility.py": "6de4c0a32cebdef6cd719573e6a53bc36f542b91b04ddff3bba2cd1cebd846c1",
+    "stream_prada_order/tests/test_phase_b_optimality.py": "2e935596d2b7fc0f1ae73751e023138c08c6cf673227103c939ed98a4f4dce08"
+  },
+  "note": "Only compact selected certificates and summaries are tracked. Full counterfactual certificates/group indexes remain local, reproducible and ignored. No raw datasets/weights/caches."
+}

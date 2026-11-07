@@ -1,0 +1,12 @@
+{
+  "model_article_titles": 30,
+  "phase_a_calibration_titles": 29,
+  "phase_a_test_titles": 30,
+  "phase_a_calibration_test_shared_titles": 29,
+  "phase_a_exposed_titles_union": 30,
+  "components_with_both_datasets": {
+    "passage": 0,
+    "article": 0
+  },
+  "unmapped_boolq_articles_are_not_certified_disjoint": true
+}

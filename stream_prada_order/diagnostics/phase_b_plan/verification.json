@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "tests_total": 27,
+  "tests_new": 9,
+  "tests_existing": 18,
+  "artifact_hashes_checked": 45,
+  "all_generated_certificates_validated": true,
+  "proposed_split_certificates_checked": 3,
+  "article_capacity_optimum": 23,
+  "encoder_runs": 0,
+  "detector_runs": 0,
+  "existing_tracked_files_modified": 0,
+  "original_processed_input_hashes_unchanged": true,
+  "prior_exposure_evidence": {
+    "PHASE2B_REPORT.md": {
+      "sha256": "ed2a4772124864cdef4c7a239a38dcf1d33cd34ce9211f21dee399b0b28d8556",
+      "dataset_exposure_verified_live": true
+    },
+    "PHASE6A_REPORT.md": {
+      "sha256": "0d66e04a9438db442e8ab4360778849f28df7a60b1ef22f4fb616ca9714b215f",
+      "dataset_exposure_verified_live": true
+    }
+  },
+  "main_sha": "5fb5e07d750a73a0a663a174433bab931ae7568a",
+  "pushed": false
+}

@@ -1,0 +1,3 @@
+# Counterfactual full certificates/group index are reproducible local artifacts.
+# Commit summary/proof hashes here and the three selected plans in phase_b_plan/.
+*.json.gz

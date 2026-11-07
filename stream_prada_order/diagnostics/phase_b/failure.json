@@ -1,0 +1,8 @@
+{
+  "status": "failed_before_capacity_analysis",
+  "reason": "Initial source parser stripped every edge quote instead of exactly the outer prompt wrapper; original passages with terminal quotation marks then mismatched official SQuAD.",
+  "affected_raw_attack_rows": 543,
+  "action": "Fixed the analysis-only parser with a failing regression test; retained the failed attempt and use phase_b_verified for the capacity audit.",
+  "detector_changes": 0,
+  "detector_runs": 0
+}

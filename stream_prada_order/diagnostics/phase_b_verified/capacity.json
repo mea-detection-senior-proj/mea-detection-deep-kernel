@@ -1,0 +1,222 @@
+[
+  {
+    "dataset": "model_leeching",
+    "grouping": "passage",
+    "global_groups": 1847,
+    "eligible_groups": 1847,
+    "unique_benign": 9900,
+    "unique_attack": 9923,
+    "groups_exposed_phase_a": 708,
+    "phase_a_unexposed_groups": 1139,
+    "ambiguous_query_hashes_removed_globally": 0,
+    "cases": {
+      "benign": {
+        "constructed": 38,
+        "capacity_upper_bound": 38,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 0,
+        "certificate": "cohorts_passage_model_leeching_benign.json.gz"
+      },
+      "pure_attack": {
+        "constructed": 38,
+        "capacity_upper_bound": 38,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 0,
+        "required_attack": 256,
+        "certificate": "cohorts_passage_model_leeching_pure_attack.json.gz"
+      },
+      "paired_control_mixed": {
+        "constructed": 38,
+        "capacity_upper_bound": 38,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 128,
+        "certificate": "cohorts_passage_model_leeching_paired_control_mixed.json.gz"
+      }
+    },
+    "phase_a_unexposed_only": {
+      "benign": {
+        "constructed": 23,
+        "capacity_upper_bound": 23,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 0,
+        "certificate": "unexposed_passage_model_leeching_benign.json.gz"
+      },
+      "paired": {
+        "constructed": 23,
+        "capacity_upper_bound": 23,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 128,
+        "certificate": "unexposed_passage_model_leeching_paired.json.gz"
+      }
+    }
+  },
+  {
+    "dataset": "ME_BERT_boolq_wiki",
+    "grouping": "passage",
+    "global_groups": 9805,
+    "eligible_groups": 9805,
+    "unique_benign": 9427,
+    "unique_attack": 1885,
+    "groups_exposed_phase_a": 0,
+    "phase_a_unexposed_groups": 9805,
+    "ambiguous_query_hashes_removed_globally": 0,
+    "cases": {
+      "benign": {
+        "constructed": 36,
+        "capacity_upper_bound": 36,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 0,
+        "certificate": "cohorts_passage_ME_BERT_boolq_wiki_benign.json.gz"
+      },
+      "pure_attack": {
+        "constructed": 7,
+        "capacity_upper_bound": 7,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 0,
+        "required_attack": 256,
+        "certificate": "cohorts_passage_ME_BERT_boolq_wiki_pure_attack.json.gz"
+      },
+      "paired_control_mixed": {
+        "constructed": 14,
+        "capacity_upper_bound": 14,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 128,
+        "certificate": "cohorts_passage_ME_BERT_boolq_wiki_paired_control_mixed.json.gz"
+      }
+    },
+    "phase_a_unexposed_only": {
+      "benign": {
+        "constructed": 36,
+        "capacity_upper_bound": 36,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 0,
+        "certificate": "unexposed_passage_ME_BERT_boolq_wiki_benign.json.gz"
+      },
+      "paired": {
+        "constructed": 14,
+        "capacity_upper_bound": 14,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 128,
+        "certificate": "unexposed_passage_ME_BERT_boolq_wiki_paired.json.gz"
+      }
+    }
+  },
+  {
+    "dataset": "model_leeching",
+    "grouping": "article",
+    "global_groups": 30,
+    "eligible_groups": 30,
+    "unique_benign": 9900,
+    "unique_attack": 9923,
+    "groups_exposed_phase_a": 30,
+    "phase_a_unexposed_groups": 0,
+    "ambiguous_query_hashes_removed_globally": 0,
+    "cases": {
+      "benign": {
+        "constructed": 23,
+        "capacity_upper_bound": 24,
+        "optimality": "constructive_lower_bound_only",
+        "required_benign": 256,
+        "required_attack": 0,
+        "certificate": "cohorts_article_model_leeching_benign.json.gz"
+      },
+      "pure_attack": {
+        "constructed": 23,
+        "capacity_upper_bound": 24,
+        "optimality": "constructive_lower_bound_only",
+        "required_benign": 0,
+        "required_attack": 256,
+        "certificate": "cohorts_article_model_leeching_pure_attack.json.gz"
+      },
+      "paired_control_mixed": {
+        "constructed": 23,
+        "capacity_upper_bound": 24,
+        "optimality": "constructive_lower_bound_only",
+        "required_benign": 256,
+        "required_attack": 128,
+        "certificate": "cohorts_article_model_leeching_paired_control_mixed.json.gz"
+      }
+    },
+    "phase_a_unexposed_only": {
+      "benign": {
+        "constructed": 0,
+        "capacity_upper_bound": 0,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 0,
+        "certificate": "unexposed_article_model_leeching_benign.json.gz"
+      },
+      "paired": {
+        "constructed": 0,
+        "capacity_upper_bound": 0,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 128,
+        "certificate": "unexposed_article_model_leeching_paired.json.gz"
+      }
+    }
+  },
+  {
+    "dataset": "ME_BERT_boolq_wiki",
+    "grouping": "article",
+    "global_groups": 9805,
+    "eligible_groups": 6,
+    "unique_benign": 4,
+    "unique_attack": 2,
+    "groups_exposed_phase_a": 0,
+    "phase_a_unexposed_groups": 6,
+    "ambiguous_query_hashes_removed_globally": 0,
+    "cases": {
+      "benign": {
+        "constructed": 0,
+        "capacity_upper_bound": 0,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 0,
+        "certificate": "cohorts_article_ME_BERT_boolq_wiki_benign.json.gz"
+      },
+      "pure_attack": {
+        "constructed": 0,
+        "capacity_upper_bound": 0,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 0,
+        "required_attack": 256,
+        "certificate": "cohorts_article_ME_BERT_boolq_wiki_pure_attack.json.gz"
+      },
+      "paired_control_mixed": {
+        "constructed": 0,
+        "capacity_upper_bound": 0,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 128,
+        "certificate": "cohorts_article_ME_BERT_boolq_wiki_paired_control_mixed.json.gz"
+      }
+    },
+    "phase_a_unexposed_only": {
+      "benign": {
+        "constructed": 0,
+        "capacity_upper_bound": 0,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 0,
+        "certificate": "unexposed_article_ME_BERT_boolq_wiki_benign.json.gz"
+      },
+      "paired": {
+        "constructed": 0,
+        "capacity_upper_bound": 0,
+        "optimality": "certified_by_matching_upper_bound",
+        "required_benign": 256,
+        "required_attack": 128,
+        "certificate": "unexposed_article_ME_BERT_boolq_wiki_paired.json.gz"
+      }
+    }
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "dataset": "model_leeching",
+    "grouping": "article",
+    "calibration": 12,
+    "validation": 3,
+    "final_partition": 8,
+    "certificate": "proposed_article_model_leeching_12_3_8.json.gz",
+    "zero_fp_one_sided_95_upper": 0.31234397806636793,
+    "untouched_final_test": false,
+    "executed": false
+  },
+  {
+    "dataset": "model_leeching",
+    "grouping": "passage",
+    "calibration": 20,
+    "validation": 4,
+    "final_partition": 14,
+    "certificate": "proposed_passage_model_leeching_20_4_14.json.gz",
+    "zero_fp_one_sided_95_upper": 0.19263617565013536,
+    "untouched_final_test": false,
+    "executed": false
+  },
+  {
+    "dataset": "ME_BERT_boolq_wiki",
+    "grouping": "passage",
+    "calibration": 20,
+    "validation": 4,
+    "final_partition": 10,
+    "certificate": "proposed_passage_ME_BERT_boolq_wiki_20_4_10.json.gz",
+    "zero_fp_one_sided_95_upper": 0.2588655508930523,
+    "untouched_final_test": false,
+    "executed": false
+  }
+]
