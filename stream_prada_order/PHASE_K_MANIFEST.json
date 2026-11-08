@@ -1,0 +1,66 @@
+{
+  "schema_version": "phase-k-deliverables-v1",
+  "branch": "experiment/stream-prada-order",
+  "base_head": "13271d150b58db3a5ec2c0320ef685c35af64b9d",
+  "main_sha_unchanged": "5fb5e07d750a73a0a663a174433bab931ae7568a",
+  "self_excluded": true,
+  "file_count": 14,
+  "files": {
+    "stream_prada_order/PHASE_K_PREPARATION_TH.md": {
+      "bytes": 19512,
+      "sha256": "59dad2dc75f55004b31f31cad9f0f2dc6af8b3e0fe073ea1ad6e77b9df255dce"
+    },
+    "stream_prada_order/phase_k_prepare.py": {
+      "bytes": 7833,
+      "sha256": "be802922ae069550d0175112b00d084c1f1bd350ee7dc66a443fb839fbbf3b7d"
+    },
+    "stream_prada_order/tests/test_phase_k_preparation.py": {
+      "bytes": 3325,
+      "sha256": "82738f001b3a5450bf5733e31a5c5704a9f39765e7bab29f067680081f3c6a69"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/evidence_inventory.json": {
+      "bytes": 502,
+      "sha256": "ec8b9e3b0636dcdbdab135192db2dfd1c83ce3e754d1cc7640b121fabe8a5c7d"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/final_checks.json": {
+      "bytes": 840,
+      "sha256": "0d337abd74390f88e5cca08f0b9f07edd7e73c012f37d397f124d95dc96fa1aa"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/manifest.draft.json": {
+      "bytes": 1185,
+      "sha256": "73899082ed5842ad6b8d847dbcc7b6c222fef5807ea8dcdbc53512f0eaa45fbe"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/offline_supervisor.json": {
+      "bytes": 331,
+      "sha256": "29a9a1001e2f6782306e93b42eea8901663830fcd556d05d7e5f5de25c562148"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/operator_requirements.json": {
+      "bytes": 2061,
+      "sha256": "14fd3bbd4c2b7c6d1877a6a5ecbbb090da65d9d3cca10d64dac0c7537e897915"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/preflight.json": {
+      "bytes": 4076,
+      "sha256": "22d2e984b8bb2d087ab4da3055b2b201e580f2f44075d7a601722c181dc380e2"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/public_tests.json": {
+      "bytes": 551,
+      "sha256": "9c440bb6f37c83cc7826b6fcbf511ec5a84988f96b579e9fb7ef607885ad2bd9"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/query_plan.draft.json": {
+      "bytes": 360,
+      "sha256": "52c87d687e9fae2dd4e61011388eb8f019ad63d274d34dfd9a2c5a44c7578ec4"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/storage_summary.json": {
+      "bytes": 849,
+      "sha256": "c32d1494637c59d3340a5a2ad3e9c5e7efed79c3df2edb7eb6590f721d8c8b63"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/tdd_red_receipt.json": {
+      "bytes": 471,
+      "sha256": "b4208aae62dabf65e1d0bf18884eb19f174e2e240f249a63b3fc92e90ac51a0c"
+    },
+    "stream_prada_order/diagnostics/phase_k_preparation_20261108_v1/tests_v1.json": {
+      "bytes": 2800,
+      "sha256": "18c1b5064286e2703546053bf70dcdc9c1c4f32852ed04ea480246ec54db1b2d"
+    }
+  }
+}

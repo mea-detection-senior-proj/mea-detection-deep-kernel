@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "exit_code": 0,
+  "seconds": 4.0470000000000255,
+  "observed_worker_peak_working_set_bytes": 43417600,
+  "worker_committed_memory_cap_bytes": 536870912,
+  "wall_gate_seconds": 120,
+  "gate_failure": null,
+  "scope": "Offline byte hashes/static metadata only; no CUDA/model/tokenizer execution."
+}

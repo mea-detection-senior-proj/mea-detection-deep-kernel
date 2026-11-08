@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "tests_run": 15,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 0.1089999999999236,
+  "scope": "7 new preparation tests + 8 frozen H policy tests; numeric mocks; socket network disabled; no native runtime",
+  "source_sha256": "be802922ae069550d0175112b00d084c1f1bd350ee7dc66a443fb839fbbf3b7d",
+  "test_source_sha256": "29257fa1a7c32e47209f488bdc5fd2aff7e192b1e075c8c09dcdb343b26da356",
+  "torch_or_transformers_imported": false,
+  "real_grants_created": 0,
+  "model_loads": 0,
+  "real_requests": 0,
+  "log": "test_acquisition_record_never_becomes_inference_grant (phase_k_tests.PreparationTests.test_acquisition_record_never_becomes_inference_grant) ... ok\ntest_draft_cannot_be_used_as_execution_manifest (phase_k_tests.PreparationTests.test_draft_cannot_be_used_as_execution_manifest) ... ok\ntest_invalid_preparation_head_is_rejected (phase_k_tests.PreparationTests.test_invalid_preparation_head_is_rejected) ... ok\ntest_limits_identity_and_retry_policy_stay_frozen (phase_k_tests.PreparationTests.test_limits_identity_and_retry_policy_stay_frozen) ... ok\ntest_missing_approval_is_refused_without_claim (phase_k_tests.PreparationTests.test_missing_approval_is_refused_without_claim) ... ok\ntest_mutating_draft_does_not_change_frozen_profile (phase_k_tests.PreparationTests.test_mutating_draft_does_not_change_frozen_profile) ... ok\ntest_no_queries_hashes_sessions_or_approvals_are_invented (phase_k_tests.PreparationTests.test_no_queries_hashes_sessions_or_approvals_are_invented) ... ok\ntest_expanded_or_duplicate_plan_is_rejected (test_phase_h_policy.PolicyTests.test_expanded_or_duplicate_plan_is_rejected) ... ok\ntest_four_request_plan_is_explicit_benign_and_bounded (test_phase_h_policy.PolicyTests.test_four_request_plan_is_explicit_benign_and_bounded) ... ok\ntest_generation_and_template_are_frozen_and_not_upstream_sampling (test_phase_h_policy.PolicyTests.test_generation_and_template_are_frozen_and_not_upstream_sampling) ... ok\ntest_grant_requires_evidence_and_exact_hash (test_phase_h_policy.PolicyTests.test_grant_requires_evidence_and_exact_hash) ... ok\ntest_hash_bound_grant_and_expiry_are_checked (test_phase_h_policy.PolicyTests.test_hash_bound_grant_and_expiry_are_checked) ... ok\ntest_mock_grant_cannot_authorize_real_manifest (test_phase_h_policy.PolicyTests.test_mock_grant_cannot_authorize_real_manifest) ... ok\ntest_no_grant_is_not_execution_authorization (test_phase_h_policy.PolicyTests.test_no_grant_is_not_execution_authorization) ... ok\ntest_one_shot_grant_cannot_reset_budget_by_changing_store (test_phase_h_policy.PolicyTests.test_one_shot_grant_cannot_reset_budget_by_changing_store) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.109s\n\nOK\n"
+}

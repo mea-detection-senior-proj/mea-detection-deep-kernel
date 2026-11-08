@@ -1,0 +1,23 @@
+{
+  "schema_version": "phase-k-public-storage-summary-v1",
+  "store_relative": "stream_prada_order/traffic_local/phase_k_pilot_20261108_v1/store",
+  "new_store": true,
+  "store_empty": true,
+  "database_created": false,
+  "root_inheritance_disabled": true,
+  "allowed_principals": [
+    "current Windows user SID",
+    "LOCAL SYSTEM"
+  ],
+  "acl_source": "icacls applied successfully; Get-Acl SDDL retained in ignored private receipt; no inherited broad access at new root",
+  "registry_created_empty": true,
+  "registry_inheritance_disabled": true,
+  "claims_created": 0,
+  "operator_privacy_review": "pending",
+  "retention": "pending",
+  "backup_policy": "pending",
+  "encryption": "not_verified",
+  "hmac_key_created": false,
+  "snapshot_read_only_protection": "pending_operator_review",
+  "ignore_is_not_encryption_or_operator_consent": true
+}

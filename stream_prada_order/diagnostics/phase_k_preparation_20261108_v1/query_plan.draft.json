@@ -1,0 +1,13 @@
+{
+  "schema_version": "phase-k-nonexecutable-draft-v1",
+  "prepared_on_head": "13271d150b58db3a5ec2c0320ef685c35af64b9d",
+  "execution_authorized": false,
+  "status": "OPERATOR_INPUTS_REQUIRED",
+  "document": {
+    "schema_version": "qwen-query-plan-v1",
+    "run_id": null,
+    "session_id": null,
+    "native_session_sha256": null,
+    "queries": null
+  }
+}

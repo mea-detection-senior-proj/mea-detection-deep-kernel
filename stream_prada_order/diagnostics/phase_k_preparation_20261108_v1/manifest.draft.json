@@ -1,0 +1,40 @@
+{
+  "schema_version": "phase-k-nonexecutable-draft-v1",
+  "prepared_on_head": "13271d150b58db3a5ec2c0320ef685c35af64b9d",
+  "execution_authorized": false,
+  "status": "OPERATOR_INPUTS_REQUIRED",
+  "document": {
+    "schema_version": "traffic-manifest-v1",
+    "run_id": null,
+    "traffic_kind": "real",
+    "label": "benign",
+    "collector_revision": null,
+    "protocol_sha256": null,
+    "actor_sha256": null,
+    "source_group_sha256": null,
+    "victim": {
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "tokenizer_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "tokenizer_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+    },
+    "authorization": {
+      "record_id": null,
+      "evidence_sha256": null
+    },
+    "sources": null,
+    "task_ids": null,
+    "split": "development",
+    "acquisition": null,
+    "budget": {
+      "max_requests": 4,
+      "max_attempts": 4,
+      "max_attempts_per_request": 1,
+      "max_query_bytes": 65536,
+      "max_response_bytes": 16384,
+      "max_logical_storage_bytes": 4194304,
+      "max_session_attempts": 4
+    },
+    "retry_policy": "not_sent_only"
+  }
+}

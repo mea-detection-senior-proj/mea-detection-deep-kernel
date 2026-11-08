@@ -1,0 +1,7 @@
+{
+  "stage": "before_implementation",
+  "expected_failure": "FileNotFoundError: phase_k_prepare_source.py did not exist",
+  "observed": "Actual initial test invocation failed during module load before implementation; subsequent tests passed.",
+  "command": "conda run --no-capture-output -n senior python stream_prada_order/traffic_local/phase_k_preparation_20261108_v1/test_phase_k_source.py",
+  "scope": "Software preparation TDD only; no runtime requests or grants"
+}

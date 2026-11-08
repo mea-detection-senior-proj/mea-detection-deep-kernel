@@ -1,0 +1,127 @@
+{
+  "schema_version": "phase-k-offline-preflight-v1",
+  "observed_utc": "2026-11-08T02:48:41.634873+00:00",
+  "checkout": {
+    "branch": "experiment/stream-prada-order",
+    "head": "13271d150b58db3a5ec2c0320ef685c35af64b9d",
+    "clean": true,
+    "main_unchanged": true
+  },
+  "frozen": {
+    "status": "passed",
+    "frozen_h_commit": "8d32d46bb1496862ddf36017b7eea811c01dc51c",
+    "manifests": {
+      "G": {
+        "manifest_sha256": "f7bbc4f324744e53cbd8ef9a6e180e933d67d9957f932b839e9fb333c1c83d31",
+        "files_verified": 39
+      },
+      "H": {
+        "manifest_sha256": "ae8ab331a3f41ba35077dfc82deb102f46c9a65e6a02bc5f8687d1ef146cd9fa",
+        "files_verified": 46
+      }
+    },
+    "runtime_code_sha256": "d163635f0a490a016b7a1fc4a0ce378d464577cd91ec99fe8f08804f9cd6dc87"
+  },
+  "manifests": {
+    "G": {
+      "files_verified": 39,
+      "manifest_sha256": "f7bbc4f324744e53cbd8ef9a6e180e933d67d9957f932b839e9fb333c1c83d31"
+    },
+    "H": {
+      "files_verified": 46,
+      "manifest_sha256": "ae8ab331a3f41ba35077dfc82deb102f46c9a65e6a02bc5f8687d1ef146cd9fa"
+    },
+    "I": {
+      "files_verified": 18,
+      "manifest_sha256": "342e89ea4a05726545504c72765e87832ed48c68d6558b394871ba2abcef7a6c"
+    },
+    "J": {
+      "files_verified": 21,
+      "manifest_sha256": "bed244b06427561da1ed85c15b4961ffb2fc321667b7fe269647f042b3b8b536"
+    }
+  },
+  "readiness": {
+    "schema_version": "qwen-offline-readiness-v1",
+    "status": "BLOCKED",
+    "codes": [
+      "valid_explicit_approval_and_evidence_required"
+    ],
+    "snapshot": {
+      "status": "passed",
+      "codes": [],
+      "bytes_read": 3098967011,
+      "verified_files": [
+        "LICENSE",
+        "config.json",
+        "generation_config.json",
+        "merges.txt",
+        "model.safetensors",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "vocab.json"
+      ],
+      "hash_authority": "pinned Phase F Git blob identities / LFS SHA256; not self-certified local hashes",
+      "model_or_tokenizer_loaded": false
+    },
+    "environment": {
+      "status": "passed_static_only",
+      "codes": [],
+      "python": "3.11.17",
+      "system": "Windows",
+      "packages": {
+        "torch": "2.14.1+cu132",
+        "transformers": "5.20.2",
+        "tokenizers": "0.23.3",
+        "huggingface-hub": "1.33.0",
+        "safetensors": "0.8.0",
+        "numpy": "2.4.6",
+        "psutil": "7.2.2",
+        "jinja2": "3.1.6"
+      },
+      "static_api_symbols": {
+        "qwen2_class": true,
+        "chat_template": true,
+        "generate": true
+      },
+      "imports_kernel_bf16_generation_compatibility": "unverified_no_execution",
+      "torch_or_transformers_imported_by_check": false
+    },
+    "resources": {
+      "available_ram_bytes": 40863551488,
+      "disk_free_bytes": 1023530717184,
+      "gpu_free_bytes": 7012876288,
+      "gpu_name": "NVIDIA GeForce RTX 4060 Ti",
+      "driver": "617.42"
+    },
+    "checkout": {
+      "branch": "experiment/stream-prada-order",
+      "head": "13271d150b58db3a5ec2c0320ef685c35af64b9d",
+      "clean": true,
+      "main_unchanged": true
+    },
+    "approval_valid": false,
+    "real_execution_enabled": false,
+    "native_inference_verified": false,
+    "victim_requests": 0,
+    "model_weights_loaded": 0,
+    "private_traffic_scanned": false,
+    "static_checks_are_not_authorization_to_execute": true
+  },
+  "grant_negative_checks": {
+    "missing_grant_refused": true,
+    "acquisition_grant_refused": true,
+    "claim_created": false,
+    "missing_grant_code": "explicit_execution_grant_required",
+    "acquisition_rejection_code": "policy_invalid",
+    "acquisition_record_sha256": "6a306cf12a6cb3f1c482c2e4189652842d4f1ca1bede0220aaa7c4d0e314eb43"
+  },
+  "private_store_empty": true,
+  "torch_or_transformers_imported": false,
+  "model_weights_loaded": 0,
+  "tokenizers_instantiated": 0,
+  "real_requests": 0,
+  "claims_created": 0,
+  "pilot_executed": false,
+  "larger_collection_decision": "NO-GO",
+  "reason": "Actual benign session, operator execution grant and privacy/source records are pending."
+}

@@ -1,0 +1,31 @@
+{
+  "observed_utc": "2026-11-08T02:52:48.130741+00:00",
+  "status": "passed",
+  "prior_manifests": {
+    "A": 29,
+    "B": 25,
+    "C": 81,
+    "D": 30,
+    "E": 34,
+    "F": 11,
+    "G": 39,
+    "H": 46,
+    "I": 18,
+    "J": 21
+  },
+  "tracked_prior_changes": false,
+  "base_head": "13271d150b58db3a5ec2c0320ef685c35af64b9d",
+  "branch": "experiment/stream-prada-order",
+  "main_unchanged": true,
+  "public_source_byte_identical_to_offline_preflight": true,
+  "ignored_paths_verified": true,
+  "private_store_empty": true,
+  "registry_empty": true,
+  "execution_grant_created": false,
+  "pilot_report_created": false,
+  "inference_executed": false,
+  "model_weights_loaded": 0,
+  "real_requests": 0,
+  "larger_collection": "NO-GO",
+  "scope": "Precommit verification; readiness receipt is from clean base HEAD before public additions."
+}

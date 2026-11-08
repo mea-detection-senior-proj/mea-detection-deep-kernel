@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "tests_run": 7,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "runner_reported_seconds": 0.023,
+  "command": "conda run --no-capture-output -n senior python -m unittest stream_prada_order.tests.test_phase_k_preparation -v",
+  "source_sha256": "be802922ae069550d0175112b00d084c1f1bd350ee7dc66a443fb839fbbf3b7d",
+  "test_source_sha256": "82738f001b3a5450bf5733e31a5c5704a9f39765e7bab29f067680081f3c6a69",
+  "scope": "Actual public import-path verification after relocating same 7 tests; not 7 additional distinct cases."
+}
