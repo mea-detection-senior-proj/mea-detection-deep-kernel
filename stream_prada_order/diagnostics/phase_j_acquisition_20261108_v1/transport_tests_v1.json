@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tests_run": 17,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "source_sha256": "d4f91308af18e404cc1c54ed91db7591fb819fed8d89463ef5690e1cdd6ce099",
+  "scope": "Numeric mocked HTTP only; real artifact requests=0; weights=0"
+}

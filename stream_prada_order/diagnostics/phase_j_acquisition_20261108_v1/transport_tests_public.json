@@ -1,0 +1,16 @@
+{
+  "schema_version": "phase-j-mock-test-result-v1",
+  "status": "passed",
+  "tests_run": 17,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "runner_reported_seconds": 0.124,
+  "exit_code": 0,
+  "command": "conda run --no-capture-output -n senior python -m unittest stream_prada_order.tests.test_phase_j_acquire -v",
+  "recorded_utc": "2026-11-08T02:38:42.016844+00:00",
+  "evidence_origin": "Observed actual unittest output during Phase J; no reconstructed test execution",
+  "source_sha256": "52ba92344a96c9ac682173e99946029bda71cefed273cc6ca4c18d70e4642740",
+  "tests_sha256": "6a199e74469fb86e5d3a2026c32438d97d80dddb232a7fd356d0d317d62c7839",
+  "scope": "Numeric fake HTTP transport only; real requests/weights/model loading=0 during tests"
+}

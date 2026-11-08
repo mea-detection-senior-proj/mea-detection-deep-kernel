@@ -1,0 +1,94 @@
+{
+  "schema_version": "phase-j-deliverables-v1",
+  "branch": "experiment/stream-prada-order",
+  "base_head": "9d3467275e2d8f1a82a3d58454f306fdfa97662a",
+  "main_sha_unchanged": "5fb5e07d750a73a0a663a174433bab931ae7568a",
+  "self_excluded": true,
+  "file_count": 21,
+  "files": {
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/acquisition_plan.json": {
+      "sha256": "435ad2c484cf05fe791b5606d3214aa7ddb6b8bc63e461485198fce77765b65e",
+      "bytes": 4172
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/APPROVAL_PLAN_TH.md": {
+      "sha256": "a5d6e4c884e9a82d7a6ce549626404aeac8c6ed1e6d1fae69cf7ee78a40a7d4a",
+      "bytes": 3934
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/authorized_preflight.json": {
+      "sha256": "3c17dbfd41a6dc23ab3f7bc4ba8a8c7dc813702c69ab718f80d2222afe3a69f0",
+      "bytes": 3032
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/events.jsonl": {
+      "sha256": "f4285bbab8bc488d985fc4664aec07d58bb0394211e4282431486585ad91d549",
+      "bytes": 19308
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/final_checks.json": {
+      "sha256": "cf8aa5171db950ef019f34b74c317a9fea91ddc23dce2ab8c8b0d80f99eb4d52",
+      "bytes": 860
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/head_preflight.json": {
+      "sha256": "be2760bb688d464b8de244346cd366d89da96712d9ccb350e3304f049b4b4a44",
+      "bytes": 7012
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/initial_checks.json": {
+      "sha256": "c25043b80c3b700a113dc2c2fe2ee481ff310ff50b7bc2f028686417f79d320d",
+      "bytes": 4841
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/official_metadata.json": {
+      "sha256": "bd2d10ea8f98c5e6dcc536b967defbc21f0c5a1ed50dbac871ef589ea4f4d446",
+      "bytes": 10581
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/operator_approval.json": {
+      "sha256": "6a306cf12a6cb3f1c482c2e4189652842d4f1ca1bede0220aaa7c4d0e314eb43",
+      "bytes": 3007
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/plan_digest.json": {
+      "sha256": "42bc4211537fad6e49e13c91a5194225c21c234bfd77630efe3dda3fb916f4e3",
+      "bytes": 98
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/post_acquisition_readiness.json": {
+      "sha256": "3e3a033708d7ff70d8a481a22c2826ebb5521b392c31565e7490ef71dc0bb789",
+      "bytes": 2853
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/preapproval_gate_check.json": {
+      "sha256": "e159569fe599a84991ddc4bea31221a5127c08db81790dcad0d2ea17b10a02eb",
+      "bytes": 505
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/result.json": {
+      "sha256": "7c26d605dc7005e55421a9930f139e79f3d482f62db545d80cedba0f26aedaeb",
+      "bytes": 3589
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/supervisor.json": {
+      "sha256": "d622ed02a35d3c63087181991ec14d8bc4d528189ca1235c330d8877751400b4",
+      "bytes": 178
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/transport_tests_public.json": {
+      "sha256": "aabadd08073337cbd194447182c99f11a7bd5306a4b8dcc9603aa9df41ba1ace",
+      "bytes": 751
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/transport_tests_v1.json": {
+      "sha256": "eb6d9b9c64ab292bc57ca570b5cf072d6a7aa7521171a266da806272bf3070bf",
+      "bytes": 264
+    },
+    "stream_prada_order/diagnostics/phase_j_acquisition_20261108_v1/transport_tests_v2.json": {
+      "sha256": "f3b56b84f55a731e1ccd7e05930dc818909fd7ed0d8fa6aab4ceb1ce0bae5d24",
+      "bytes": 264
+    },
+    "stream_prada_order/phase_j_acquire.py": {
+      "sha256": "52ba92344a96c9ac682173e99946029bda71cefed273cc6ca4c18d70e4642740",
+      "bytes": 16321
+    },
+    "stream_prada_order/PHASE_J_ACQUISITION_TH.md": {
+      "sha256": "d3a3717256fdcd6def84057fb8f96f1404d44e298a1bd5d688d939b46ccf4a5b",
+      "bytes": 9574
+    },
+    "stream_prada_order/PHASE_J_INTEGRITY_TH.md": {
+      "sha256": "57beda2f6e6a90be42a543f813b0547fbdfff4d1fdfbf84c8f3c3a9cc760d5e4",
+      "bytes": 6062
+    },
+    "stream_prada_order/tests/test_phase_j_acquire.py": {
+      "sha256": "6a199e74469fb86e5d3a2026c32438d97d80dddb232a7fd356d0d317d62c7839",
+      "bytes": 7429
+    }
+  }
+}

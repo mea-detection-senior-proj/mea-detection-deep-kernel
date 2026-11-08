@@ -1,0 +1,210 @@
+{
+  "scope": "One bounded model metadata GET and HEAD-only artifact requests; artifact bodies not read",
+  "observed_utc": "2026-11-07T16:07:32.384488+00:00",
+  "metadata_payload_bytes": 8389,
+  "metadata_gets": 1,
+  "head_transactions": 16,
+  "max_head_transactions": 32,
+  "seconds": 5.0,
+  "max_seconds": 120,
+  "observed_https_hosts": [
+    "huggingface.co",
+    "us.aws.cdn.hf.co"
+  ],
+  "files": [
+    {
+      "file": "LICENSE",
+      "hops": [
+        {
+          "host": "huggingface.co",
+          "status": 307,
+          "url_sha256": "951d5fff9049ceede3f22c6da61359cbbb3f108a8f0e7643e2c75b14f7b4c46e",
+          "content_length": "202",
+          "etag": null,
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": "11343"
+        },
+        {
+          "host": "huggingface.co",
+          "status": 200,
+          "url_sha256": "27e7a1bccfd10e1bad78ca4392540e42be88eeb00cd509c388b5fb5e3d049483",
+          "content_length": "11343",
+          "etag": "\"6634c8cc3133b3848ec74b9f275acaaa1ea618ab\"",
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": null
+        }
+      ],
+      "terminal_status": 200
+    },
+    {
+      "file": "config.json",
+      "hops": [
+        {
+          "host": "huggingface.co",
+          "status": 307,
+          "url_sha256": "0dcf9a2c213dafa4450a026e6eb82c50a765dfb91ee06256e3fa32f8f41e8c31",
+          "content_length": "206",
+          "etag": null,
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": "660"
+        },
+        {
+          "host": "huggingface.co",
+          "status": 200,
+          "url_sha256": "f9170bc43db570498074cad39292ddc306d5808e99d4a6b6d961c25fbc70c689",
+          "content_length": "660",
+          "etag": "\"f81ead14ab072d65a07817f83a3ee0e5a1890d10\"",
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": null
+        }
+      ],
+      "terminal_status": 200
+    },
+    {
+      "file": "generation_config.json",
+      "hops": [
+        {
+          "host": "huggingface.co",
+          "status": 307,
+          "url_sha256": "b3b04644491dd6dfe0455ea6140058c4b974aa0bdd612b865e35eaa27a9d2c66",
+          "content_length": "217",
+          "etag": null,
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": "242"
+        },
+        {
+          "host": "huggingface.co",
+          "status": 200,
+          "url_sha256": "698f84fe23df39fc6b08f67f2edba56e58da9e78015fdc8502d63470af0e4b93",
+          "content_length": "242",
+          "etag": "\"dfc11073787daf1b0f9c0f1499487ab5f4c93738\"",
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": null
+        }
+      ],
+      "terminal_status": 200
+    },
+    {
+      "file": "merges.txt",
+      "hops": [
+        {
+          "host": "huggingface.co",
+          "status": 307,
+          "url_sha256": "7bc785f3567771b611c48aa7d741f7c3db3137bf822a88cf1f222331acdd6493",
+          "content_length": "205",
+          "etag": null,
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": "1671839"
+        },
+        {
+          "host": "huggingface.co",
+          "status": 200,
+          "url_sha256": "675497846dd4cb1daafbf7d25670dabf9a996e15b3c32b4ebcd01de37ccec40c",
+          "content_length": "1671839",
+          "etag": "\"20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0\"",
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": null
+        }
+      ],
+      "terminal_status": 200
+    },
+    {
+      "file": "model.safetensors",
+      "hops": [
+        {
+          "host": "huggingface.co",
+          "status": 302,
+          "url_sha256": "192f1a876a846f15c1815136a3ebfe2eb772641d01f6e048577fb09ff0240b91",
+          "content_length": "1050",
+          "etag": null,
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": "3087467144"
+        },
+        {
+          "host": "us.aws.cdn.hf.co",
+          "status": 200,
+          "url_sha256": "eeb42577abe9fed7367bdfdff83a4e018920970da794c6a0333c0f1d2eb05d73",
+          "content_length": "3087467144",
+          "etag": "\"46ea4ba5786759efecf127c64dee654df39a3f02fdeaafc67734a06574619467\"",
+          "x_repo_commit": null,
+          "x_linked_size": null
+        }
+      ],
+      "terminal_status": 200
+    },
+    {
+      "file": "tokenizer.json",
+      "hops": [
+        {
+          "host": "huggingface.co",
+          "status": 307,
+          "url_sha256": "bc56de195e96ac19e82ac0ef87ef8bf50595a32bed112bcca9b1ebbb54c13aba",
+          "content_length": "209",
+          "etag": null,
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": "7031645"
+        },
+        {
+          "host": "huggingface.co",
+          "status": 200,
+          "url_sha256": "c8f17f80fb57cbe2fd52fd97b4c0b8818c04705b30d1ff31d1963b0978b22a22",
+          "content_length": "7031645",
+          "etag": "\"443909a61d429dff23010e5bddd28ff530edda00\"",
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": null
+        }
+      ],
+      "terminal_status": 200
+    },
+    {
+      "file": "tokenizer_config.json",
+      "hops": [
+        {
+          "host": "huggingface.co",
+          "status": 307,
+          "url_sha256": "d5c0fb61c62ff735a4ef19333546980cc0dd49a3e3f72346b9e044d91ead26b6",
+          "content_length": "216",
+          "etag": null,
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": "7305"
+        },
+        {
+          "host": "huggingface.co",
+          "status": 200,
+          "url_sha256": "fde77aa41b282b38e59d01c0af757c149c1e11d4c3be5adc38438a6da2315ffe",
+          "content_length": "7305",
+          "etag": "\"07bfe0640cb5a0037f9322287fbfc682806cf672\"",
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": null
+        }
+      ],
+      "terminal_status": 200
+    },
+    {
+      "file": "vocab.json",
+      "hops": [
+        {
+          "host": "huggingface.co",
+          "status": 307,
+          "url_sha256": "efd48c9e97d6e31aa6cdd2a870495640880629575137e941443ecf9761ee2a20",
+          "content_length": "205",
+          "etag": null,
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": "2776833"
+        },
+        {
+          "host": "huggingface.co",
+          "status": 200,
+          "url_sha256": "70676916f8e0c4e28785a2775ea59413c66b2ced5fe0337115c36f415f6b8a8d",
+          "content_length": "2776833",
+          "etag": "\"4783fe10ac3adce15ac8f358ef5462739852c569\"",
+          "x_repo_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "x_linked_size": null
+        }
+      ],
+      "terminal_status": 200
+    }
+  ],
+  "model_file_body_bytes_received": 0,
+  "weights_downloaded": 0
+}

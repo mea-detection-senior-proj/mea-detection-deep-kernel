@@ -1,0 +1,13 @@
+{
+  "status": "prepared_awaiting_explicit_operator_authorization",
+  "canonical_plan_sha256": "fd3f1d8685a0ccfb6efc6912962016da53f5929047259d29ff4771b716a18e9f",
+  "source_sha256": "52ba92344a96c9ac682173e99946029bda71cefed273cc6ca4c18d70e4642740",
+  "plan_validation": "passed",
+  "no_authorization_gate": "verified_refused",
+  "actual_artifact_gets": 0,
+  "model_file_body_bytes": 0,
+  "destination_created": false,
+  "run_root_created": false,
+  "inference_executed": false,
+  "checkout_clean": true
+}

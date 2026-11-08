@@ -1,0 +1,89 @@
+{
+  "schema_version": "phase-j-acquisition-plan-v1",
+  "base_head": "9d3467275e2d8f1a82a3d58454f306fdfa97662a",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "files": [
+    {
+      "name": "LICENSE",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/LICENSE",
+      "bytes": 11343,
+      "content_sha256": null,
+      "git_blob_sha1": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab"
+    },
+    {
+      "name": "config.json",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json",
+      "bytes": 660,
+      "content_sha256": null,
+      "git_blob_sha1": "f81ead14ab072d65a07817f83a3ee0e5a1890d10"
+    },
+    {
+      "name": "generation_config.json",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json",
+      "bytes": 242,
+      "content_sha256": null,
+      "git_blob_sha1": "dfc11073787daf1b0f9c0f1499487ab5f4c93738"
+    },
+    {
+      "name": "merges.txt",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/merges.txt",
+      "bytes": 1671839,
+      "content_sha256": null,
+      "git_blob_sha1": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0"
+    },
+    {
+      "name": "model.safetensors",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/model.safetensors",
+      "bytes": 3087467144,
+      "content_sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "git_blob_sha1": "9127f71e7314df0064f469223749e5f237e06463"
+    },
+    {
+      "name": "tokenizer.json",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer.json",
+      "bytes": 7031645,
+      "content_sha256": null,
+      "git_blob_sha1": "443909a61d429dff23010e5bddd28ff530edda00"
+    },
+    {
+      "name": "tokenizer_config.json",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json",
+      "bytes": 7305,
+      "content_sha256": null,
+      "git_blob_sha1": "07bfe0640cb5a0037f9322287fbfc682806cf672"
+    },
+    {
+      "name": "vocab.json",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/vocab.json",
+      "bytes": 2776833,
+      "content_sha256": null,
+      "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569"
+    }
+  ],
+  "allowed_https_hosts": [
+    "huggingface.co",
+    "us.aws.cdn.hf.co"
+  ],
+  "destination": "D:\\MU\\Y3S3-Y4S1\\Senior Project\\Deep-Kernel\\stream_prada_order\\traffic_local\\qwen_snapshots\\989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "run_root": "D:\\MU\\Y3S3-Y4S1\\Senior Project\\Deep-Kernel\\stream_prada_order\\traffic_local\\phase_j_acquisition_20261107_v1",
+  "snapshot_lock_sha256": "1dc22fd7b94a773318564890554d1084210d85c812a674265f58e3503f340e1f",
+  "worker_source_sha256": "52ba92344a96c9ac682173e99946029bda71cefed273cc6ca4c18d70e4642740",
+  "phase_i_plan_sha256": "1f92b651e77b655eb14f8c3d6829bb8b6f950216214b05f6258dccbe280f461a",
+  "remote_metadata_sha256": "bd2d10ea8f98c5e6dcc536b967defbc21f0c5a1ed50dbac871ef589ea4f4d446",
+  "head_preflight_sha256": "be2760bb688d464b8de244346cd366d89da96712d9ccb350e3304f049b4b4a44",
+  "limits": {
+    "wall_seconds": 1200,
+    "logical_gets": 8,
+    "http_transactions": 32,
+    "redirects_per_file": 3,
+    "http_accounted_bytes": 3115744227,
+    "storage_bytes": 8589934592,
+    "initial_disk_free_bytes": 9663676416,
+    "running_disk_reserve_bytes": 1073741824,
+    "worker_memory_bytes": 536870912,
+    "retries": 0
+  },
+  "http_accounting_scope": "response bodies + serialized response headers + status allowance; TLS/TCP/link-layer and retransmissions unmeasured",
+  "authorization_scope": "acquisition only; no weights loaded, inference, GPU kernels, victim API, attacks, students or participant traffic"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "exit_code": 0,
+  "gate_failure": null,
+  "seconds": 91.46800000000007,
+  "observed_worker_peak_bytes": 33259520,
+  "model_inference_executed": false
+}
