@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "exit_code": 0,
+  "seconds": 0.18800000000010186,
+  "observed_peak_working_set_bytes": 24465408,
+  "worker_committed_cap_bytes": 536870912,
+  "gate_failure": null,
+  "sources_unchanged": true,
+  "branch": "experiment/stream-prada-order",
+  "main_unchanged": true,
+  "model_loads": 0,
+  "detector_executions": 0,
+  "real_score_sessions_evaluated": 0,
+  "scientific_fpr": null,
+  "scientific_tpr": null,
+  "scientific_detection_delay": null
+}

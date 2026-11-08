@@ -1,0 +1,18 @@
+{
+  "schema_version": "hybrid-fusion-config-v1",
+  "horizon": 300,
+  "mmd_window": 100,
+  "mmd_stride": 50,
+  "sequential_first_eligible": 102,
+  "joint_checkpoints": [150, 200, 250, 300],
+  "mmd_policy": "exact-end-only; no stale carry, future score, fallback or imputation",
+  "normalization": "pooled benign fit checkpoint ECDF; right-continuous (#fit<=x + 1)/(m+1)",
+  "score_orientation": "higher-is-more-anomalous; sequential PRADA export=-W; CUSUM export=positive statistic; MMD export=raw MMD",
+  "weighted_fusion_sequential_weight": 0.5,
+  "methods": ["sequential_only", "mmd_only", "or", "and", "weighted"],
+  "alpha": 0.05,
+  "calibration": "benign calibration stream maxima; rank ceil((n+1)*(1-alpha)); strict >; no finite threshold if rank>n",
+  "calibration_missingness": "reject incomplete calibration streams; do not silently drop observations",
+  "evaluation_missingness": "abstain when required component unavailable; report incomplete coverage and exclude from conditional complete-stream FPR denominator explicitly",
+  "scientific_status": "software prototype; synthetic numeric tests only; no performance estimation or detector selection"
+}

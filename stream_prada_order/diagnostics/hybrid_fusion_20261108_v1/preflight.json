@@ -1,0 +1,21 @@
+{
+  "observed_utc": "2026-11-08T03:32:26.904981+00:00",
+  "branch": "experiment/stream-prada-order",
+  "base_head": "60490a7a8f8f2db42f1bcaaba3d3965f33c78c41",
+  "source_hashes": {
+    "stream_prada_order/hybrid_fusion.py": "f52f7bb38aef1206d52629ad4c09fb3d5faa9658ad622e7fd69cbee48d9bcf0d",
+    "stream_prada_order/tests/test_hybrid_fusion.py": "c5d66cd6521289a9998cd88af1d43995a3793ca2c61c313451c31d54fa732ddc",
+    "stream_prada_order/hybrid_fusion_config_v1.json": "786ef686b7b31b078a1662414d1e4a277b827cc1dc08473b52a9ca69df216b6f",
+    "stream_prada_order/hybrid_fusion_verify.py": "4a396ab8d902f2d67aff5a5a4aae591191d2fe86c57c16484d63fe12351dfe5a",
+    "stream_prada_order/HYBRID_FUSION_DESIGN_TH.md": "106d3c000893dae727835e29e6caa04d686cf3df2ff07783e0a5178592ab4f4c",
+    "stream_prada_order/HYBRID_MMD_CONTRACT_TH.md": "c53458b369d6b2c5e878d40d71316b4096aad552d46c3bd631f3486def53b220",
+    "pilot/README.md": "f94ae2dcec75631013fc478ccd96fcb5ce7211f7f9850def6506a582459a0a7c",
+    "pilot/deep_kernel_pilot.py": "723fb505eb547859c5a06b43d378382fa2cce74583f6a64a4395d79ffc9b3e89",
+    "stream_prada_order/PHASE_D_REPORT_TH.md": "4b9594ba7aad03bdf55ee4f1d0d8a02f06f11a501826016c6e07ea64d5dcd7e0",
+    "stream_prada_order/PHASE_E_REPORT_TH.md": "d996fdd7d07487d35dda21fb86d4af5f0b0d519b42f7efaf7495b1437d017f71",
+    "stream_prada_order/PHASE_F_PROTOCOL_TH.md": "854577e59db4f9283a38f384369c658e64f65c08c9bc1eaf4b92804bd18dfe90"
+  },
+  "wall_gate_seconds": 120,
+  "worker_committed_cap_bytes": 536870912,
+  "scientific_execution": false
+}

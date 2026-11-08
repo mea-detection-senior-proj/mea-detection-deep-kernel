@@ -1,0 +1,57 @@
+{
+  "schema_version": "hybrid-fusion-deliverables-v1",
+  "branch": "experiment/stream-prada-order",
+  "base_head": "60490a7a8f8f2db42f1bcaaba3d3965f33c78c41",
+  "self_excluded": true,
+  "file_count": 12,
+  "files": {
+    "stream_prada_order/hybrid_fusion.py": {
+      "sha256": "f52f7bb38aef1206d52629ad4c09fb3d5faa9658ad622e7fd69cbee48d9bcf0d",
+      "bytes": 15410
+    },
+    "stream_prada_order/hybrid_fusion_config_v1.json": {
+      "sha256": "786ef686b7b31b078a1662414d1e4a277b827cc1dc08473b52a9ca69df216b6f",
+      "bytes": 1162
+    },
+    "stream_prada_order/hybrid_fusion_verify.py": {
+      "sha256": "4a396ab8d902f2d67aff5a5a4aae591191d2fe86c57c16484d63fe12351dfe5a",
+      "bytes": 5593
+    },
+    "stream_prada_order/tests/test_hybrid_fusion.py": {
+      "sha256": "c5d66cd6521289a9998cd88af1d43995a3793ca2c61c313451c31d54fa732ddc",
+      "bytes": 11622
+    },
+    "stream_prada_order/HYBRID_FUSION_DESIGN_TH.md": {
+      "sha256": "106d3c000893dae727835e29e6caa04d686cf3df2ff07783e0a5178592ab4f4c",
+      "bytes": 15371
+    },
+    "stream_prada_order/HYBRID_FUSION_TEST_REPORT_TH.md": {
+      "sha256": "6d96ef291ba657f8fd1fb4be1db9cd40bb769745c7bf1693793c53bf2a2cd180",
+      "bytes": 8337
+    },
+    "stream_prada_order/HYBRID_MMD_CONTRACT_TH.md": {
+      "sha256": "c53458b369d6b2c5e878d40d71316b4096aad552d46c3bd631f3486def53b220",
+      "bytes": 8502
+    },
+    "stream_prada_order/diagnostics/hybrid_fusion_20261108_v1/development_attempts.json": {
+      "sha256": "2ccd326923c1dd03118f7a78e5b2264b4dfd2ae17bf3aab30d9c4d074a15e13d",
+      "bytes": 793
+    },
+    "stream_prada_order/diagnostics/hybrid_fusion_20261108_v1/final_checks.json": {
+      "sha256": "6406e3e93e52f50281015ba5426ff2b5a116589507e558636eb295b426690332",
+      "bytes": 683
+    },
+    "stream_prada_order/diagnostics/hybrid_fusion_20261108_v1/preflight.json": {
+      "sha256": "4d11ea89abd01b7a9e808e6ceda805b0d93c586ecd05808e9ef94fd99556d54f",
+      "bytes": 1545
+    },
+    "stream_prada_order/diagnostics/hybrid_fusion_20261108_v1/tests.json": {
+      "sha256": "6a45372dd4db7ff9f35dab077574b83afbfc68fc19e0ffff21dac9ecbce041cb",
+      "bytes": 4144
+    },
+    "stream_prada_order/diagnostics/hybrid_fusion_20261108_v1/verification.json": {
+      "sha256": "1d1a8c3312fe70ec4d24df7bd3bf27e460bbdc488bfc05578fb5a5576b36111c",
+      "bytes": 467
+    }
+  }
+}

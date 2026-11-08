@@ -1,0 +1,25 @@
+{
+  "observed_utc": "2026-11-08T03:33:52.210550+00:00",
+  "branch": "experiment/stream-prada-order",
+  "base_head": "60490a7a8f8f2db42f1bcaaba3d3965f33c78c41",
+  "main_unchanged": true,
+  "prior_tracked_files_changed": false,
+  "prior_manifests_verified": {
+    "A": 29,
+    "B": 25,
+    "C": 81,
+    "D": 30,
+    "E": 34,
+    "F": 11,
+    "G": 39,
+    "H": 46,
+    "I": 18,
+    "J": 21,
+    "K": 14
+  },
+  "tested_source_config_design_hashes_unchanged": true,
+  "actual_mmd_integration": false,
+  "new_traffic_or_model_execution": false,
+  "scientific_metrics": null,
+  "scope": "Precommit checks, additions only; does not assert scientific independence or calibration readiness"
+}

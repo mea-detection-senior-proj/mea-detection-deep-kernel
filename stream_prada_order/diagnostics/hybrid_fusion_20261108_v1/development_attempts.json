@@ -1,0 +1,31 @@
+{
+  "scope": "Actual development test outcomes; numeric fixtures only",
+  "attempts": [
+    {
+      "stage": "TDD before implementation",
+      "outcome": "ImportError hybrid_fusion not present",
+      "tests_loaded": 1,
+      "errors": 1
+    },
+    {
+      "stage": "Initial implementation",
+      "tests_run": 15,
+      "passed": 14,
+      "errors": 1,
+      "cause": "Invalid computed_through record constructed outside assertRaises; early constructor rejection was correct"
+    },
+    {
+      "stage": "Expanded unit suite",
+      "tests_run": 21,
+      "passed": 21,
+      "errors": 0
+    },
+    {
+      "stage": "Final guarded suite with config consistency",
+      "tests_run": 22,
+      "passed": 22,
+      "errors": 0
+    }
+  ],
+  "no_detector_or_scientific_traffic_execution": true
+}
