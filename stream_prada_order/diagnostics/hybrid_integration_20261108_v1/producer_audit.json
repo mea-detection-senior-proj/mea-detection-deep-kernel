@@ -1,0 +1,218 @@
+{
+  "schema_version": "hybrid-integration-metadata-audit-v1",
+  "observed_utc": "2026-11-08T05:32:43.328461+00:00",
+  "branch": "experiment/stream-prada-order",
+  "base_head": "87fefe4242afeaaee2b032f7b7a74a7d4e37ddca",
+  "scope": "Explicit saved development metadata, one validation control trace shape, CSV headers and producer sources; no evaluation outcomes or private traffic.",
+  "scientific_evaluation": false,
+  "real_exports_generated": 0,
+  "real_score_joins": 0,
+  "model_or_detector_execution": false,
+  "sources": [
+    {
+      "path": "stream_prada_order/experiment.py",
+      "bytes": 23259,
+      "sha256": "6cc38739bb26819de3b1fe7e3f3582d54c4b4765b61ea95e1504e54c76236c77"
+    },
+    {
+      "path": "stream_prada_order/phase_c_runner.py",
+      "bytes": 22344,
+      "sha256": "284e20fcc80a2c91b66a3031bf6eb6c32a2c599aa5a0edfb8522b35df7ec0496"
+    },
+    {
+      "path": "stream_prada_order/phase_d_pilot.py",
+      "bytes": 21032,
+      "sha256": "a904343b2453e8bebc3524f7b03fd188d9b96e511c2077652c339f5fad4f8926"
+    },
+    {
+      "path": "pilot/deep_kernel_pilot.py",
+      "bytes": 12560,
+      "sha256": "723fb505eb547859c5a06b43d378382fa2cce74583f6a64a4395d79ffc9b3e89"
+    },
+    {
+      "path": "MMD_detection/mmd_detector_gpu.py",
+      "bytes": 27564,
+      "sha256": "1464edeab96ae31bcc753790fe96f12b2f5d9cf99812f4b85d109866a290d9c2"
+    },
+    {
+      "path": "pilot/README.md",
+      "bytes": 3950,
+      "sha256": "f94ae2dcec75631013fc478ccd96fcb5ce7211f7f9850def6506a582459a0a7c"
+    },
+    {
+      "path": "stream_prada_order/hybrid_fusion.py",
+      "bytes": 15410,
+      "sha256": "f52f7bb38aef1206d52629ad4c09fb3d5faa9658ad622e7fd69cbee48d9bcf0d"
+    },
+    {
+      "path": "stream_prada_order/hybrid_fusion_config_v1.json",
+      "bytes": 1162,
+      "sha256": "786ef686b7b31b078a1662414d1e4a277b827cc1dc08473b52a9ca69df216b6f"
+    },
+    {
+      "path": "stream_prada_order/PHASE_F_PROTOCOL_TH.md",
+      "bytes": 19140,
+      "sha256": "854577e59db4f9283a38f384369c658e64f65c08c9bc1eaf4b92804bd18dfe90"
+    }
+  ],
+  "deep_kernel_configured_output": {
+    "path": "pilot/outputs",
+    "exists": false,
+    "status": "missing_in_this_checkout",
+    "no_machine_wide_search": true
+  },
+  "sequential_metadata": {
+    "path": "stream_prada_order/results/phase_c_pilot_20261107_v1/metadata.json",
+    "bytes": 8305,
+    "sha256": "e5007bebfaf44fc9ff07e8eab191df5df1d7a482c6f0cc3cd6372d57eaee46b4",
+    "encoder": "BAAI/bge-small-en-v1.5",
+    "encoder_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "stream_length": 256,
+    "source_certificate": {
+      "path": "stream_prada_order/diagnostics/phase_b_plan/proposed_article_model_leeching_12_3_8.json.gz",
+      "bytes": 278732,
+      "sha256": "25970769c8e5128aa974ae00eae723ec56ffe984169a7499f38ca0ee49649b53"
+    },
+    "certificate_hash_matches_config": true,
+    "native_session_or_availability_evidence": false,
+    "certificate_scope": "Historical article/cohort allocation; not a native user/run connected-group certificate."
+  },
+  "sequential_embedding_metadata": {
+    "path": "stream_prada_order/results/phase_c_pilot_20261107_v1/embedding_calibration_validation.json",
+    "bytes": 331,
+    "sha256": "723b51d5abeefb33d8dabf0db508a98dca67bf7e368c0dfeafda6c0c194fcb42",
+    "queries": 4224,
+    "query_order_sha256": "d53cdb2b64838e0462f651304e816dcdd77b562e2ec53edf7801f33cc68bde2c",
+    "raw_text_order_sha256": "8529dadb512be043a3306abee067fa98a688a2a42fe4549af55e73788c510e17",
+    "embedding_sha256": "2db36b0374d595c0ed050ad91a8df680935705e8a9a588c26ce7fadf08d07df5",
+    "missing": [
+      "per-row vector hashes",
+      "shared canonical request/query manifest",
+      "per-cohort-local-index to common embedding-row mapping"
+    ]
+  },
+  "sequential_trace_shape": {
+    "path": "stream_prada_order/results/phase_c_pilot_20261107_v1/control_trace_12.json.gz",
+    "bytes": 5446,
+    "sha256": "2141ba6aee91258facefe3ea475618598b0e9c9b6a6de2dc52c9a430f4fc8771",
+    "keys": [
+      "cohort",
+      "key",
+      "order",
+      "growing",
+      "distances",
+      "thresholds",
+      "w",
+      "w_steps",
+      "score",
+      "retained_samples"
+    ],
+    "order_length": 256,
+    "w_count": 155,
+    "query_index_range": [
+      102,
+      256
+    ],
+    "score_values_exported_or_evaluated": false
+  },
+  "cusum_saved_output": {
+    "path": "stream_prada_order/results/phase_d_pilot_20261107_v2/per_stream.csv.gz",
+    "bytes": 61571,
+    "sha256": "7cb0218a02f6902ef6e775346a78d00983400b53f5727a19108c73117a7cc8ea",
+    "header": [
+      "cohort",
+      "key",
+      "attack_count",
+      "permutation",
+      "ordering",
+      "has_attack",
+      "candidate",
+      "alpha",
+      "max_score",
+      "any_alert",
+      "first_alert",
+      "prefix_alarm",
+      "eligible",
+      "detected",
+      "delay",
+      "right_censored"
+    ],
+    "checkpoint_curves_present": false,
+    "recomputation_performed": false
+  },
+  "mmd_saved_metadata": {
+    "path": "experiment_result/main/seed=42/MMD/model_leeching_bge_bs1500/metadata.json",
+    "bytes": 2338,
+    "sha256": "b2dcfe691cd5d97858f0d9dafe6f6323f183c27de2b375ba528518f266171628",
+    "keys": [
+      "dataset",
+      "data_root",
+      "normal_source",
+      "global_normal_path",
+      "normal_path",
+      "attacker_path",
+      "text_field",
+      "embedding_model",
+      "query_prefix",
+      "normalize_embeddings",
+      "batch_size",
+      "reference_repeats",
+      "null_samples",
+      "threshold_percentile",
+      "threshold",
+      "median_bandwidth",
+      "sigmas",
+      "normal_queries",
+      "benign_pool_size",
+      "heldout_benign_size",
+      "attacker_queries",
+      "mixed_attacker_ratios",
+      "mixed_batches_per_ratio",
+      "benign_eval_batches",
+      "attacker_eval_batches",
+      "seed",
+      "metrics",
+      "metrics_by_split"
+    ],
+    "declared_settings": {
+      "dataset": "model_leeching",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "query_prefix": "",
+      "normalize_embeddings": true,
+      "batch_size": 1500,
+      "reference_repeats": 20,
+      "seed": 42
+    },
+    "kind": "Existing MMD batch run; Deep Kernel checkpoint not established by this metadata",
+    "missing": [
+      "session/request chronology",
+      "canonical ordered-query manifest",
+      "exact encoder/tokenizer revision",
+      "per-row embedding hashes/index mapping",
+      "connected source/user/run split certificate",
+      "window start/end and actual member hashes",
+      "availability/computed-through provenance",
+      "per-window reference draw IDs",
+      "learned-kernel checkpoint/configuration digest"
+    ]
+  },
+  "mmd_saved_scores": {
+    "path": "experiment_result/main/seed=42/MMD/model_leeching_bge_bs1500/batch_scores.csv",
+    "bytes": 23246,
+    "sha256": "a8d7333be100968ec7af6c5ec0e9e63224d3703ee898d02f13c0ec0317ee2a48",
+    "header": [
+      "split",
+      "batch_id",
+      "label",
+      "size",
+      "attacker_ratio",
+      "attacker_count",
+      "score",
+      "p_value",
+      "suspicious"
+    ],
+    "rows_joined_or_evaluated": 0,
+    "batch_ids_are_not_session_ids": true
+  },
+  "decision": "NO-GO genuine same-stream integration; metadata blockers confirmed within inspected scope"
+}

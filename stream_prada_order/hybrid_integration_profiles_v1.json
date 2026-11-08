@@ -1,0 +1,11 @@
+{
+  "schema_version": "hybrid-integration-profiles-v1",
+  "default_profile": null,
+  "profiles": {
+    "illustrative_300_v1": {"horizon": 300, "window": 100, "stride": 50, "first_eligible": 102, "joint_checkpoints": [150, 200, 250, 300], "status": "existing_software_illustration"},
+    "research_256_grid_proposal_v1": {"horizon": 256, "window": 100, "stride": 50, "first_eligible": 102, "joint_checkpoints": [150, 200, 250], "status": "integration_fixture_proposal_not_a_replacement_for_phase_f"}
+  },
+  "phase_f_unchanged": {"primary_horizon": 256, "primary_online_looks": "Q102..Q256", "reported_budgets": [102, 128, 192, 256]},
+  "endpoint_256": "No automatic terminal window. [157,256] is off the 100/50 grid and unsupported by frozen hybrid v1 aligner.",
+  "calibration_transfer": "Forbidden across profiles; refit normalization and joint calibration under a separately frozen experiment protocol."
+}

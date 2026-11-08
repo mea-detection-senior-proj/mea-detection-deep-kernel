@@ -1,0 +1,30 @@
+{
+  "observed_utc": "2026-11-08T05:36:49.089502+00:00",
+  "status": "passed",
+  "base_head": "87fefe4242afeaaee2b032f7b7a74a7d4e37ddca",
+  "branch": "experiment/stream-prada-order",
+  "main_unchanged": true,
+  "prior_tracked_changes": false,
+  "prior_manifests_verified": {
+    "A": 29,
+    "B": 25,
+    "C": 81,
+    "D": 30,
+    "E": 34,
+    "F": 11,
+    "G": 39,
+    "H": 46,
+    "I": 18,
+    "J": 21,
+    "K": 14,
+    "hybrid_fusion": 12
+  },
+  "inspected_producer_source_and_output_hashes_unchanged": true,
+  "old_hybrid_300_and_phase_f_256_unchanged": true,
+  "real_scores_exported": 0,
+  "real_score_joins": 0,
+  "model_inference_or_detector_training": false,
+  "scientific_evaluation": false,
+  "readiness": "NO-GO genuine same-stream integration; GO numeric-only software adapters",
+  "scope": "Precommit checks; no claim of physical embedding verification or source independence"
+}

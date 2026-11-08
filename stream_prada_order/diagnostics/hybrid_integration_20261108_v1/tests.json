@@ -1,0 +1,40 @@
+{
+  "schema_version": "hybrid-integration-tests-v1",
+  "status": "passed",
+  "tests_run": 39,
+  "new_tests": 17,
+  "regression_tests": 22,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "runner_reported_seconds": 0.351,
+  "command": "conda run --no-capture-output -n senior python -m unittest stream_prada_order.tests.test_hybrid_integration stream_prada_order.tests.test_hybrid_fusion -v",
+  "evidence_origin": "Actual observed unittest output in this task; counts and time recorded after successful execution, not a reconstructed run.",
+  "source_hashes": {
+    "stream_prada_order/hybrid_integration.py": "fe066783abad487fa7f67c8da7ce9b536e3948dfb8494ffd023b50eb904255f8",
+    "stream_prada_order/tests/test_hybrid_integration.py": "1d2e199e2ab2054b2f51812b91577cc1f39b4e84405bd23689b7dc73465eb8d1",
+    "stream_prada_order/hybrid_integration_profiles_v1.json": "7622040fa8900f4756985ff9b7d6dca4d511b881b272e58b9654cf3c857ca14e",
+    "stream_prada_order/hybrid_integration_audit.py": "ad8241d92b363a650255955cef730773591db380ab322d675563b49a77ad2171"
+  },
+  "scope": "Synthetic numeric fixtures only; real score exports/joins=0; no detector/model calls.",
+  "development_stages": [
+    {
+      "stage": "TDD before implementation",
+      "outcome": "ImportError hybrid_integration not present",
+      "errors": 1
+    },
+    {
+      "stage": "Initial adapters",
+      "tests_run": 15,
+      "status": "passed"
+    },
+    {
+      "stage": "Expanded integration + frozen hybrid suite",
+      "tests_run": 39,
+      "status": "passed"
+    }
+  ],
+  "scientific_fpr": null,
+  "scientific_tpr": null,
+  "scientific_detection_delay": null
+}

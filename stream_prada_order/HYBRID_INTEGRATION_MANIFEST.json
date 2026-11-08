@@ -1,0 +1,45 @@
+{
+  "schema_version": "hybrid-integration-deliverables-v1",
+  "base_head": "87fefe4242afeaaee2b032f7b7a74a7d4e37ddca",
+  "branch": "experiment/stream-prada-order",
+  "self_excluded": true,
+  "file_count": 9,
+  "files": {
+    "stream_prada_order/hybrid_integration.py": {
+      "bytes": 15238,
+      "sha256": "fe066783abad487fa7f67c8da7ce9b536e3948dfb8494ffd023b50eb904255f8"
+    },
+    "stream_prada_order/hybrid_integration_audit.py": {
+      "bytes": 5830,
+      "sha256": "ad8241d92b363a650255955cef730773591db380ab322d675563b49a77ad2171"
+    },
+    "stream_prada_order/hybrid_integration_profiles_v1.json": {
+      "bytes": 908,
+      "sha256": "7622040fa8900f4756985ff9b7d6dca4d511b881b272e58b9654cf3c857ca14e"
+    },
+    "stream_prada_order/tests/test_hybrid_integration.py": {
+      "bytes": 11421,
+      "sha256": "1d2e199e2ab2054b2f51812b91577cc1f39b4e84405bd23689b7dc73465eb8d1"
+    },
+    "stream_prada_order/HYBRID_INTEGRATION_READINESS_TH.md": {
+      "bytes": 13083,
+      "sha256": "c015dbc2c321b6912a25e7b903682d2af8b9cfe7631d4b068087f66f46981445"
+    },
+    "stream_prada_order/HYBRID_MMD_PRODUCER_REQUIREMENTS_TH.md": {
+      "bytes": 13531,
+      "sha256": "7fd363ab92930cb52f3cfc2840ed875d508b5096312bb08968ad31ddcde45369"
+    },
+    "stream_prada_order/diagnostics/hybrid_integration_20261108_v1/final_checks.json": {
+      "bytes": 891,
+      "sha256": "fd56ffd3270873fe91d0ee099dd2838c46c49d14cc2cc987c5e644e40515bb12"
+    },
+    "stream_prada_order/diagnostics/hybrid_integration_20261108_v1/producer_audit.json": {
+      "bytes": 7239,
+      "sha256": "f4b90ec4527b576fb7916a5e0bd94ac44c280ca7b528136c2086eab526fd757d"
+    },
+    "stream_prada_order/diagnostics/hybrid_integration_20261108_v1/tests.json": {
+      "bytes": 1639,
+      "sha256": "3a543c1862c96886040aa1b920b3136b988be95d6579dd27aba0d4c712750f34"
+    }
+  }
+}
